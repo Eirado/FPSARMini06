@@ -30,7 +30,7 @@ class MainScene: ARView {
         enemy = EnemyEntity()
         
         let planeAnchor = AnchorEntity(plane: .horizontal)
-        planeAnchor.addChild(enemy?.model)
+        planeAnchor.addChild(enemy!.model)
         
         self.scene.addAnchor(planeAnchor)
     }
