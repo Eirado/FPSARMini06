@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
+		ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */; };
 		B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */; };
 		B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA22C4EC3420038ECD9 /* InventoryView.swift */; };
 		B868FAA52C4EC34D0038ECD9 /* InventoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA42C4EC34D0038ECD9 /* InventoryViewModel.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		B868FAA22C4EC3420038ECD9 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		B868FAA42C4EC34D0038ECD9 /* InventoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewModel.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				B868FAB02C4EC3950038ECD9 /* HealthComponent.swift */,
 				B868FAB22C4EC39C0038ECD9 /* MovementComponent.swift */,
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
+				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				B8C65F8B2C4AE1E100D56811 /* ContentView.swift */,
 				B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */,
 				B8C65F8F2C4AE1E200D56811 /* Preview Content */,
+				ABFA01782C4ED1BB0096BA9F /* GameController.swift */,
 			);
 			path = FPSARMini06;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				B868FAB32C4EC39C0038ECD9 /* MovementComponent.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
+				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
 				B868FAB12C4EC3950038ECD9 /* HealthComponent.swift in Sources */,
@@ -247,6 +254,7 @@
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
 				B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */,
 				B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */,
+				ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -411,7 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
