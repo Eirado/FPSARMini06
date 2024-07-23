@@ -14,27 +14,38 @@ O objetivo do projeto é desenvolver um jogo FPS utilizando AR.
 A estrutura de pastas e arquivos do projeto é organizada da seguinte forma:
 
 ```
-NomeDoProjeto/
+FPSARMini06/
 │
-├── NomeDoProjeto/
-│   ├── AppDelegate.swift
-│   ├── SceneDelegate.swift
-│   ├── Info.plist
-│   ├── Assets.xcassets/
-│   │   └── AppIcon.appiconset/
-│   ├── Base.lproj/
-│   │   ├── LaunchScreen.storyboard
-│   │   └── Main.storyboard
-│   ├── ViewControllers/
-│   │   └── MainViewController.swift
-│   ├── Models/
-│   │   └── [SeuModelo].swift
+├── FPSARMini06/
+│   ├── Model/
+│   │   └── Model.swift
+│   ├── NavigationController/
+│   │   ├── Navigator.swift
+│   │   ├── PageManager.swift
+│   │   └── GameScene.swift
 │   ├── Views/
-│   │   └── [SuaView].swift
-│   ├── Services/
-│   │   └── [SeuServico].swift
+│   │   ├── Inventory/
+│   │   │   ├── InventoryView.swift
+│   │   │   └── InventoryViewModel.swift
+│   │   ├── Menu/
+│   │   │   └── MenuView.swift
+│   ├── GameSystem/
+│   │   ├── Components/
+│   │   │   ├── HealthComponent.swift
+│   │   │   ├── MovementComponent.swift
+│   │   │   ├── AttackComponent.swift
+│   │   │   └── VisualComponent.swift
+│   │   ├── Entities/
+│   │   │   ├── EnemyEntity.swift
+│   │   │   └── PlayerEntity.swift
+│   │   └── MainScene.swift
 │   └── Utils/
 │       └── [SeuUtil].swift
+│   ├── AppDelegate.swift
+│   ├── ContentView.swift
+│   ├── Assets.xcassets/
+│   │   └── AppIcon.appiconset/
+│   ├── Info.plist
 │
 ├── NomeDoProjetoTests/
 │   └── [NomeDoProjetoTests].swift
