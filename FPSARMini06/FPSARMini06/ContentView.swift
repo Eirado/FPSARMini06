@@ -9,8 +9,10 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    @Environment(PageManager.self) var pageManager
+    
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        Navigator().edgesIgnoringSafeArea(.all)
     }
 }
 

@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Navigator: View {
+    @Environment(PageManager.self) var pageManager
+    
+    var body: some View {
+        switch pageManager.page {
+        case .menu:
+            MenuView()
+        case .gameScene:
+            GameScene()
+        }
+    }
+}

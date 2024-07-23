@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		127DF41D2C502749009C3231 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF41C2C502749009C3231 /* PageManager.swift */; };
+		127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF41E2C5028F6009C3231 /* GameScene.swift */; };
 		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
 		ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */; };
 		B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127DF41C2C502749009C3231 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
+		127DF41E2C5028F6009C3231 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */,
+				127DF41C2C502749009C3231 /* PageManager.swift */,
+				127DF41E2C5028F6009C3231 /* GameScene.swift */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -244,12 +250,14 @@
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				B868FAB32C4EC39C0038ECD9 /* MovementComponent.swift in Sources */,
+				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
 				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
 				B868FAB12C4EC3950038ECD9 /* HealthComponent.swift in Sources */,
+				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
 				B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */,
@@ -388,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = ZQ6R8GYU9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -419,7 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = ZQ6R8GYU9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
