@@ -23,6 +23,6 @@ jobs:
       - name: Build for testing
         run: |
           xcodebuild build-for-testing \
-          -project FPSARMini06/FPSARMini06.xcodeproj \
+          -project Código/FPSARMini06/FPSARMini06.xcodeproj \
           -scheme FPSARMini06 \
           -destination 'platform=iOS Simulator,name=iPhone 15 Pro'
