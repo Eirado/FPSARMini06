@@ -6,30 +6,22 @@
 //
 
 import Foundation
-import GameplayKit
 import RealityKit
 
-class EnemyEntity: GKEntity{
+class EnemyEntity: Entity{
     
-    public lazy var visualComponent: VisualComponent = {
-        guard let component = component(ofType: VisualComponent.self) else {
-            fatalError("VisualComponent not found")
-        }
-        return component
-    }()
+    var model: Entity
+    var animationRoot: Entity
     
-    var model: ModelEntity{
-        return visualComponent.model
-    }
-    
-    override init() {
-        super.init()
-    
-        self.addComponent(VisualComponent(mesh: .generateSphere(radius: 0.5), material: [SimpleMaterial(color: .red, isMetallic: true)]))
+    required init() {
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.model = Entity()
+        self.animationRoot = Entity()
+        
+        self.model.components.set( ModelComponent(mesh: .generateSphere(radius: 0.2), materials: [SimpleMaterial(color: .red, isMetallic: true)]))
+        
+        super.init()
+        self.addChild(self.model)
+                
     }
 }
