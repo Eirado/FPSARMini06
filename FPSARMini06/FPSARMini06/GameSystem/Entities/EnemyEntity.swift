@@ -10,7 +10,6 @@ import RealityKit
 
 class EnemyEntity: Entity{
     
-    
     var model: Entity
     var animationRoot: Entity
     
