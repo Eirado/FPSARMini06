@@ -8,7 +8,7 @@
 import Foundation
 import RealityKit
 
-class EnemyEntity: Entity{
+class EnemyEntity: Entity {
     
     var model: Entity
     var animationRoot: Entity
