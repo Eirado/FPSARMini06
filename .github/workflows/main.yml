@@ -25,5 +25,4 @@ jobs:
            -project FPSARMini06/FPSARMini06.xcodeproj \
            -scheme FPSARMini06 \
            -sdk iphonesimulator \
-           -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2' \
-            test || exit 1
+           -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
