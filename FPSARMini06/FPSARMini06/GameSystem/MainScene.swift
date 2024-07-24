@@ -29,8 +29,8 @@ class MainScene: ARView {
         
         enemy = EnemyEntity()
         
-        let planeAnchor = AnchorEntity(plane: .horizontal)
-        planeAnchor.addChild(enemy!.model)
+        let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        planeAnchor.addChild(enemy!)
         
         self.scene.addAnchor(planeAnchor)
     }
