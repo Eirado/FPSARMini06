@@ -18,9 +18,9 @@ class EnemyEntity: Entity {
         self.model = Entity()
         self.animationRoot = Entity()
         
-        self.model.components[MotionComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.2), materials: [SimpleMaterial(color: .red, isMetallic: true)])
+        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.2), materials: [SimpleMaterial(color: .red, isMetallic: true)])
         
-        self.model.components.set(CollisionComponent(shapes: [.generateSphere(radius: 0.2)]))
+        self.model.components[CollisionComponent.self] = CollisionComponent(shapes: [.generateSphere(radius: 0.2)])
         
         
         super.init()
