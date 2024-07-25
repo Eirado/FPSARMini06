@@ -14,6 +14,7 @@
 		ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */; };
 		B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */; };
 		B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8114BE32C52BF1B001940C2 /* DamageComponent.swift */; };
+		B8114C042C52D625001940C2 /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8114C032C52D625001940C2 /* MotionComponent.swift */; };
 		B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */; };
 		B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA22C4EC3420038ECD9 /* InventoryView.swift */; };
 		B868FAA52C4EC34D0038ECD9 /* InventoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA42C4EC34D0038ECD9 /* InventoryViewModel.swift */; };
@@ -38,6 +39,7 @@
 		ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSystem.swift; sourceTree = "<group>"; };
 		B8114BE32C52BF1B001940C2 /* DamageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageComponent.swift; sourceTree = "<group>"; };
+		B8114C032C52D625001940C2 /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
 		B868FA9E2C4EC2F00038ECD9 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		B868FAA22C4EC3420038ECD9 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		B868FAA42C4EC34D0038ECD9 /* InventoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				B868FAB02C4EC3950038ECD9 /* HealthComponent.swift */,
 				ABEC1B672C52D5A300AE13EF /* HealthComponent.swift */,
+				B8114C032C52D625001940C2 /* MotionComponent.swift */,
 				B8114BE32C52BF1B001940C2 /* DamageComponent.swift */,
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
@@ -265,6 +268,7 @@
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
+				B8114C042C52D625001940C2 /* MotionComponent.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
