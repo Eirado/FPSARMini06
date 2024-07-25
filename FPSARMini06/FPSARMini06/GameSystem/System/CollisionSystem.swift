@@ -10,9 +10,12 @@ import RealityKit
 
 
 class CollisionSystem: RealityKit.System {
-   
+    
+    
+    
     required init(scene: Scene) {
         
+        print("temp")
+      
     }
-    
 }
