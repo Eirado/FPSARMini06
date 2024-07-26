@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		127DF41D2C502749009C3231 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF41C2C502749009C3231 /* PageManager.swift */; };
 		127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF41E2C5028F6009C3231 /* GameScene.swift */; };
+		127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4202C52D6CD009C3231 /* PauseMenuView.swift */; };
+		127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */; };
 		ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1B692C52D73600AE13EF /* MotionComponent.swift */; };
 		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
 		ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		127DF41C2C502749009C3231 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
 		127DF41E2C5028F6009C3231 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		127DF4202C52D6CD009C3231 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
+		127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentePauseMenu.swift; sourceTree = "<group>"; };
 		ABEC1B692C52D73600AE13EF /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
 		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127DF4242C52EA08009C3231 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */,
+			);
+			name = Utils;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		B8114BDF2C5196A6001940C2 /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B868FAA62C4EC35B0038ECD9 /* MenuView.swift */,
+				127DF4202C52D6CD009C3231 /* PauseMenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 				B8C65F892C4AE1E100D56811 /* AppDelegate.swift */,
 				B8C65F8B2C4AE1E100D56811 /* ContentView.swift */,
 				ABFA01782C4ED1BB0096BA9F /* GameController.swift */,
+				127DF4242C52EA08009C3231 /* Utils */,
 				B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */,
 				B8C65F8F2C4AE1E200D56811 /* Preview Content */,
 			);
@@ -262,12 +277,15 @@
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
+				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
+				B868FAB32C4EC39C0038ECD9 /* MovementComponent.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
 				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
+				127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
