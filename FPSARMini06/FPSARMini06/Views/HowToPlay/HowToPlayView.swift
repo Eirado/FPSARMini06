@@ -12,7 +12,7 @@ struct HowToPlayView: View {
         VStack {
             HStack {
                 Button(action: {
-                    print("voltou")
+                    print("voltou") // Entra aqui a lógica
                 }, label: {
                     Image("Backbutton")
                 })
@@ -31,7 +31,7 @@ struct HowToPlayView: View {
             Spacer()
             
             Button(action: {
-                print("apertou")
+                print("apertou") //Entra aqui a lógica
             }, label: {
                 Image("ImReadybutton")
                     .overlay {
