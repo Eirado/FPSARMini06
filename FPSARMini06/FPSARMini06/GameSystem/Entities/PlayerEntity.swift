@@ -6,3 +6,37 @@
 //
 
 import Foundation
+import RealityKit
+
+class PlayerEntity: Entity, HasCollision, HasModel {
+    
+    var model: ModelEntity
+    var animationRoot: Entity
+    var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
+    
+    required init() {
+        
+        self.model = ModelEntity()
+        self.animationRoot = Entity()
+        self.modelShape = .generateBox(width: 0.2, height: 0.2, depth: 0.2)
+        
+        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0.2), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
+        
+        //Defino o comportamento de colisao aqui
+        self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
+        self.model.generateCollisionShapes(recursive: true)
+        
+        let extractedEntityBitMask = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
+        let bitMask = extractedEntityBitMask.entityBitMask
+        
+        let entityGroup = CollisionGroup(rawValue: bitMask.rawValue)
+        
+        let entityMask = CollisionGroup.all.subtracting(entityGroup)
+        
+        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
+        
+        super.init()
+        self.addChild(self.model)
+        self.addChild(self.animationRoot)
+    }
+}
