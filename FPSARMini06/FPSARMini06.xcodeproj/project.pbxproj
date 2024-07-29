@@ -23,6 +23,7 @@
 		B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */; };
 		B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* Model.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
+		B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */; };
 		B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F892C4AE1E100D56811 /* AppDelegate.swift */; };
 		B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F8B2C4AE1E100D56811 /* ContentView.swift */; };
 		B8C65F8E2C4AE1E200D56811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		B868FAB62C4EC3B90038ECD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
+		B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCollisionComponent.swift; sourceTree = "<group>"; };
 		B8C65F862C4AE1E100D56811 /* FPSARMini06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSARMini06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C65F892C4AE1E100D56811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C65F8B2C4AE1E100D56811 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				B8114BE32C52BF1B001940C2 /* DamageComponent.swift */,
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
+				B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
+				B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
 				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
@@ -408,7 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -439,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

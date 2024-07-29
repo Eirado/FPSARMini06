@@ -12,9 +12,12 @@ import RealityKit
 import Combine
 import SwiftUI
 
+// Mudanças para teste de componente
+
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
+    var enemy2: EnemyEntity? = nil
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -28,9 +31,16 @@ class MainScene: ARView {
         self.init(frame: UIScreen.main.bounds)
         
         enemy = EnemyEntity()
+        enemy?.position.x += 0.3
+        self.installGestures(.all, for: enemy!)
         
-        let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        enemy2 = EnemyEntity()
+        enemy2?.position.x -= 0.3
+        self.installGestures(.all, for: enemy2!)
+        
+        let planeAnchor = AnchorEntity(plane: .horizontal)
         planeAnchor.addChild(enemy!)
+        planeAnchor.addChild(enemy2!)
         
         self.scene.addAnchor(planeAnchor)
     }
