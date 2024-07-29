@@ -29,6 +29,7 @@ struct HowToPlayView: View {
                     Text("HOW TO PLAY")
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
+                        .padding(.trailing, 56)
                     
                     Spacer()
                 }
