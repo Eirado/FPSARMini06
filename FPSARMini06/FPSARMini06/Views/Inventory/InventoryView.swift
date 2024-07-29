@@ -16,12 +16,16 @@ struct InventoryView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                VStack {
                     HStack {
                         Button(action: {
                             print("voltar")
                         }, label: {
-                            Image("Backbutton")
+                            Image("Top Bar")
+                                .overlay{
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 36, weight: .bold))
+                                        .tint(.black)
+                                }
                         })
                         .frame(width: 81, height: 53)
                         
@@ -68,9 +72,8 @@ struct InventoryView: View {
                         }
                     
                     Spacer()
-                }
-                .padding()
             }
+            .padding(.horizontal)
             
         }
     }
