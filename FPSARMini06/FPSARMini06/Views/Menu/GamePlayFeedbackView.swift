@@ -65,10 +65,6 @@ struct GamePlayFeedbackView: View {
                         Spacer()
                         
                         //MARK: Componentes
-//                        ComponentePauseMenuBG3(toggleOn: $toggleOn)
-                        
-                        Spacer()
-                        
                         Button{
                             
                         } label: {
@@ -99,20 +95,6 @@ struct GamePlayFeedbackView: View {
                 .ignoresSafeArea(.all)
             }
         }
-//
-//        //#Preview {
-//        //    PauseMenuView()
-//        //}
-//        #Preview {
-//            struct PauseMenuPreviewContainer: View{
-//                @State private var toggleOn = false
-//                
-//                var body: some View {
-//                    PauseMenuView(toggleOn: $toggleOn)
-//                }
-//            }
-//            return PauseMenuPreviewContainer()
-//        }
 
 #Preview {
     GamePlayFeedbackView()
