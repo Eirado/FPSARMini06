@@ -12,7 +12,7 @@ struct SettingsView: View {
     var body: some View {
         ZStack{
             //MARK: Fundo
-            Color.red.opacity(0.2)
+            Color.green.opacity(0.2)
             
             VStack{
                 //MARK: Topo
@@ -22,49 +22,30 @@ struct SettingsView: View {
                     } label: {
                         ZStack{
                             Image("Top Bar")
-                            Image(systemName: "questionmark")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
-                        }
-                    }
-                    Spacer()
-                    Button{
-                        
-                    } label: {
-                        ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "gear")
+                            Image(systemName: "chevron.left")
                                 .font(.system(size: 36, weight: .bold))
                                 .tint(.black)
                         }
                     }
                     
+                    Spacer()
+                    
+                    Text("SETTINGS")
+                        .font(.system(size: 20, weight: .bold))
+                        .tint(.black)
+                        .padding(.trailing, 56)
+                    
+                    Spacer()
                 }
-                .padding(.horizontal, 20)
+                .padding(.vertical, 50)
+                .padding(.horizontal, 12)
                 
                 Spacer()
                 
-                Button{
-                    
-                } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("PLAY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
-                }
+                ComponentePauseMenuBG5(toggleOn: $toggleOn)
+                    .padding(.bottom, 104)
                 
-                Button{
-                                    
-                } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("INVENTORY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
-                }
+                Spacer()
             }
             .padding(.vertical, 20)
         }
@@ -73,12 +54,12 @@ struct SettingsView: View {
 }
 
 #Preview {
-    struct MenuPreviewContainer: View{
+    struct SettingsPreviewContainer: View{
         @State private var toggleOn = false
         
         var body: some View {
-            MenuView(toggleOn: $toggleOn)
+            SettingsView(toggleOn: $toggleOn)
         }
     }
-    return MenuPreviewContainer()
+    return SettingsPreviewContainer()
 }
