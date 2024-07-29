@@ -10,9 +10,10 @@ import RealityKit
 
 struct ContentView : View {
     @Environment(PageManager.self) var pageManager
+    @Binding var toggleOn: Bool
     
     var body: some View {
-        Navigator().edgesIgnoringSafeArea(.all)
+        Navigator(toggleOn: $toggleOn).edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -30,5 +31,12 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 #Preview {
-    ContentView()
+struct ContentViewPreviewContainer: View{
+    @State private var toggleOn = false
+    
+    var body: some View {
+        ContentView(toggleOn: $toggleOn)
+    }
+}
+return ContentViewPreviewContainer()
 }
