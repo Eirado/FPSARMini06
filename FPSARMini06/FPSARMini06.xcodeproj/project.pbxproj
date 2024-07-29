@@ -27,6 +27,7 @@
 		B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* Model.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
 		B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */; };
+		B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A120A52C581173003603BC /* HowToPlayView.swift */; };
 		B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F892C4AE1E100D56811 /* AppDelegate.swift */; };
 		B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F8B2C4AE1E100D56811 /* ContentView.swift */; };
 		B8C65F8E2C4AE1E200D56811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		B868FAB62C4EC3B90038ECD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
 		B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCollisionComponent.swift; sourceTree = "<group>"; };
+		B8A120A52C581173003603BC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		B8C65F862C4AE1E100D56811 /* FPSARMini06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSARMini06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C65F892C4AE1E100D56811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C65F8B2C4AE1E100D56811 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				B868FAA12C4EC3210038ECD9 /* Inventory */,
 				B868FAA02C4EC31C0038ECD9 /* Menu */,
+				B8A120A72C58117D003603BC /* HowToPlay */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +168,14 @@
 				B868FAA42C4EC34D0038ECD9 /* InventoryViewModel.swift */,
 			);
 			path = Inventory;
+			sourceTree = "<group>";
+		};
+		B8A120A72C58117D003603BC /* HowToPlay */ = {
+			isa = PBXGroup;
+			children = (
+				B8A120A52C581173003603BC /* HowToPlayView.swift */,
+			);
+			path = HowToPlay;
 			sourceTree = "<group>";
 		};
 		B8C65F7D2C4AE1E100D56811 = {
@@ -284,7 +295,6 @@
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
-				B868FAB32C4EC39C0038ECD9 /* MovementComponent.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */,
@@ -293,6 +303,7 @@
 				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
+				B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */,
 				127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,

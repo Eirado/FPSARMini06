@@ -1,0 +1,214 @@
+# Xcode
+#
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+
+# User settings
+#
+*.xcuserdatad
+!default.xcworkspace/contents.xcworkspacedata
+!default.xcworkspace/contents.xcworkspacedata.doit
+
+# Obj-C/Swift specific
+#
+*.hmap
+*.ipa
+
+# Build generated
+#
+build/
+DerivedData/
+*.o
+*.d
+*.dtapi
+*.swp
+*.out
+
+# Pods
+#
+Pods/
+
+# Carthage
+#
+Carthage/Build/
+
+# fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+#
+.idea/
+
+# CocoaPods
+#
+Pods/
+Podfile.lock
+Podfile.svn/
+Podfile.origin/
+
+# Swift Package Manager
+#
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/xcode/xcshareddata/swiftpm/Package.resolved
+
+# Archives
+#
+*.xcarchive
+
+# xcproj
+#
+xcuserdata/
+*.xcscmblueprint
+
+# Xcode iOS
+#
+*.ipa
+
+# Xcode macOS
+#
+*.app
+
+# Xcode watchOS
+#
+*.watchapp
+*.watchkitapp
+
+# Xcode tvOS
+#
+*.tvosapp
+
+# Xcode Other
+#
+*.testcase
+*.moved-aside
+*.trace
+*.llbm
+*.bblm
+
+# Xcode Mac
+#
+*.dSYM
+
+# Xcode iOS
+#
+*.app.dSYM
+
+# Resilio Sync
+#
+.resilio-sync/
+
+# Certs
+#
+*.cert
+*.cer
+*.mobileprovision
+*.pem
+
+# Images
+#
+*.tiff
+*.tif
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.bmpf
+*.ico
+*.cur
+*.xbm
+
+# DS_Store
+#
+.DS_Store
+
+# Logs
+#
+*.log
+
+# Swp
+#
+*.swp
+
+# Frameworks
+#
+*.framework
+Carthage/
+
+# Bundle
+#
+*.bundle
+
+# Package manager
+#
+.swiftpm/xcode/
+*.xcodeproj
+
+# Markdown
+#
+*.md
+
+# Fastlane
+#
+fastlane/
+
+# Cache
+#
+*.swiftdoc
+*.swiftmodule
+
+# xcworkspace
+#
+*.xcworkspace
+
+# SPM
+#
+.build/
+
+# Xcode Derived Data
+#
+DerivedData/
+
+# User-specific files
+#
+xcuserdata/
+
+# Build artifacts
+#
+build/
+
+# Index
+#
+*.idx
+
+# Auxiliary files
+#
+.xcscmblueprint
+
+# Simulator devices
+#
+*.simulator
+
+# User project settings
+#
+xcuserdata/
+
+# Temporary files
+#
+*.tmp
+
+# Markdown
+#
+*.markdown
