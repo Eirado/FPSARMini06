@@ -46,12 +46,12 @@ class MainScene: ARView {
         player2 = PlayerEntity()
         self.installGestures(.all, for: player2!)
         
-//        let planeAnchor = AnchorEntity(plane: .horizontal)
-//        planeAnchor.addChild(enemy!)
-//        planeAnchor.addChild(enemy2!)
-//        planeAnchor.addChild(player!)
-//        planeAnchor.addChild(player2!)
-//        
-//        self.scene.addAnchor(planeAnchor)
+        let planeAnchor = AnchorEntity(plane: .horizontal)
+        planeAnchor.addChild(enemy!)
+        planeAnchor.addChild(enemy2!)
+        planeAnchor.addChild(player!)
+        planeAnchor.addChild(player2!)
+        
+        self.scene.addAnchor(planeAnchor)
     }
 }

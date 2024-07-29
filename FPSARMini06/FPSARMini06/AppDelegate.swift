@@ -12,7 +12,7 @@ import SwiftUI
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    @State var toggleOn: Bool = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gameCollisionComponent.registerComponent()
         
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ContentView(toggleOn: $toggleOn)
             .environment(PageManager())
 
         // Use a UIHostingController as window root view controller.
