@@ -12,21 +12,20 @@ class EnemyEntity: Entity, HasCollision, HasModel {
     
     var model: ModelEntity
     var animationRoot: Entity
-    var esfera: ShapeResource
+    var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
     
     required init() {
         
-        esfera = .generateSphere(radius: 0.2)
-        
         self.model = ModelEntity()
         self.animationRoot = Entity()
+        self.modelShape = .generateSphere(radius: 0.2)
         
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.2), materials: [SimpleMaterial(color: .red, isMetallic: true)])
         
         //Defino o comportamento de colisao aqui
         self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
         self.model.generateCollisionShapes(recursive: true)
-        self.model.collision = CollisionComponent(shapes: [esfera], mode: .trigger, filter: .sensor)
+        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
         
         super.init()
         self.addChild(self.model)

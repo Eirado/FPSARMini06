@@ -18,28 +18,9 @@ class CollisionSystem: RealityKit.System {
     func update(context: SceneUpdateContext) {
         context.scene.performQuery(hasCollisionComponentQuery).forEach { collisorEntity in
             guard let entityComponent = collisorEntity.components[gameCollisionComponent.self] as? gameCollisionComponent else { return }
-            
-            
-            //            let entityGroup = {
-            //                switch entityComponent.entityBitMask {
-            //                case .enemyEntityBitMask:
-            //                    return CollisionGroup(rawValue: entityComponent.entityBitMask.rawValue)
-            //                case .playerEntityBitMask:
-            //                    return CollisionGroup(rawValue: entityComponent.entityBitMask.rawValue)
-            //                }
-            //            }
-            
-            // creating masks
-            //            let entityMask = CollisionGroup.all.subtracting(entityGroup())
-            
-            // Have to create collision Groups
-            
-            //Have to define generateCollisionShapes and CollisionComponent
+
             collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Began.self) { event in
-//                guard let modelEntity = collisorEntity as? ModelEntity else { return }
                 print("Colidiu")
-                
-//                modelEntity.model?.materials = [SimpleMaterial(color: .purple, isMetallic: true)]
             })
         }
     }
