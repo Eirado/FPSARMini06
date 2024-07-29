@@ -14,7 +14,7 @@ import SwiftUI
 struct PauseMenuView: View {
     @Binding var toggleOn: Bool
     var body: some View {
-        ZStack{
+        ZStack {
             //MARK: Fundo
             RoundedRectangle(cornerRadius: 20)
                 .fill(.gray.opacity(0.8))
@@ -22,10 +22,10 @@ struct PauseMenuView: View {
                 .frame(height: 715)
                 .padding(.horizontal,4)
             
-            VStack{
+            VStack {
                 //MARK: Topo
-                HStack{
-                    Button{
+                HStack {
+                    Button {
                         
                     } label: {
                         ZStack{
@@ -52,7 +52,7 @@ struct PauseMenuView: View {
                 
                 Spacer()
                 
-                Button{
+                Button {
                     
                 } label: {
                     ZStack{
@@ -63,7 +63,7 @@ struct PauseMenuView: View {
                     }
                 }
                 
-                Button{
+                Button {
                     
                 } label: {
                     ZStack{

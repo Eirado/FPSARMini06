@@ -15,9 +15,14 @@ import SwiftUI
 enum Page {
     case menu
     case gameScene
+    case inventory
+    case howToPlay
+    case settings
+    case pause
+    case feedbackView
 }
 
 @Observable class PageManager {
-//    var page: Page = .menu // MARK: Comentar linha quando for testar o jogo em si
-    var page: Page = .gameScene // MARK: Comentar página quando for testar o menu
+    var page: Page = .menu // MARK: Comentar linha quando for testar o jogo em si
+//    var page: Page = .gameScene // MARK: Comentar página quando for testar o menu
 }
