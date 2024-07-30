@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InventoryView: View {
+    @Environment(PageManager.self) var pageManager
+    
     var body: some View {
         
         ZStack {
@@ -19,7 +21,7 @@ struct InventoryView: View {
                 VStack (spacing: 10){
                     HStack {
                         Button(action: {
-                            print("voltar")
+                            pageManager.page = .menu
                         }, label: {
                             Image("Top Bar")
                                 .overlay{
@@ -84,6 +86,7 @@ struct InventoryView: View {
 
 #Preview {
     InventoryView()
+        .environment(PageManager())
 }
 
 struct ExtractedView: View {

@@ -22,6 +22,16 @@ struct Navigator: View {
             MenuView(toggleOn: $toggleOn)
         case .gameScene:
             GameScene()
+        case .inventory:
+            InventoryView()
+        case .howToPlay:
+            HowToPlayView()
+        case .settings:
+            SettingsView(toggleOn: $toggleOn)
+        case .pause:
+            PauseMenuView(toggleOn: $toggleOn)
+        case .feedbackView:
+            GamePlayFeedbackView()
         }
     }
 }
