@@ -1,10 +1,3 @@
-//
-//  MotionSystem.swift
-//  FPSARMini06
-//
-//  Created by Gabriel Eirado on 25/07/24.
-//
-
 import Foundation
 import RealityKit
 import UIKit
@@ -15,10 +8,12 @@ class MotionSystem: RealityKit.System {
     
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
-    private let sphereRadius: Float = 0.5
+    private let sphereRadius: Float = 0.3
     
     required init(scene: Scene) {
         generateNodes()
+        selectNewTargetNode()
+        visualizeSphereAndNodes(in: scene)
     }
     
     func update(context: SceneUpdateContext) {
@@ -67,13 +62,16 @@ class MotionSystem: RealityKit.System {
     
     private func generateNodes() {
         let numberOfNodes = 10
+        nodes.removeAll()
         
-        for _ in 0..<numberOfNodes {
-            let theta = Float.random(in: 0...2 * .pi)
-            let phi = Float.random(in: 0...2 * .pi)
-            let x = sphereRadius * sin(theta) * cos(phi)
-            let y = sphereRadius * sin(theta) * sin(phi)
-            let z = sphereRadius * cos(theta)
+        for i in 0..<numberOfNodes {
+            let theta = Float(i) * (2.0 * .pi / Float(numberOfNodes))
+            let phi = acos(1.0 - 2.0 * Float(i) / Float(numberOfNodes))
+            
+            let x = sphereRadius * sin(phi) * cos(theta)
+            let y = sphereRadius * sin(phi) * sin(theta)
+            let z = sphereRadius * cos(phi)
+            
             let node = SIMD3<Float>(x, y, z)
             nodes.append(node)
         }
@@ -88,5 +86,28 @@ class MotionSystem: RealityKit.System {
     
     private func selectNewTargetNode() {
         currentTargetIndex = Int.random(in: 0..<nodes.count)
+    }
+    
+    private func visualizeSphereAndNodes(in scene: Scene) {
+        
+        scene.performQuery(MotionSystem.query).forEach { entity in
+
+            // Create and add visual sphere as a child of the parent entity
+            let sphereMesh = MeshResource.generateSphere(radius: sphereRadius)
+            let sphereMaterial = SimpleMaterial(color: UIColor(white: .zero, alpha: 0.1), isMetallic: false)
+            let sphereEntity = ModelEntity(mesh: sphereMesh, materials: [sphereMaterial])
+            entity.addChild(sphereEntity)
+            sphereEntity.position = .zero
+            
+            // Create and add visual nodes
+            let nodeRadius: Float = 0.02 // Adjust the size of the node spheres
+            for nodePosition in nodes {
+                let nodeMesh = MeshResource.generateSphere(radius: nodeRadius)
+                let nodeMaterial = SimpleMaterial(color: .red, isMetallic: false)
+                let nodeEntity = ModelEntity(mesh: nodeMesh, materials: [nodeMaterial])
+                nodeEntity.position = nodePosition
+                entity.addChild(nodeEntity)
+            }
+        }
     }
 }
