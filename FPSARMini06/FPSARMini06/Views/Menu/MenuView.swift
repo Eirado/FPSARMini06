@@ -24,23 +24,23 @@ struct MenuView: View {
                     Button{
                         
                     } label: {
-                        ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "questionmark")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
-                        }
+                        Image("Top Bar")
+                            .overlay{
+                                Image(systemName: "questionmark")
+                                    .font(.system(size: 36, weight: .bold))
+                                    .tint(.black)
+                            }
                     }
                     Spacer()
                     Button{
                         
                     } label: {
-                        ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "gear")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
-                        }
+                        Image("Top Bar")
+                            .overlay{
+                                Image(systemName: "gear")
+                                    .font(.system(size: 36, weight: .bold))
+                                    .tint(.black)
+                            }
                     }
                     
                 }
@@ -51,23 +51,23 @@ struct MenuView: View {
                 Button{
                     
                 } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("PLAY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
+                    Image("Default")
+                        .overlay{
+                            Text("PLAY")
+                                .font(.system(size: 20, weight: .bold))
+                                .tint(.black)
+                        }
                 }
                 
                 Button{
-                                    
+                    
                 } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("INVENTORY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
+                    Image("Default")
+                        .overlay{
+                            Text("INVENTORY")
+                                .font(.system(size: 20, weight: .bold))
+                                .tint(.black)
+                        }
                 }
             }
             .padding(.vertical, 20)
