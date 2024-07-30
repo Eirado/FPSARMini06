@@ -15,6 +15,8 @@ import SwiftUI
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
+    var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
+    
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -29,9 +31,27 @@ class MainScene: ARView {
         
         enemy = EnemyEntity()
         
+        
         let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
         planeAnchor.addChild(enemy!)
         
+        self.pos = planeAnchor.position
+        
         self.scene.addAnchor(planeAnchor)
+        
+        arViewGestureSetup()
+    }
+    
+    func arViewGestureSetup() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
+        self.addGestureRecognizer(tapGesture)
+
+    }
+    
+    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        let touchLocation = sender.location(in: self)
+        
+        print(pos)
+        enemy?.position = pos
     }
 }

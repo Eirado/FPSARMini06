@@ -13,8 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+   
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+                     
+    [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        MotionComponent.registerComponent()
+        
+        MotionSystem.registerSystem()
+        
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
             .environment(PageManager())

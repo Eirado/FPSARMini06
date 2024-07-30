@@ -22,8 +22,10 @@ class EnemyEntity: Entity {
         
         self.model.components[CollisionComponent.self] = CollisionComponent(shapes: [.generateSphere(radius: 0.2)])
         
-        
         super.init()
+        
+        self.components[MotionComponent.self] = MotionComponent()
+        
         self.addChild(self.model)
         self.addChild(self.animationRoot)
            
