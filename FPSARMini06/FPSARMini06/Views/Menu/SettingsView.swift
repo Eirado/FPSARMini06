@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(PageManager.self) var pageManager
     @Binding var toggleOn: Bool
+    
     var body: some View {
-        ZStack{
+        ZStack {
             //MARK: Fundo
             Color.green.opacity(0.2)
             
             VStack{
                 //MARK: Topo
-                HStack{
-                    Button{
-                        
+                HStack {
+                    Button {
+                        pageManager.page = .menu
                     } label: {
-                        ZStack{
+                        ZStack {
                             Image("Top Bar")
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 36, weight: .bold))
@@ -59,6 +61,7 @@ struct SettingsView: View {
         
         var body: some View {
             SettingsView(toggleOn: $toggleOn)
+                .environment(PageManager())
         }
     }
     return SettingsPreviewContainer()

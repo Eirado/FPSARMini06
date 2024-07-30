@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct HowToPlayView: View {
+    @Environment(PageManager.self) var pageManager
+    
     var body: some View {
         ZStack{
             Color.blue.opacity(0.2)
             VStack {
                 HStack {
                     Button(action: {
-                        print("voltou") // Entra aqui a lógica
+                        pageManager.page = .menu
                     }, label: {
                         Image("Top Bar")
                             .overlay{
@@ -44,7 +46,7 @@ struct HowToPlayView: View {
                 Spacer()
                 
                 Button(action: {
-                    print("apertou") //Entra aqui a lógica
+                    pageManager.page = .gameScene
                 }, label: {
                     Image("Default")
                         .overlay {
@@ -62,4 +64,5 @@ struct HowToPlayView: View {
 
 #Preview {
     HowToPlayView()
+        .environment(PageManager())
 }
