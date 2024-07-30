@@ -12,7 +12,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(PageManager.self) var pageManager
     @Binding var toggleOn: Bool
+    
     var body: some View {
         ZStack{
             //MARK: Fundo
@@ -22,7 +24,7 @@ struct MenuView: View {
                 //MARK: Topo
                 HStack{
                     Button{
-                        
+                        pageManager.page = .howToPlay
                     } label: {
                         Image("Top Bar")
                             .overlay{
@@ -33,7 +35,7 @@ struct MenuView: View {
                     }
                     Spacer()
                     Button{
-                        
+                        pageManager.page = .settings
                     } label: {
                         Image("Top Bar")
                             .overlay{
@@ -49,7 +51,7 @@ struct MenuView: View {
                 Spacer()
                 
                 Button{
-                    
+                    pageManager.page = .gameScene
                 } label: {
                     Image("Default")
                         .overlay{
@@ -60,7 +62,7 @@ struct MenuView: View {
                 }
                 
                 Button{
-                    
+                    pageManager.page = .inventory
                 } label: {
                     Image("Default")
                         .overlay{
@@ -82,6 +84,7 @@ struct MenuView: View {
         
         var body: some View {
             MenuView(toggleOn: $toggleOn)
+                .environment(PageManager())
         }
     }
     return MenuPreviewContainer()

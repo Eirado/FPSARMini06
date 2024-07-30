@@ -12,7 +12,9 @@
 import SwiftUI
 
 struct PauseMenuView: View {
+    @Environment(PageManager.self) var pageManager
     @Binding var toggleOn: Bool
+    
     var body: some View {
         ZStack {
             //MARK: Fundo
@@ -26,7 +28,7 @@ struct PauseMenuView: View {
                 //MARK: Topo
                 HStack {
                     Button {
-                        
+                        pageManager.page = .gameScene
                     } label: {
                         ZStack{
                             Image("Top Bar")
@@ -53,7 +55,7 @@ struct PauseMenuView: View {
                 Spacer()
                 
                 Button {
-                    
+                    pageManager.page = .gameScene
                 } label: {
                     ZStack{
                         Image("Default")
@@ -64,7 +66,7 @@ struct PauseMenuView: View {
                 }
                 
                 Button {
-                    
+                    pageManager.page = .menu
                 } label: {
                     ZStack{
                         Image("Default")
@@ -92,6 +94,7 @@ struct PauseMenuView: View {
         
         var body: some View {
             PauseMenuView(toggleOn: $toggleOn)
+                .environment(PageManager())
         }
     }
     return PauseMenuPreviewContainer()

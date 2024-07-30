@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct GamePlayFeedbackView: View {
+    @Environment(PageManager.self) var pageManager
+    
     var body: some View {
                 ZStack {
                     //MARK: Fundo
@@ -66,7 +68,7 @@ struct GamePlayFeedbackView: View {
                         
                         //MARK: Componentes
                         Button {
-                            
+                            pageManager.page = .gameScene
                         } label: {
                             ZStack {
                                 Image("Default")
@@ -77,7 +79,7 @@ struct GamePlayFeedbackView: View {
                         }
                         
                         Button {
-                            
+                            pageManager.page = .menu
                         } label: {
                             ZStack {
                                 Image("Default")
@@ -98,4 +100,5 @@ struct GamePlayFeedbackView: View {
 
 #Preview {
     GamePlayFeedbackView()
+        .environment(PageManager())
 }
