@@ -20,9 +20,13 @@ class MainScene: ARView {
     var enemy2: EnemyEntity? = nil
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
+    var bullet: BulletEntity? = nil
     
     required init(frame frameRect: CGRect) {
+        
         super.init(frame: frameRect)
+        
+
     }
     
     dynamic required init?(coder decoder: NSCoder) {
@@ -30,6 +34,9 @@ class MainScene: ARView {
     }
     
     convenience init() {
+        
+        
+        
         self.init(frame: UIScreen.main.bounds)
         
         enemy = EnemyEntity()
@@ -46,12 +53,25 @@ class MainScene: ARView {
         player2 = PlayerEntity()
         self.installGestures(.all, for: player2!)
         
+        bullet = BulletEntity(arView: self)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        self.addGestureRecognizer(tapGesture)
+        
         let planeAnchor = AnchorEntity(plane: .horizontal)
+        planeAnchor.name = "plano_principal"
         planeAnchor.addChild(enemy!)
         planeAnchor.addChild(enemy2!)
         planeAnchor.addChild(player!)
         planeAnchor.addChild(player2!)
+        planeAnchor.addChild(bullet!)
         
         self.scene.addAnchor(planeAnchor)
     }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        bullet?.movementOfBullet()
+        print("clicou")
+    }
+    
 }

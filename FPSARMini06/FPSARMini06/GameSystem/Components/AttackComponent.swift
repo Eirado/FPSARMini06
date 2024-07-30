@@ -5,4 +5,9 @@
 //  Created by Giovanni Favorin de Melo on 22/07/24.
 //
 
-import Foundation
+import RealityKit
+
+struct AttackComponent: Component{
+    var attackSpeed:Float
+    var isHidden: Bool
+}

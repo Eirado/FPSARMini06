@@ -17,11 +17,13 @@ struct gameCollisionComponent: Component {
 enum BitMasks: UInt32 {
     case enemyEntityBitMask
     case playerEntityBitMask
+    case bulletEntity
     
     var rawValue: Int {
         switch self {
         case .enemyEntityBitMask: return 1 << 0
         case .playerEntityBitMask: return 1 << 1
+        case .bulletEntity : return 1 << 2
         }
     }
 }
