@@ -99,8 +99,15 @@
         }
       }
     },
-    "PAUSE" : {
-
+    "pauseMenuView-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSE"
+          }
+        }
+      }
     },
     "PLAY" : {
 
@@ -114,9 +121,6 @@
           }
         }
       }
-    },
-    "QUIT GAME" : {
-
     },
     "quitGame-button" : {
       "localizations" : {
@@ -138,8 +142,15 @@
         }
       }
     },
-    "RESUME" : {
-
+    "resumeGame-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RESUME"
+          }
+        }
+      }
     },
     "reward-text" : {
       "localizations" : {
@@ -189,7 +200,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wa"
+            "value" : "Wave Number"
           }
         }
       }

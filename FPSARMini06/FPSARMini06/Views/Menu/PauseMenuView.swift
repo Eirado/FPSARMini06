@@ -38,7 +38,7 @@ struct PauseMenuView: View {
                         }
                     }
                     Spacer()
-                    Text("PAUSE")
+                    Text("pauseMenuView-title")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundStyle(Color.black)
                         .padding(.trailing, 56)
@@ -59,7 +59,7 @@ struct PauseMenuView: View {
                 } label: {
                     ZStack{
                         Image("Default")
-                        Text("RESUME")
+                        Text("resumeGame-button")
                             .font(.system(size: 20, weight: .bold))
                             .tint(.black)
                     }
@@ -70,7 +70,7 @@ struct PauseMenuView: View {
                 } label: {
                     ZStack{
                         Image("Default")
-                        Text("QUIT GAME")
+                        Text("quitGame-button")
                             .font(.system(size: 20, weight: .bold))
                             .tint(.black)
                     }
