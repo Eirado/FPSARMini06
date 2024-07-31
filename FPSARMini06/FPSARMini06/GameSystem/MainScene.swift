@@ -17,7 +17,6 @@ import SwiftUI
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
-    var enemy2: EnemyEntity? = nil
 
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
@@ -40,9 +39,6 @@ class MainScene: ARView {
         enemy?.position.x += 0.3
         self.installGestures(.all, for: enemy!)
         
-        enemy2 = EnemyEntity()
-        enemy2?.position.x -= 0.3
-        self.installGestures(.all, for: enemy2!)
         
         player = PlayerEntity()
         self.installGestures(.all, for: player!)
@@ -58,13 +54,13 @@ class MainScene: ARView {
 //        
 //        self.scene.addAnchor(planeAnchor)
 
-        enemy2 = EnemyEntity()
-        
-        
+        let enemyClone = enemy?.clone(recursive: true)
+        let enemyClone2 = enemy?.clone(recursive: true)
         let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
-        planeAnchor.addChild(enemy!)
-        planeAnchor.addChild(enemy2!)
         
+        planeAnchor.addChild(enemyClone2!)
+        planeAnchor.addChild(enemyClone!)
+
         self.pos = planeAnchor.position
         
         self.scene.addAnchor(planeAnchor)
@@ -81,7 +77,6 @@ class MainScene: ARView {
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
         _ = sender.location(in: self)
         
-        print(pos)
-        enemy?.position = pos
+    
     }
 }
