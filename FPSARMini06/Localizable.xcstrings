@@ -4,11 +4,25 @@
     "" : {
 
     },
-    "$$$ $$$" : {
-
+    "bestScore-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXXX"
+          }
+        }
+      }
     },
-    "Best Score" : {
-
+    "bestScore-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Best Score"
+          }
+        }
+      }
     },
     "bots-title" : {
       "localizations" : {
@@ -20,11 +34,25 @@
         }
       }
     },
-    "CLAIM" : {
-
+    "claim-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CLAIM"
+          }
+        }
+      }
     },
-    "Customization Name" : {
-
+    "customizationName-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Customization Name"
+          }
+        }
+      }
     },
     "defeat-title" : {
       "localizations" : {
@@ -66,10 +94,17 @@
         }
       }
     },
-    "INVENTORY" : {
-
-    },
     "inventory-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INVENTORY"
+          }
+        }
+      }
+    },
+    "inventoryView-title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -85,6 +120,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
+          }
+        }
+      }
+    },
+    "money-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$$$ $$$"
           }
         }
       }
@@ -209,8 +254,15 @@
         }
       }
     },
-    "Type" : {
-
+    "type-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        }
+      }
     },
     "waveNumber-text" : {
       "localizations" : {
@@ -221,9 +273,6 @@
           }
         }
       }
-    },
-    "XXXXX" : {
-
     }
   },
   "version" : "1.0"
