@@ -10,4 +10,5 @@ import RealityKit
 struct AttackComponent: Component{
     var attackSpeed:Float
     var isHidden: Bool
+    var damage: Float
 }
