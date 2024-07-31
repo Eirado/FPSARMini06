@@ -55,9 +55,10 @@ struct MenuView: View {
                 } label: {
                     Image("Default")
                         .overlay{
-                            Text("PLAY")
+                            Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
                 
@@ -66,9 +67,10 @@ struct MenuView: View {
                 } label: {
                     Image("Default")
                         .overlay{
-                            Text("INVENTORY")
+                            Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
             }
