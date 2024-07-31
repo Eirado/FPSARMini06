@@ -21,12 +21,24 @@
             "state" : "translated",
             "value" : "Best Score"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Melhor Pontuação"
+          }
         }
       }
     },
     "bots-title" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BOTS"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BOTS"
@@ -40,6 +52,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CLAIM"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ADQUIRIR"
           }
         }
       }
@@ -61,6 +79,12 @@
             "state" : "translated",
             "value" : "DEFEAT"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DERROTADO"
+          }
         }
       }
     },
@@ -81,6 +105,12 @@
             "state" : "translated",
             "value" : "HEALTH"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAÚDE"
+          }
         }
       }
     },
@@ -90,6 +120,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "HOW TO PLAY"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "COMO JOGAR"
           }
         }
       }
@@ -101,6 +137,12 @@
             "state" : "translated",
             "value" : "INVENTORY"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INVENTÁRIO"
+          }
         }
       }
     },
@@ -110,6 +152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "INVENTORY"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INVENTÁRIO"
           }
         }
       }
@@ -151,6 +199,12 @@
             "state" : "translated",
             "value" : "ON"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIGADO"
+          }
         }
       }
     },
@@ -160,6 +214,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PAUSE"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAUSA"
           }
         }
       }
@@ -171,6 +231,12 @@
             "state" : "translated",
             "value" : "PLAY"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGAR"
+          }
         }
       }
     },
@@ -180,6 +246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PLAY AGAIN"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JOGAR NOVAMENTE"
           }
         }
       }
@@ -191,6 +263,12 @@
             "state" : "translated",
             "value" : "QUIT GAME"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAIR DO JOGO"
+          }
         }
       }
     },
@@ -201,6 +279,12 @@
             "state" : "translated",
             "value" : "I'M READY"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESTOU PRONTO"
+          }
         }
       }
     },
@@ -210,6 +294,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "RESUME"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VOLTAR"
           }
         }
       }
@@ -231,6 +321,12 @@
             "state" : "translated",
             "value" : "REWARD"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RECOMPENSA"
+          }
         }
       }
     },
@@ -240,6 +336,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SETTINGS"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AJUSTES"
           }
         }
       }
@@ -251,6 +353,12 @@
             "state" : "translated",
             "value" : "Sound"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som"
+          }
         }
       }
     },
@@ -261,6 +369,12 @@
             "state" : "translated",
             "value" : "Type"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
         }
       }
     },
@@ -270,6 +384,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wave Number"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número da Onda"
           }
         }
       }
