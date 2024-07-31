@@ -17,7 +17,7 @@ import SwiftUI
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
-
+    
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
@@ -46,24 +46,16 @@ class MainScene: ARView {
         player2 = PlayerEntity()
         self.installGestures(.all, for: player2!)
         
-//        let planeAnchor = AnchorEntity(plane: .horizontal)
-//        planeAnchor.addChild(enemy!)
-//        planeAnchor.addChild(enemy2!)
-//        planeAnchor.addChild(player!)
-//        planeAnchor.addChild(player2!)
-//        
-//        self.scene.addAnchor(planeAnchor)
-
         let enemyClone = enemy?.clone(recursive: true)
         let enemyClone2 = enemy?.clone(recursive: true)
-        let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
         
-        planeAnchor.addChild(enemyClone2!)
-        planeAnchor.addChild(enemyClone!)
-
-        self.pos = planeAnchor.position
+        worldAnchor.addChild(enemyClone2!)
+        worldAnchor.addChild(enemyClone!)
         
-        self.scene.addAnchor(planeAnchor)
+        self.pos = worldAnchor.position
+        
+        self.scene.addAnchor(worldAnchor)
         
         arViewGestureSetup()
     }
@@ -71,12 +63,9 @@ class MainScene: ARView {
     func arViewGestureSetup() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
         self.addGestureRecognizer(tapGesture)
-
+        
     }
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        _ = sender.location(in: self)
-        
-    
     }
 }

@@ -85,9 +85,11 @@ struct ComponentePauseMenuFG: View {
                     .padding(.leading)
                 Text("sound-text")
                     .font(.system(size: 18, weight: .bold))
+                    .minimumScaleFactor(0.5)
                 Spacer()
                 Text("on-text")
                     .font(.system(size: 18))
+                    .minimumScaleFactor(0.5)
                 Toggle(togglePause, isOn: $toggleOn)
                     .padding(.trailing)
             }

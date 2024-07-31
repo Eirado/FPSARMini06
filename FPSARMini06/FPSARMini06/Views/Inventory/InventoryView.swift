@@ -32,10 +32,11 @@ struct InventoryView: View {
                         })
                         .frame(width: 81, height: 53)
                         Spacer()
-                        Text("INVENTORY")
+                        Text("inventoryView-title")
                             .font(.system(size: 24, weight: .bold))
                             .foregroundStyle(Color.black)
                             .padding(.trailing, 56)
+                            .minimumScaleFactor(0.5)
                         Spacer()
                     }
                     
@@ -64,6 +65,7 @@ struct InventoryView: View {
                             .overlay{
                                 Image(systemName: "paintbrush.pointed.fill")
                                     .font(.system(size: 16))
+                                    .minimumScaleFactor(0.5)
                             }
                             .frame(width: 50, height: 50)
                         
@@ -108,10 +110,12 @@ struct ExtractedView: View {
                             .padding(5)
                     }
                     .frame(width: 38, height: 38)
-                Text("Best Score")
+                Text("bestScore-title")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(Color.black)
-                Text("XXXXX")
+                    .minimumScaleFactor(0.5)
+                Text("bestScore-text")
+                    .minimumScaleFactor(0.5)
             }
         }
     }
@@ -164,7 +168,7 @@ struct ExtractedView4: View {
                         .fill(.white.opacity(0.8))
                         .frame(width: 58, height: 25)
                         .overlay{
-                            Text("Type")
+                            Text("type-title")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
                         }
@@ -174,7 +178,7 @@ struct ExtractedView4: View {
                         .fill(.white.opacity(0.8))
                         .frame(width: 83, height: 25)
                         .overlay{
-                            Text("$$$ $$$")
+                            Text("money-text")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
                         }
@@ -194,12 +198,14 @@ struct ExtractedView4: View {
                     .frame(width: 366, height: 126)
                 
                 HStack{
-                    Text("Customization Name")
+                    Text("customizationName-title")
+                        .minimumScaleFactor(0.5)
                     Spacer()
                     Image("Claim")
                         .overlay{
-                            Text("CLAIM")
+                            Text("claim-button")
                                 .font(.system(size: 16, weight: .bold))
+                                .minimumScaleFactor(0.5)
                         }
                 }
                 .padding(.horizontal)

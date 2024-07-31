@@ -36,6 +36,7 @@ struct SettingsView: View {
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
                         .padding(.trailing, 56)
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                 }

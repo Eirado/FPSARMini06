@@ -12,7 +12,10 @@
 		127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4202C52D6CD009C3231 /* PauseMenuView.swift */; };
 		127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */; };
 		127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */; };
+		12B308D32C5ABB040005ADE1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
+		70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */; };
+		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
 		ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1B692C52D73600AE13EF /* MotionComponent.swift */; };
 		ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */; };
 		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
@@ -43,7 +46,10 @@
 		127DF4202C52D6CD009C3231 /* PauseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuView.swift; sourceTree = "<group>"; };
 		127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentePauseMenu.swift; sourceTree = "<group>"; };
 		127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayFeedbackView.swift; sourceTree = "<group>"; };
+		12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogEntity.swift; sourceTree = "<group>"; };
+		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
 		ABEC1B692C52D73600AE13EF /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
 		ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSystem.swift; sourceTree = "<group>"; };
 		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		127DF4242C52EA08009C3231 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */,
 				127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */,
 			);
 			name = Utils;
@@ -143,6 +150,7 @@
 				B8E381F62C5AB29C0038463C /* BulletEntity.swift */,
 				B868FAA82C4EC3730038ECD9 /* EnemyEntity.swift */,
 				B868FAAA2C4EC37B0038ECD9 /* PlayerEntity.swift */,
+				70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 		B8C65F7D2C4AE1E100D56811 = {
 			isa = PBXGroup;
 			children = (
+				12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */,
 				B8C65F882C4AE1E100D56811 /* FPSARMini06 */,
 				B8C65F872C4AE1E100D56811 /* Products */,
 			);
@@ -270,6 +279,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = B8C65F7D2C4AE1E100D56811;
 			productRefGroup = B8C65F872C4AE1E100D56811 /* Products */;
@@ -286,8 +296,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */,
 				B8C65F912C4AE1E200D56811 /* Preview Assets.xcassets in Resources */,
 				B8C65F8E2C4AE1E200D56811 /* Assets.xcassets in Resources */,
+				12B308D32C5ABB040005ADE1 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */,
+				70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */,
 				12F2DF912C581C22001C663C /* SettingsView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
 				127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */,
