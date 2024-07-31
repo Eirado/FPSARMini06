@@ -50,7 +50,7 @@ struct HowToPlayView: View {
                 }, label: {
                     Image("Default")
                         .overlay {
-                            Text("ready-text")
+                            Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
                         }

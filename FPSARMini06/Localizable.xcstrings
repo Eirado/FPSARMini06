@@ -10,8 +10,15 @@
     "Best Score" : {
 
     },
-    "BOTS" : {
-
+    "bots-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BOTS"
+          }
+        }
+      }
     },
     "CLAIM" : {
 
@@ -19,11 +26,35 @@
     "Customization Name" : {
 
     },
-    "DEFEAT" : {
-
+    "defeat-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DEFEAT"
+          }
+        }
+      }
     },
-    "HEALTH" : {
-
+    "health-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
+        }
+      }
+    },
+    "health-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HEALTH"
+          }
+        }
+      }
     },
     "howToPlayView-title" : {
       "localizations" : {
@@ -48,6 +79,16 @@
         }
       }
     },
+    "numberOfBots-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
+        }
+      }
+    },
     "on-text" : {
       "localizations" : {
         "en" : {
@@ -64,13 +105,30 @@
     "PLAY" : {
 
     },
-    "PLAY AGAIN" : {
-
+    "playAgain-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PLAY AGAIN"
+          }
+        }
+      }
     },
     "QUIT GAME" : {
 
     },
-    "ready-text" : {
+    "quitGame-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QUIT GAME"
+          }
+        }
+      }
+    },
+    "ready-button" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -83,8 +141,25 @@
     "RESUME" : {
 
     },
-    "REWARD" : {
-
+    "reward-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
+        }
+      }
+    },
+    "reward-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REWARD"
+          }
+        }
+      }
     },
     "settingsView-title" : {
       "localizations" : {
@@ -109,11 +184,15 @@
     "Type" : {
 
     },
-    "Wave Number" : {
-
-    },
-    "XXXX" : {
-
+    "waveNumber-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wa"
+          }
+        }
+      }
     },
     "XXXXX" : {
 

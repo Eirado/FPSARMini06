@@ -28,35 +28,35 @@ struct GamePlayFeedbackView: View {
                             .stroke(Color.black, lineWidth: 2)
                             .frame(width: 170, height: 170)
                         
-                        Text("DEFEAT")
+                        Text("defeat-title")
                             .font(.system(size: 64, weight: .bold))
-                        Text("Wave Number")
+                        Text("waveNumber-text")
                             .font(.system(size: 36, weight: .bold))
                         
                         VStack {
                             HStack{
-                                Text("BOTS")
+                                Text("bots-title")
                                     .font(.system(size: 24))
                                 Spacer()
-                                Text("XXXX")
+                                Text("numberOfBots-text")
                                     .font(.system(size: 24))
                             }
                             
                             HStack {
-                                Text("HEALTH")
+                                Text("health-title")
                                     .font(.system(size: 24))
                                 Spacer()
-                                Text("XXXX")
+                                Text("health-text")
                                     .font(.system(size: 24))
                             }
                             .padding(.vertical, 12)
                             
                             HStack {
                                 Spacer()
-                                Text("REWARD")
+                                Text("reward-title")
                                     .font(.system(size: 24, weight: .bold))
                                 Spacer()
-                                Text("XXXX")
+                                Text("reward-text")
                                     .font(.system(size: 24, weight: .bold))
                                 Spacer()
                             }
@@ -72,7 +72,7 @@ struct GamePlayFeedbackView: View {
                         } label: {
                             ZStack {
                                 Image("Default")
-                                Text("PLAY AGAIN")
+                                Text("playAgain-button")
                                     .font(.system(size: 20, weight: .bold))
                                     .tint(.black)
                             }
@@ -83,7 +83,7 @@ struct GamePlayFeedbackView: View {
                         } label: {
                             ZStack {
                                 Image("Default")
-                                Text("QUIT GAME")
+                                Text("quitGame-button")
                                     .font(.system(size: 20, weight: .bold))
                                     .tint(.black)
                             }
