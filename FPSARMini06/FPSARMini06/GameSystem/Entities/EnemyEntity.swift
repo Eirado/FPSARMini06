@@ -36,6 +36,9 @@ class EnemyEntity: Entity, HasCollision, HasModel {
 //        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
         
         super.init()
+        
+        self.components[MotionComponent.self] = MotionComponent()
+        
         self.addChild(self.model)
         self.addChild(self.animationRoot)
            

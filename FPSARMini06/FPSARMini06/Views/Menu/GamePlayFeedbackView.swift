@@ -11,8 +11,10 @@
 import SwiftUI
 
 struct GamePlayFeedbackView: View {
+    @Environment(PageManager.self) var pageManager
+    
     var body: some View {
-                ZStack{
+                ZStack {
                     //MARK: Fundo
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.gray.opacity(0.8))
@@ -20,7 +22,7 @@ struct GamePlayFeedbackView: View {
                         .frame(height: 715)
                         .padding(.horizontal,4)
                     
-                    VStack{
+                    VStack {
                         Rectangle()
                             .fill(Color.white.opacity(0.8))
                             .stroke(Color.black, lineWidth: 2)
@@ -31,7 +33,7 @@ struct GamePlayFeedbackView: View {
                         Text("Wave Number")
                             .font(.system(size: 36, weight: .bold))
                         
-                        VStack{
+                        VStack {
                             HStack{
                                 Text("BOTS")
                                     .font(.system(size: 24))
@@ -40,7 +42,7 @@ struct GamePlayFeedbackView: View {
                                     .font(.system(size: 24))
                             }
                             
-                            HStack{
+                            HStack {
                                 Text("HEALTH")
                                     .font(.system(size: 24))
                                 Spacer()
@@ -49,7 +51,7 @@ struct GamePlayFeedbackView: View {
                             }
                             .padding(.vertical, 12)
                             
-                            HStack{
+                            HStack {
                                 Spacer()
                                 Text("REWARD")
                                     .font(.system(size: 24, weight: .bold))
@@ -65,10 +67,10 @@ struct GamePlayFeedbackView: View {
                         Spacer()
                         
                         //MARK: Componentes
-                        Button{
-                            
+                        Button {
+                            pageManager.page = .gameScene
                         } label: {
-                            ZStack{
+                            ZStack {
                                 Image("Default")
                                 Text("PLAY AGAIN")
                                     .font(.system(size: 20, weight: .bold))
@@ -76,10 +78,10 @@ struct GamePlayFeedbackView: View {
                             }
                         }
                         
-                        Button{
-                            
+                        Button {
+                            pageManager.page = .menu
                         } label: {
-                            ZStack{
+                            ZStack {
                                 Image("Default")
                                 Text("QUIT GAME")
                                     .font(.system(size: 20, weight: .bold))
@@ -98,4 +100,5 @@ struct GamePlayFeedbackView: View {
 
 #Preview {
     GamePlayFeedbackView()
+        .environment(PageManager())
 }

@@ -21,6 +21,7 @@ class MainScene: ARView {
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
     var bullet: BulletEntity? = nil
+    var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
     
     required init(frame frameRect: CGRect) {
         
@@ -59,14 +60,34 @@ class MainScene: ARView {
         self.addGestureRecognizer(tapGesture)
         
         let planeAnchor = AnchorEntity(plane: .horizontal)
+        let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        
         planeAnchor.name = "plano_principal"
-        planeAnchor.addChild(enemy!)
-        planeAnchor.addChild(enemy2!)
+        worldAnchor.addChild(enemy!)
+        worldAnchor.addChild(enemy2!)
         planeAnchor.addChild(player!)
         planeAnchor.addChild(player2!)
         planeAnchor.addChild(bullet!)
+
+        self.pos = worldAnchor.position
         
         self.scene.addAnchor(planeAnchor)
+        self.scene.addAnchor(worldAnchor)
+        
+        arViewGestureSetup()
+    }
+    
+    func arViewGestureSetup() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
+        self.addGestureRecognizer(tapGesture)
+
+    }
+    
+    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        _ = sender.location(in: self)
+        
+        print(pos)
+        enemy?.position = pos
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {

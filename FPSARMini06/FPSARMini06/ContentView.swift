@@ -36,6 +36,7 @@ struct ContentViewPreviewContainer: View{
     
     var body: some View {
         ContentView(toggleOn: $toggleOn)
+            .environment(PageManager())
     }
 }
 return ContentViewPreviewContainer()

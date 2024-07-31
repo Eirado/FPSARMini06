@@ -12,7 +12,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(PageManager.self) var pageManager
     @Binding var toggleOn: Bool
+    
     var body: some View {
         ZStack{
             //MARK: Fundo
@@ -22,25 +24,25 @@ struct MenuView: View {
                 //MARK: Topo
                 HStack{
                     Button{
-                        
+                        pageManager.page = .howToPlay
                     } label: {
-                        ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "questionmark")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
-                        }
+                        Image("Top Bar")
+                            .overlay{
+                                Image(systemName: "questionmark")
+                                    .font(.system(size: 36, weight: .bold))
+                                    .tint(.black)
+                            }
                     }
                     Spacer()
                     Button{
-                        
+                        pageManager.page = .settings
                     } label: {
-                        ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "gear")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
-                        }
+                        Image("Top Bar")
+                            .overlay{
+                                Image(systemName: "gear")
+                                    .font(.system(size: 36, weight: .bold))
+                                    .tint(.black)
+                            }
                     }
                     
                 }
@@ -49,25 +51,25 @@ struct MenuView: View {
                 Spacer()
                 
                 Button{
-                    
+                    pageManager.page = .gameScene
                 } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("PLAY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
+                    Image("Default")
+                        .overlay{
+                            Text("PLAY")
+                                .font(.system(size: 20, weight: .bold))
+                                .tint(.black)
+                        }
                 }
                 
                 Button{
-                                    
+                    pageManager.page = .inventory
                 } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("INVENTORY")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
+                    Image("Default")
+                        .overlay{
+                            Text("INVENTORY")
+                                .font(.system(size: 20, weight: .bold))
+                                .tint(.black)
+                        }
                 }
             }
             .padding(.vertical, 20)
@@ -82,6 +84,7 @@ struct MenuView: View {
         
         var body: some View {
             MenuView(toggleOn: $toggleOn)
+                .environment(PageManager())
         }
     }
     return MenuPreviewContainer()

@@ -10,8 +10,15 @@ import RealityKit
 
 struct MotionComponent: RealityKit.Component {
     
-    let acceleration: SIMD3<Float>
-    let multiplier: Float
+    struct Force {
+        let acceleration: SIMD3<Float>
+        let multiplier: Float
+        let name: String
+    }
+
+    var forces = [Force]()
+
     var velocity: SIMD3<Float> = SIMD3<Float>.zero
-    
 }
+    
+

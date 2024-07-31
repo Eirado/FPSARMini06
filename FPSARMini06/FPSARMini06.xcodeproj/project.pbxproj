@@ -14,6 +14,7 @@
 		127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1B692C52D73600AE13EF /* MotionComponent.swift */; };
+		ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */; };
 		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
 		ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */; };
 		B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */; };
@@ -43,6 +44,7 @@
 		127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayFeedbackView.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ABEC1B692C52D73600AE13EF /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
+		ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSystem.swift; sourceTree = "<group>"; };
 		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSystem.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		B8114BDF2C5196A6001940C2 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */,
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
 			);
 			path = System;
@@ -313,6 +316,7 @@
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
+				ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */,
 				B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */,
 				B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */,
 				ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */,
@@ -449,7 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -480,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
