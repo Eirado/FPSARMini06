@@ -13,6 +13,7 @@
 		127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */; };
 		127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */; };
 		12B308D32C5ABB040005ADE1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */; };
+		12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */; };
 		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
@@ -40,6 +41,16 @@
 		B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381F62C5AB29C0038463C /* BulletEntity.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		12B308DC2C5AD8B60005ADE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8C65F7E2C4AE1E100D56811 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8C65F852C4AE1E100D56811;
+			remoteInfo = FPSARMini06;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		127DF41C2C502749009C3231 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
 		127DF41E2C5028F6009C3231 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -47,6 +58,8 @@
 		127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentePauseMenu.swift; sourceTree = "<group>"; };
 		127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayFeedbackView.swift; sourceTree = "<group>"; };
 		12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		12B308D82C5AD8B60005ADE1 /* FPSARMini06Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPSARMini06Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSARMini06Tests.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogEntity.swift; sourceTree = "<group>"; };
 		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
@@ -76,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12B308D52C5AD8B60005ADE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8C65F832C4AE1E100D56811 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +114,14 @@
 			);
 			name = Utils;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		12B308D92C5AD8B60005ADE1 /* FPSARMini06Tests */ = {
+			isa = PBXGroup;
+			children = (
+				12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */,
+			);
+			path = FPSARMini06Tests;
 			sourceTree = "<group>";
 		};
 		B8114BDF2C5196A6001940C2 /* System */ = {
@@ -200,6 +228,7 @@
 			children = (
 				12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */,
 				B8C65F882C4AE1E100D56811 /* FPSARMini06 */,
+				12B308D92C5AD8B60005ADE1 /* FPSARMini06Tests */,
 				B8C65F872C4AE1E100D56811 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				B8C65F862C4AE1E100D56811 /* FPSARMini06.app */,
+				12B308D82C5AD8B60005ADE1 /* FPSARMini06Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +270,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		12B308D72C5AD8B60005ADE1 /* FPSARMini06Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B308DE2C5AD8B60005ADE1 /* Build configuration list for PBXNativeTarget "FPSARMini06Tests" */;
+			buildPhases = (
+				12B308D42C5AD8B60005ADE1 /* Sources */,
+				12B308D52C5AD8B60005ADE1 /* Frameworks */,
+				12B308D62C5AD8B60005ADE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12B308DD2C5AD8B60005ADE1 /* PBXTargetDependency */,
+			);
+			name = FPSARMini06Tests;
+			productName = FPSARMini06Tests;
+			productReference = 12B308D82C5AD8B60005ADE1 /* FPSARMini06Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B8C65F852C4AE1E100D56811 /* FPSARMini06 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8C65F942C4AE1E200D56811 /* Build configuration list for PBXNativeTarget "FPSARMini06" */;
@@ -267,6 +315,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					12B308D72C5AD8B60005ADE1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = B8C65F852C4AE1E100D56811;
+					};
 					B8C65F852C4AE1E100D56811 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -287,11 +339,19 @@
 			projectRoot = "";
 			targets = (
 				B8C65F852C4AE1E100D56811 /* FPSARMini06 */,
+				12B308D72C5AD8B60005ADE1 /* FPSARMini06Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12B308D62C5AD8B60005ADE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8C65F842C4AE1E100D56811 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +366,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12B308D42C5AD8B60005ADE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8C65F822C4AE1E100D56811 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,7 +410,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		12B308DD2C5AD8B60005ADE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8C65F852C4AE1E100D56811 /* FPSARMini06 */;
+			targetProxy = 12B308DC2C5AD8B60005ADE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		12B308DF2C5AD8B60005ADE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ6R8GYU9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LeticiaMalagutti.FPSARMini06Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FPSARMini06.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FPSARMini06";
+			};
+			name = Debug;
+		};
+		12B308E02C5AD8B60005ADE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZQ6R8GYU9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LeticiaMalagutti.FPSARMini06Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FPSARMini06.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FPSARMini06";
+			};
+			name = Release;
+		};
 		B8C65F922C4AE1E200D56811 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,6 +639,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12B308DE2C5AD8B60005ADE1 /* Build configuration list for PBXNativeTarget "FPSARMini06Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B308DF2C5AD8B60005ADE1 /* Debug */,
+				12B308E02C5AD8B60005ADE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B8C65F812C4AE1E100D56811 /* Build configuration list for PBXProject "FPSARMini06" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
