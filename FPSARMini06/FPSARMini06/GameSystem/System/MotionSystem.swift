@@ -92,15 +92,13 @@ class MotionSystem: RealityKit.System {
         
         scene.performQuery(MotionSystem.query).forEach { entity in
 
-            // Create and add visual sphere as a child of the parent entity
             let sphereMesh = MeshResource.generateSphere(radius: sphereRadius)
             let sphereMaterial = SimpleMaterial(color: UIColor(white: .zero, alpha: 0.1), isMetallic: false)
             let sphereEntity = ModelEntity(mesh: sphereMesh, materials: [sphereMaterial])
             entity.addChild(sphereEntity)
             sphereEntity.position = .zero
             
-            // Create and add visual nodes
-            let nodeRadius: Float = 0.02 // Adjust the size of the node spheres
+            let nodeRadius: Float = 0.02 
             for nodePosition in nodes {
                 let nodeMesh = MeshResource.generateSphere(radius: nodeRadius)
                 let nodeMaterial = SimpleMaterial(color: .red, isMetallic: false)
