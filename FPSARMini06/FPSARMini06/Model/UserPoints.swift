@@ -9,12 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-final class UserData {
-    var title: String
-    var year: Int
+final class UserData: Identifiable {
+    var id:String
+    var score:Int
+    var box_itens_ID:[Int]
     
-    init(title: String, year: Int) {
-        self.title = title
-        self.year = year
+    init( score: Int, box_itens_ID: [Int]) {
+        self.id = UUID().uuidString
+        self.score = score
+        self.box_itens_ID = box_itens_ID
     }
 }
