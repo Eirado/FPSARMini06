@@ -20,27 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CollisionSystem.registerSystem()
         gameCollisionComponent.registerComponent()
         
+        MotionComponent.registerComponent()
         
-        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-                         
-                         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            
-            
-            MotionComponent.registerComponent()
-            
-            MotionSystem.registerSystem()
-            
-            // Create the SwiftUI view that provides the window contents.
-            let contentView = ContentView(toggleOn: $toggleOn)
-                .environment(PageManager())
-            
-            // Use a UIHostingController as window root view controller.
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
-            return true
-        }
+        MotionSystem.registerSystem()
         
+        // Create the SwiftUI view that provides the window contents.
+        let contentView = ContentView(toggleOn: $toggleOn)
+            .environment(PageManager())
+        
+        // Use a UIHostingController as window root view controller.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIHostingController(rootView: contentView)
+        self.window = window
+        window.makeKeyAndVisible()
+        return true
     }
 }
+
