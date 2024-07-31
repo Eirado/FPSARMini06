@@ -19,6 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CollisionSystem.registerSystem()
         gameCollisionComponent.registerComponent()
+=======
+    
+   
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+                     
+    [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        MotionComponent.registerComponent()
+        
+        MotionSystem.registerSystem()
+        
+>>>>>>> MotionComponent-
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(toggleOn: $toggleOn)
