@@ -42,6 +42,7 @@ struct PauseMenuView: View {
                         .font(.system(size: 24, weight: .bold))
                         .foregroundStyle(Color.black)
                         .padding(.trailing, 56)
+                        .minimumScaleFactor(0.5)
                     Spacer()
 
                 }
@@ -62,6 +63,7 @@ struct PauseMenuView: View {
                         Text("resumeGame-button")
                             .font(.system(size: 20, weight: .bold))
                             .tint(.black)
+                            .minimumScaleFactor(0.5)
                     }
                 }
                 
@@ -73,6 +75,7 @@ struct PauseMenuView: View {
                         Text("quitGame-button")
                             .font(.system(size: 20, weight: .bold))
                             .tint(.black)
+                            .minimumScaleFactor(0.5)
                     }
                 }
             }

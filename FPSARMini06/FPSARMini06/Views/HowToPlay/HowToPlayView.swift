@@ -32,6 +32,7 @@ struct HowToPlayView: View {
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
                         .padding(.trailing, 56)
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                 }
@@ -53,6 +54,7 @@ struct HowToPlayView: View {
                             Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 })
                 .padding(.vertical)

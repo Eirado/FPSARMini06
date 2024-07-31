@@ -58,6 +58,7 @@ struct MenuView: View {
                             Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
                 
@@ -69,6 +70,7 @@ struct MenuView: View {
                             Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
             }
