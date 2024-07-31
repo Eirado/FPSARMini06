@@ -26,6 +26,7 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
         self.model.generateCollisionShapes(recursive: true)
         
+<<<<<<< HEAD
 //        let extractedEntityBitMask = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
 //        let bitMask = extractedEntityBitMask.entityBitMask
 //        
@@ -35,7 +36,12 @@ class EnemyEntity: Entity, HasCollision, HasModel {
 //        
 //        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
         
+=======
+>>>>>>> MotionComponent-
         super.init()
+        
+        self.components[MotionComponent.self] = MotionComponent()
+        
         self.addChild(self.model)
         self.addChild(self.animationRoot)
            
