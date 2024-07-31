@@ -18,13 +18,11 @@ class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
     var enemy2: EnemyEntity? = nil
-<<<<<<< HEAD
+
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
-=======
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
     
->>>>>>> MotionComponent-
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -38,7 +36,7 @@ class MainScene: ARView {
         self.init(frame: UIScreen.main.bounds)
         
         enemy = EnemyEntity()
-<<<<<<< HEAD
+        
         enemy?.position.x += 0.3
         self.installGestures(.all, for: enemy!)
         
@@ -59,7 +57,7 @@ class MainScene: ARView {
 //        planeAnchor.addChild(player2!)
 //        
 //        self.scene.addAnchor(planeAnchor)
-=======
+
         enemy2 = EnemyEntity()
         
         
@@ -85,6 +83,5 @@ class MainScene: ARView {
         
         print(pos)
         enemy?.position = pos
->>>>>>> MotionComponent-
     }
 }
