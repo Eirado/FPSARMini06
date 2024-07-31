@@ -38,7 +38,6 @@ class BulletEntity: Entity, HasCollision, HasModel{
         self.addChild(self.animationRoot)
         self.arView = arView
         
-        
     }
     
     @MainActor required init() {
