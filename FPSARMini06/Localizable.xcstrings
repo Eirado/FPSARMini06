@@ -69,6 +69,16 @@
     "INVENTORY" : {
 
     },
+    "inventory-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INVENTORY"
+          }
+        }
+      }
+    },
     "LoremIpsum" : {
       "localizations" : {
         "en" : {
@@ -109,8 +119,15 @@
         }
       }
     },
-    "PLAY" : {
-
+    "play-button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PLAY"
+          }
+        }
+      }
     },
     "playAgain-button" : {
       "localizations" : {
