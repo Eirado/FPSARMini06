@@ -25,30 +25,16 @@
     "HEALTH" : {
 
     },
-    "howToPlayViewTitle" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HOW TO PLAY"
-          }
-        }
-      }
+    "howToPlayView-title" : {
+
     },
     "INVENTORY" : {
 
     },
     "LoremIpsum" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
-          }
-        }
-      }
+
     },
-    "ON" : {
+    "on-text" : {
 
     },
     "PAUSE" : {
@@ -63,15 +49,8 @@
     "QUIT GAME" : {
 
     },
-    "readyText" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "I'M READY"
-          }
-        }
-      }
+    "ready-text" : {
+
     },
     "RESUME" : {
 
@@ -79,25 +58,11 @@
     "REWARD" : {
 
     },
-    "SETTINGS" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SETTINGS"
-          }
-        }
-      }
+    "settingsView-title" : {
+
     },
-    "Sound" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sound"
-          }
-        }
-      }
+    "sound-text" : {
+
     },
     "Type" : {
 
