@@ -25,7 +25,7 @@
 		B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA82C4EC3730038ECD9 /* EnemyEntity.swift */; };
 		B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAAA2C4EC37B0038ECD9 /* PlayerEntity.swift */; };
 		B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */; };
-		B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* Model.swift */; };
+		B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
 		B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */; };
 		B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A120A52C581173003603BC /* HowToPlayView.swift */; };
@@ -54,7 +54,7 @@
 		B868FAA82C4EC3730038ECD9 /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
 		B868FAAA2C4EC37B0038ECD9 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		B868FAB62C4EC3B90038ECD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
 		B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCollisionComponent.swift; sourceTree = "<group>"; };
 		B8A120A52C581173003603BC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		B868FA9A2C4EC2CB0038ECD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B868FAB62C4EC3B90038ECD9 /* Model.swift */,
+				B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */,
 				12F2DF912C581C22001C663C /* SettingsView.swift in Sources */,
-				B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */,
+				B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */,
 				127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */,
 				ABFA017B2C4EDCCB0096BA9F /* VisualComponent.swift in Sources */,
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
