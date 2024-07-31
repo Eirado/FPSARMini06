@@ -28,7 +28,7 @@ struct HowToPlayView: View {
                     
                     Spacer()
                     
-                    Text("HOW TO PLAY")
+                    Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
                         .padding(.trailing, 56)
@@ -40,7 +40,7 @@ struct HowToPlayView: View {
                 
                 Spacer()
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem.")
+                Text("LoremIpsum")
                     .padding()
                 
                 Spacer()
@@ -50,7 +50,7 @@ struct HowToPlayView: View {
                 }, label: {
                     Image("Default")
                         .overlay {
-                            Text("I'M READY")
+                            Text("ready-text")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
                         }

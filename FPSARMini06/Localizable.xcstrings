@@ -1,7 +1,116 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
 
+    },
+    "$$$ $$$" : {
+
+    },
+    "Best Score" : {
+
+    },
+    "BOTS" : {
+
+    },
+    "CLAIM" : {
+
+    },
+    "Customization Name" : {
+
+    },
+    "DEFEAT" : {
+
+    },
+    "HEALTH" : {
+
+    },
+    "howToPlayViewTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HOW TO PLAY"
+          }
+        }
+      }
+    },
+    "INVENTORY" : {
+
+    },
+    "LoremIpsum" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
+          }
+        }
+      }
+    },
+    "ON" : {
+
+    },
+    "PAUSE" : {
+
+    },
+    "PLAY" : {
+
+    },
+    "PLAY AGAIN" : {
+
+    },
+    "QUIT GAME" : {
+
+    },
+    "readyText" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'M READY"
+          }
+        }
+      }
+    },
+    "RESUME" : {
+
+    },
+    "REWARD" : {
+
+    },
+    "SETTINGS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETTINGS"
+          }
+        }
+      }
+    },
+    "Sound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sound"
+          }
+        }
+      }
+    },
+    "Type" : {
+
+    },
+    "Wave Number" : {
+
+    },
+    "XXXX" : {
+
+    },
+    "XXXXX" : {
+
+    }
   },
   "version" : "1.0"
 }

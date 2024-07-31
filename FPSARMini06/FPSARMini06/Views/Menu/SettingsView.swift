@@ -32,7 +32,7 @@ struct SettingsView: View {
                     
                     Spacer()
                     
-                    Text("SETTINGS")
+                    Text("settingsView-title")
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
                         .padding(.trailing, 56)
