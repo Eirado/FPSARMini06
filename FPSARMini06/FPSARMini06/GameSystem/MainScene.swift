@@ -18,8 +18,13 @@ class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
     var enemy2: EnemyEntity? = nil
+<<<<<<< HEAD
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
+=======
+    var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
+    
+>>>>>>> MotionComponent-
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -33,6 +38,7 @@ class MainScene: ARView {
         self.init(frame: UIScreen.main.bounds)
         
         enemy = EnemyEntity()
+<<<<<<< HEAD
         enemy?.position.x += 0.3
         self.installGestures(.all, for: enemy!)
         
@@ -53,5 +59,32 @@ class MainScene: ARView {
 //        planeAnchor.addChild(player2!)
 //        
 //        self.scene.addAnchor(planeAnchor)
+=======
+        enemy2 = EnemyEntity()
+        
+        
+        let planeAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        planeAnchor.addChild(enemy!)
+        planeAnchor.addChild(enemy2!)
+        
+        self.pos = planeAnchor.position
+        
+        self.scene.addAnchor(planeAnchor)
+        
+        arViewGestureSetup()
+    }
+    
+    func arViewGestureSetup() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
+        self.addGestureRecognizer(tapGesture)
+
+    }
+    
+    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        _ = sender.location(in: self)
+        
+        print(pos)
+        enemy?.position = pos
+>>>>>>> MotionComponent-
     }
 }
