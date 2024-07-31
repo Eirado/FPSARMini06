@@ -26,16 +26,37 @@
 
     },
     "howToPlayView-title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HOW TO PLAY"
+          }
+        }
+      }
     },
     "INVENTORY" : {
 
     },
     "LoremIpsum" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
+          }
+        }
+      }
     },
     "on-text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ON"
+          }
+        }
+      }
     },
     "PAUSE" : {
 
@@ -50,7 +71,14 @@
 
     },
     "ready-text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'M READY"
+          }
+        }
+      }
     },
     "RESUME" : {
 
@@ -59,10 +87,24 @@
 
     },
     "settingsView-title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETTINGS"
+          }
+        }
+      }
     },
     "sound-text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sound"
+          }
+        }
+      }
     },
     "Type" : {
 
