@@ -17,7 +17,7 @@ import SwiftUI
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
-    
+    var spawner: SpawnerEntity? = nil
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
@@ -50,14 +50,16 @@ class MainScene: ARView {
         let enemyClone2 = enemy?.clone(recursive: true)
         let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
         
-        worldAnchor.addChild(enemyClone2!)
-        worldAnchor.addChild(enemyClone!)
+//        worldAnchor.addChild(enemyClone2!)
+//        worldAnchor.addChild(enemyClone!)
         
         self.pos = worldAnchor.position
         
         self.scene.addAnchor(worldAnchor)
         
         arViewGestureSetup()
+        
+        _ = SpawnerEntity(entity: enemy!, anchor: worldAnchor, spawnerRadius: 3, entityCount: 50)
     }
     
     func arViewGestureSetup() {

@@ -13,7 +13,7 @@ class MotionSystem: RealityKit.System {
     required init(scene: Scene) {
         generateNodes()
         selectNewTargetNode()
-        visualizeSphereAndNodes(in: scene)
+//        visualizeSphereAndNodes(in: scene)
     }
     
     func update(context: SceneUpdateContext) {
