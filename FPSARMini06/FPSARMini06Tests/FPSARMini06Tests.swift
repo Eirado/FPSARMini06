@@ -5,6 +5,15 @@
 //  Created by Letícia Malagutti on 31/07/24.
 //
 
+/*
+ Página com os testes unitários do sistema
+ 
+ Naming Structure: test_UnitOfWork_StateUnderTest_ExpectedBehavior
+ Naming Structure: test_[struct]_[ui component]_[expected result]
+ 
+ Testing Structure: Arrange, Act, Assert
+ */
+
 import XCTest
 
 final class FPSARMini06Tests: XCTestCase {
