@@ -23,10 +23,10 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0.2), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
         
         //Defino o comportamento de colisao aqui
-        self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
+        self.model.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: .playerEntityBitMask)
         self.model.generateCollisionShapes(recursive: true)
         
-        let extractedEntityBitMask = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
+        let extractedEntityBitMask = GameCollisionComponent(entityBitMask: .playerEntityBitMask)
         let bitMask = extractedEntityBitMask.entityBitMask
         
         let entityGroup = CollisionGroup(rawValue: bitMask.rawValue)

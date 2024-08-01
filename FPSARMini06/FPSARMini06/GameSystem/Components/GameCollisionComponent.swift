@@ -8,11 +8,9 @@
 import Foundation
 import RealityKit
 
-struct gameCollisionComponent: Component {
+struct GameCollisionComponent: Component {
     let entityBitMask: BitMasks
 }
-
-/// Não estou conseguindo fazer com q o componente já compute o valor da bitmask por conta própria
 
 enum BitMasks: UInt32 {
     case enemyEntityBitMask

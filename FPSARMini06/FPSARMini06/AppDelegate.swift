@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CollisionSystem.registerSystem()
        
-        gameCollisionComponent.registerComponent()
+        GameCollisionComponent.registerComponent()
         
         MotionComponent.registerComponent()
         

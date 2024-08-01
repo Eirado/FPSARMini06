@@ -31,7 +31,7 @@ class BulletEntity: Entity, HasCollision, HasModel{
         super.init()
         
         self.model.components[AttackComponent.self] = attackComponent
-        self.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .bulletEntity)
+        self.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: .bulletEntity)
         self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
         
         self.addChild(self.model)

@@ -23,7 +23,7 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .red, isMetallic: true)])
         
         //Defino o comportamento de colisao aqui
-        self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
+        self.model.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: .enemyEntityBitMask)
         
         self.model.generateCollisionShapes(recursive: true)
         

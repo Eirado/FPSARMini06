@@ -9,28 +9,38 @@ import Foundation
 import RealityKit
 import Combine
 
-// falta lidar com filtro de colisoes
+//TODO: Lidar com a colisão de dois elementos para fazer o dano na healthComponent
 
 class CollisionSystem: RealityKit.System {
-    let hasCollisionComponentQuery = EntityQuery(where: .has(gameCollisionComponent.self))
+    private let hasCollisionComponentQuery = EntityQuery(where: .has(GameCollisionComponent.self))
     var collisionSubscriptions = [Cancellable]()
     
     required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
         context.scene.performQuery(hasCollisionComponentQuery).forEach { collisorEntity in
-            guard let entityComponent = collisorEntity.components[gameCollisionComponent.self] as? gameCollisionComponent else { return }
+            guard let entityComponent = collisorEntity.components[GameCollisionComponent.self] as? GameCollisionComponent else { return }
 
-            collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Began.self) { event in // aqui definimos como será a resposta para a colisao
+            collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Began.self) { event in
                 
                 guard let entity1 = event.entityA as? ModelEntity,
                       let entity2 = event.entityB as? ModelEntity else { return }
+                
+                if var entidadeComVida = entity1.components[HealthComponent.self] as? HealthComponent {
+                    entidadeComVida.totalHealth -= 10
+                    
+                    do {
+                        try self.verificarVida(entidade: entidadeComVida)
+                    } catch {
+                        fatalError("A vida está abaixo de zero")
+                    }
+                }
                         
                 entity1.model?.materials = [SimpleMaterial(color: .green, isMetallic: true)]
                 entity2.model?.materials = [SimpleMaterial(color: .green, isMetallic: true)]
             })
             
-            collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Ended.self) { event in // aqui definimos como será a resposta para a colisao
+            collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Ended.self) { event in
                 
                 guard let entity1 = event.entityA as? ModelEntity,
                       let entity2 = event.entityB as? ModelEntity else { return }
@@ -40,4 +50,11 @@ class CollisionSystem: RealityKit.System {
             })
         }
     }
+    
+    func verificarVida(entidade: HealthComponent) throws {
+        if entidade.totalHealth < 0 {
+            throw fatalError()
+        }
+    }
 }
+
