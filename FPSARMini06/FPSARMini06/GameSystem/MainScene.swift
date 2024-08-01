@@ -36,19 +36,8 @@ class MainScene: ARView {
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
         
-        bulletEnemy = BulletEntity(/*quemAtirou: .enemyEntityBitMask*/)
-        
-        if var component = bulletEnemy?.components[GameCollisionComponent.self] as? GameCollisionComponent{
-            component.entityBitMask = .playerEntityBitMask
-            bulletEnemy?.components[GameCollisionComponent.self] = component
-        }
-        
-        bulletPlayer = BulletEntity(/*quemAtirou: .playerEntityBitMask*/)
-        
-        if var component = bulletPlayer?.components[GameCollisionComponent.self] as? GameCollisionComponent{
-            component.entityBitMask = .enemyEntityBitMask
-            bulletPlayer?.components[GameCollisionComponent.self] = component
-        }
+        bulletEnemy = BulletEntity(quemAtirou: .enemyEntityBitMask)
+        bulletPlayer = BulletEntity(quemAtirou: .playerEntityBitMask)
         
         enemy = EnemyEntity()
         enemy?.position.x += 0.3
