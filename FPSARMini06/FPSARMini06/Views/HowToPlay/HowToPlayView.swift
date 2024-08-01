@@ -21,7 +21,7 @@ struct HowToPlayView: View {
                         }, label: {
                             Image("Top Bar")
                                 .resizable()
-                                .frame(width: geometry.size.width * buttonRegW, height: geometry.size.height * buttonRegH)
+                                .frame(width: geometry.size.width * buttonSmallW, height: geometry.size.height * buttonSmallH)
                                 .overlay{
                                     Image(systemName: "chevron.left")
                                         .font(.system(size: 36, weight: .bold))
@@ -46,6 +46,7 @@ struct HowToPlayView: View {
                     
                     Text("LoremIpsum")
                         .padding()
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                     
@@ -53,6 +54,8 @@ struct HowToPlayView: View {
                         pageManager.page = .gameScene
                     }, label: {
                         Image("Default")
+                            .resizable()
+                            .frame(width: geometry.size.width * buttonRegW, height: geometry.size.height * buttonRegH)
                             .overlay {
                                 Text("ready-button")
                                     .font(.system(size: 20, weight: .bold))
