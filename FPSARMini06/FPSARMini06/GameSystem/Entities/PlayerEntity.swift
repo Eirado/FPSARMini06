@@ -29,7 +29,7 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         let extractedEntityBitMask = GameCollisionComponent(entityBitMask: .playerEntityBitMask)
         let bitMask = extractedEntityBitMask.entityBitMask
         
-        let entityGroup = CollisionGroup(rawValue: bitMask.rawValue)
+        let entityGroup = CollisionGroup(rawValue: bitMask!.rawValue)
         
         let entityMask = CollisionGroup.all.subtracting(entityGroup)
         

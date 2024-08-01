@@ -27,18 +27,9 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         
         self.model.generateCollisionShapes(recursive: true)
         
-//        let extractedEntityBitMask = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
-//        let bitMask = extractedEntityBitMask.entityBitMask
-//        
-//        let entityGroup = CollisionGroup(rawValue: bitMask.rawValue)
-//        
-//        let entityMask = CollisionGroup.all.subtracting(entityGroup)
-//        
-//        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
-        
         super.init()
         
-        self.components[MotionComponent.self] = MotionComponent()
+//        self.components[MotionComponent.self] = MotionComponent()
         
         
         let clone = self.model.clone(recursive: true)

@@ -9,7 +9,7 @@ import Foundation
 import RealityKit
 
 struct GameCollisionComponent: Component {
-    let entityBitMask: BitMasks
+    var entityBitMask: BitMasks?
 }
 
 enum BitMasks: UInt32 {

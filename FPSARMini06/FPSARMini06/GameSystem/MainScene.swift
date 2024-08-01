@@ -19,13 +19,11 @@ class MainScene: ARView {
     var enemy: EnemyEntity? = nil
     
     var player: PlayerEntity? = nil
-    var player2: PlayerEntity? = nil
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
     
     /// Entidades para a bullet do player e do enemy
     var bulletPlayer: BulletEntity? = nil
     var bulletEnemy: BulletEntity? = nil
-    
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -38,41 +36,55 @@ class MainScene: ARView {
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
         
+        bulletEnemy = BulletEntity(/*quemAtirou: .enemyEntityBitMask*/)
+        
+        if var component = bulletEnemy?.components[GameCollisionComponent.self] as? GameCollisionComponent{
+            component.entityBitMask = .playerEntityBitMask
+            bulletEnemy?.components[GameCollisionComponent.self] = component
+        }
+        
+        bulletPlayer = BulletEntity(/*quemAtirou: .playerEntityBitMask*/)
+        
+        if var component = bulletPlayer?.components[GameCollisionComponent.self] as? GameCollisionComponent{
+            component.entityBitMask = .enemyEntityBitMask
+            bulletPlayer?.components[GameCollisionComponent.self] = component
+        }
+        
         enemy = EnemyEntity()
-        
         enemy?.position.x += 0.3
-        self.installGestures(.all, for: enemy!)
-        
-        
         player = PlayerEntity()
-        self.installGestures(.all, for: player!)
         
-        bulletEnemy = BulletEntity(quemAtirou: .enemyEntityBitMask, arView: self)
-        bulletPlayer = BulletEntity(quemAtirou: .playerEntityBitMask, arView: self)
+        let entities: [Entity] = [player!, enemy!, bulletEnemy!, bulletPlayer!]
         
-        player2 = PlayerEntity()
-        self.installGestures(.all, for: player2!)
+        for entity in entities {
+            self.installGestures(.all, for: entity as! HasCollision)
+        }
         
         let enemyClone = enemy?.clone(recursive: true)
-        let enemyClone2 = enemy?.clone(recursive: true)
+        self.installGestures(.all, for: enemyClone!)
+        enemyClone?.position.x = 0.3
+        
+        let playerClone = player?.clone(recursive: true)
+        self.installGestures(.all, for: playerClone!)
+        playerClone?.position.x = -0.3
+        
+        let enemyBulletClone = bulletEnemy?.clone(recursive: true)
+        self.installGestures(.all, for: enemyBulletClone!)
+        enemyBulletClone?.position.x = 0.6
+        
+        let playerBulletClone = bulletPlayer?.clone(recursive: true)
+        self.installGestures(.all, for: playerBulletClone!)
+        playerBulletClone?.position.x = -0.6
+        
         let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
         
-        worldAnchor.addChild(enemyClone2!)
         worldAnchor.addChild(enemyClone!)
+        worldAnchor.addChild(playerClone!)
+        worldAnchor.addChild(enemyBulletClone!)
+        worldAnchor.addChild(playerBulletClone!)
         
         self.pos = worldAnchor.position
         
         self.scene.addAnchor(worldAnchor)
-        
-        arViewGestureSetup()
-    }
-    
-    func arViewGestureSetup() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
-        self.addGestureRecognizer(tapGesture)
-        
-    }
-    
-    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
     }
 }
