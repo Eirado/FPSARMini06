@@ -6,9 +6,12 @@
 //
 
 import RealityKit
+import Foundation
 
 struct AttackComponent: Component{
+    var startPosition:SIMD3<Float>
+    var direction:SIMD3<Float>
     var attackSpeed:Float
-    var isHidden: Bool
-//    var damage: Float
+    var damage: Float
+    var duration:TimeInterval
 }

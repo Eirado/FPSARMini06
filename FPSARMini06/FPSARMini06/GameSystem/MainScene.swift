@@ -21,6 +21,7 @@ class MainScene: ARView {
     var player: PlayerEntity? = nil
     var player2: PlayerEntity? = nil
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
+    var cameraTransforms: simd_float4x4?
     
     
     required init(frame frameRect: CGRect) {
@@ -33,6 +34,10 @@ class MainScene: ARView {
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
+        
+        //posiçao da camera
+        guard let cameraTransforms = self.session.currentFrame?.camera.transform else { return }
+        self.cameraTransforms = cameraTransforms
         
         enemy = EnemyEntity()
         
@@ -48,7 +53,11 @@ class MainScene: ARView {
         
         let enemyClone = enemy?.clone(recursive: true)
         let enemyClone2 = enemy?.clone(recursive: true)
-        let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0))
+        
+        var startPosition = simd_make_float3(cameraTransforms.columns.3.x, cameraTransforms.columns.3.y, cameraTransforms.columns.3.z)
+
+        let worldAnchor = AnchorEntity(world: startPosition)
+//        let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0)) //valor anterior
         
         worldAnchor.addChild(enemyClone2!)
         worldAnchor.addChild(enemyClone!)
@@ -66,6 +75,11 @@ class MainScene: ARView {
         
     }
     
+    
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        if let cameraTransforms = cameraTransforms{
+            player?.addBullet(cameraPosition: cameraTransforms)
+        }
     }
 }
+
