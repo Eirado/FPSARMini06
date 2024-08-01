@@ -8,20 +8,22 @@
 import Foundation
 import RealityKit
 
-class BulletEntity: Entity, HasCollision, HasModel{
+class BulletEntity: Entity, HasCollision, HasModel {
+    
+    var quemAtirou: UInt32 // variável q mantém uma bitmask
     
     var model: ModelEntity
     var animationRoot: Entity
     var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
-    var attackComponent: AttackComponent{
+    var attackComponent: AttackComponent {
         get{return components[AttackComponent.self] ?? AttackComponent(attackSpeed: 5, isHidden: false)}
         set{ components[AttackComponent.self] = newValue}
     }
     var arView:ARView?
     
-    
-    required init(arView:ARView) {
+    required init(quemAtirou: BitMasks, arView:ARView) {
         
+        self.quemAtirou = quemAtirou.rawValue
         self.model = ModelEntity()
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
@@ -31,7 +33,8 @@ class BulletEntity: Entity, HasCollision, HasModel{
         super.init()
         
         self.model.components[AttackComponent.self] = attackComponent
-        self.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: .bulletEntity)
+        self.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: quemAtirou)
+        
         self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
         
         self.addChild(self.model)
@@ -46,13 +49,13 @@ class BulletEntity: Entity, HasCollision, HasModel{
     
     
 }
-extension BulletEntity{
-    func movementOfBullet(){
+extension BulletEntity {
+    func movementOfBullet() {
         
         print("entrou na funcao")
         self.attackComponent.isHidden = true
         
-        if attackComponent.isHidden{
+        if attackComponent.isHidden {
             self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
             
             guard let cameraTransform = arView?.session.currentFrame?.camera.transform else { return }

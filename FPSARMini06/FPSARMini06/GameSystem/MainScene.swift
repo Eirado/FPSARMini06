@@ -22,6 +22,10 @@ class MainScene: ARView {
     var player2: PlayerEntity? = nil
     var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
     
+    /// Entidades para a bullet do player e do enemy
+    var bulletPlayer: BulletEntity? = nil
+    var bulletEnemy: BulletEntity? = nil
+    
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -42,6 +46,9 @@ class MainScene: ARView {
         
         player = PlayerEntity()
         self.installGestures(.all, for: player!)
+        
+        bulletEnemy = BulletEntity(quemAtirou: .enemyEntityBitMask, arView: self)
+        bulletPlayer = BulletEntity(quemAtirou: .playerEntityBitMask, arView: self)
         
         player2 = PlayerEntity()
         self.installGestures(.all, for: player2!)

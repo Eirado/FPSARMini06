@@ -19,8 +19,7 @@ class CollisionSystem: RealityKit.System {
     
     func update(context: SceneUpdateContext) {
         context.scene.performQuery(hasCollisionComponentQuery).forEach { collisorEntity in
-            guard let entityComponent = collisorEntity.components[GameCollisionComponent.self] as? GameCollisionComponent else { return }
-
+            
             collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Began.self) { event in
                 
                 guard let entity1 = event.entityA as? ModelEntity,
