@@ -17,9 +17,18 @@ class HealthSystem: System {
     
     func update(context: SceneUpdateContext) {
         
-    }
-    
-    func die() {// essa função deve retirar os elementos da tela quando o lifepoint chegar a zero
+        context.scene.performQuery(Self.query).forEach { entity in
+            
+            guard var component = entity.components[HealthComponent.self] as? HealthComponent else { return }
+            
+            if component.totalHealth == 0{
+                die(entity: entity)
+            }
+        }
         
+        func die(entity: Entity) {// essa função deve retirar os elementos da tela quando o lifepoint chegar a zero
+            entity.removeFromParent()
+            
+        }
     }
 }
