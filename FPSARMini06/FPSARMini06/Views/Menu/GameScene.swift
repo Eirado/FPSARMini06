@@ -16,6 +16,17 @@ struct GameScene: View {
     @Environment(PageManager.self) var pageManager
     
     var body: some View {
-        ARViewContainer()
+        ZStack{
+            VStack{
+                HStack{
+                    
+                }
+            }
+            
+            Image("Mira")
+            
+            ARViewContainer()
+        }
+        .ignoresSafeArea()
     }
 }
