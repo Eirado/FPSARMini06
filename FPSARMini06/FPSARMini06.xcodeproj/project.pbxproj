@@ -15,6 +15,8 @@
 		12B308D32C5ABB040005ADE1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 12B308D22C5ABB040005ADE1 /* Localizable.xcstrings */; };
 		12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
+		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
+		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
 		70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */; };
 		70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */; };
 		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
@@ -62,6 +64,8 @@
 		12B308D82C5AD8B60005ADE1 /* FPSARMini06Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPSARMini06Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSARMini06Tests.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
+		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
 		70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSystem.swift; sourceTree = "<group>"; };
 		70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogEntity.swift; sourceTree = "<group>"; };
 		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */,
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
 				70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */,
+				70AA701F2C5D67BD004C306A /* PlayerSystem.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
 				B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */,
+				70AA701D2C5D679A004C306A /* PlayerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -399,8 +405,10 @@
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
 				B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */,
+				70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */,
 				127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
+				70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
@@ -586,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = CU2V2363W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -617,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = CU2V2363W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

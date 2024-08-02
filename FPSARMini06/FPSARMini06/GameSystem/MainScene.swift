@@ -28,13 +28,7 @@ class MainScene: ARView {
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         
-        
         arViewGestureSetup()
-
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(sessionDidStart(_:)), name: .ARSessionDidStart, object: nil)
-
     }
     
     dynamic required init?(coder decoder: NSCoder) {
@@ -52,9 +46,10 @@ class MainScene: ARView {
 //
         
         player = PlayerEntity()
+        player?.movement(ar: self)
+        
         self.installGestures(.all, for: player!)
     
-        
         
         let worldAnchor = AnchorEntity(world: .zero)
         
@@ -64,14 +59,6 @@ class MainScene: ARView {
 
     }
     
-    
-    
-    @objc func sessionDidStart(_ notification: Notification) {
-            // Captura a transformação da câmera após a sessão AR ter iniciado
-        print("funcao")
-            
-        }
-    
     func arViewGestureSetup() {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
@@ -80,8 +67,6 @@ class MainScene: ARView {
     
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        print("clicou")
-        
         guard let cameraTransform = self.session.currentFrame?.camera.transform else { print("erro")
             return }
          
