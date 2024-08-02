@@ -36,7 +36,9 @@ class MainScene: ARView {
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
         
-        bulletEnemy = BulletEntity(quemAtirou: .enemyEntityBitMask)
+        self.debugOptions.insert([.showPhysics])
+        
+        bulletEnemy = BulletEntity(quemAtirou: .otherEnemyEntityBitMask)
         bulletPlayer = BulletEntity(quemAtirou: .playerEntityBitMask)
         
         enemy = EnemyEntity()

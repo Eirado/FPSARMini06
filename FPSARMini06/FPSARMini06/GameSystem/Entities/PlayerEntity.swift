@@ -29,13 +29,16 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         let extractedEntityBitMask = GameCollisionComponent(entityBitMask: .playerEntityBitMask)
         let bitMask = extractedEntityBitMask.entityBitMask
         
-        let entityGroup = CollisionGroup(rawValue: bitMask!.rawValue)
+        let playerGroup = CollisionGroup(rawValue: bitMask!.rawValue)
         
-        let entityMask = CollisionGroup.all.subtracting(entityGroup)
+        let entityMask = CollisionGroup.all.subtracting(playerGroup)
         
-        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
+//        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: playerGroup , mask: entityMask))
         
         super.init()
+        
+        self.model.name = "PlayerEntity"
+        
         self.addChild(self.model)
         self.addChild(self.animationRoot)
     }

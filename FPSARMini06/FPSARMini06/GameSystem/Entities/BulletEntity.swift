@@ -18,6 +18,8 @@ class BulletEntity: Entity, HasCollision, HasModel {
     
     required init(quemAtirou: BitMasks) {
         
+      
+        
         self.quemAtirou = quemAtirou
         self.model = ModelEntity()
         self.animationRoot = Entity()
@@ -26,15 +28,28 @@ class BulletEntity: Entity, HasCollision, HasModel {
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0.2), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
         
         //Colisão
+        self.model.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: quemAtirou)
         self.model.generateCollisionShapes(recursive: true)
         
-        // tenho q lidar com o filtro aqui
+        let extractedEntityBitMask = GameCollisionComponent(entityBitMask: quemAtirou)
+        let bitMask = extractedEntityBitMask.entityBitMask
         
-        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
+//        let entityMask = CollisionGroup(rawValue: bitMask!.rawValue)
+        
+//        let entityGroup = CollisionGroup(bitMask)
+//        let entityMask = CollisionGroup.all.subtracting(entityMask)
+//        
+        let entityGroup = CollisionGroup(rawValue: bitMask!.getOther().rawValue)
+        
+        let entityMask = CollisionGroup.all.subtracting(entityGroup)
+        
+        // tenho q lidar com o filtro aqui
+//        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityMask, mask:  entityGroup))
         
         super.init()
         
-        self.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: quemAtirou)
+        self.model.name = "BulletEntity"
+        
         self.addChild(self.model)
         self.addChild(self.animationRoot)
         
