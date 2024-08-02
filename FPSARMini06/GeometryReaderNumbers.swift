@@ -38,7 +38,9 @@ let h2pTextBoxW = 0.944
 let h2pTextBoxH = 0.165
 
 // MARK: SettingsView e PauseView
-// ComponenteBG3 e ComponenteBG5 Box Sizes
+// ComponenteFG, ComponenteBG3 e ComponenteBG5 Box Sizes
+let cFGW = 0.821
+let cFGH = 0.058
 let cBG3W = 0.826
 let cBG3H = 0.199
 let cBG5W = 0.826
@@ -73,7 +75,7 @@ let insideIconW = 0.089
 let insideIconH = 0.041
 
 // Frame Imagem Central
-let cntrImgW = 0.796
+let cntrImgW = 0.906
 let cntrImgH = 0.526
 
 // Frame Cores de Tiros
@@ -95,3 +97,103 @@ let bg$$PillH = 0.027
 // Frame Imagem Claim
 let claimImgW = 0.851
 let claimImgH = 0.135
+
+//
+//struct ComponentePauseMenuBG3: View {
+//    @Binding var toggleOn: Bool
+//    var body: some View {
+//        ZStack{
+//            // MARK: Background
+//            RoundedRectangle(cornerRadius: 8)
+//                .fill(.gray.opacity(0.8))
+//                .stroke(Color.black, lineWidth: 2)
+//                .frame(width: 355, height: 186)
+//            Rectangle()
+//                .fill(.white.opacity(0.5))
+//                .frame(width: 353, height: 62)
+//            
+//            // MARK: Foreground
+//            VStack{
+//                // TODO: Adicionar componente parte escrita
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//            }
+//            .frame(width: 355, height: 186)
+//            .padding()
+//        }
+//    }
+//}
+//
+//struct ComponentePauseMenuBG5: View {
+//    @Binding var toggleOn: Bool
+//    var body: some View {
+//        ZStack{
+//            // MARK: Background
+//            RoundedRectangle(cornerRadius: 8)
+//                .fill(.gray.opacity(0.8))
+//                .stroke(Color.black, lineWidth: 2)
+//                .frame(width: 355, height: 310)
+//            VStack{
+//                Rectangle()
+//                    .fill(.white.opacity(0.5))
+//                    .frame(width: 353, height: 62)
+//                Spacer()
+//                Rectangle()
+//                    .fill(.white.opacity(0.5))
+//                    .frame(width: 353, height: 62)
+//            }
+//            .frame(height: 186)
+//            // MARK: Foreground
+//            VStack{
+//                // TODO: Adicionar componente parte escrita
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//                ComponentePauseMenuFG(toggleOn: toggleOn)
+//            }
+//            .frame(width: 355, height: 186)
+//            .padding()
+//        }
+//    }
+//}
+//
+//struct ComponentePauseMenuFG: View {
+//    @State var toggleOn = false
+//    
+//    var togglePause: LocalizedStringKey = ""
+//    
+//    var body: some View {
+//        ZStack{
+////            RoundedRectangle(cornerRadius: 8)
+////                .fill(.red.opacity(0.5))
+//            HStack{
+//                Rectangle()
+//                    .frame(width: 30, height: 30)
+//                    .padding(.leading)
+//                Text("sound-text")
+//                    .font(.system(size: 18, weight: .bold))
+//                    .minimumScaleFactor(0.5)
+//                Spacer()
+//                Text("on-text")
+//                    .font(.system(size: 18))
+//                    .minimumScaleFactor(0.5)
+//                Toggle(togglePause, isOn: $toggleOn)
+//                    .padding(.trailing)
+//            }
+//        }
+//        .frame(width: 353, height: 54)
+//    }
+//}
+//
+//#Preview {
+//    struct BindingViewWxamplePreviewContainer: View{
+//        @State private var toggleOn = false
+//        
+//        var body: some View {
+//            ComponentePauseMenuBG5(toggleOn: $toggleOn)
+//        }
+//    }
+//    return BindingViewWxamplePreviewContainer()
+//}

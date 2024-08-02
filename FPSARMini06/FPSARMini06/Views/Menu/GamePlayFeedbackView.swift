@@ -19,14 +19,14 @@ struct GamePlayFeedbackView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(.gray.opacity(0.8))
                         .stroke(Color.black, lineWidth: 2)
-                        .frame(height: 715)
-                        .padding(.horizontal,4)
+                        .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
                     
                     VStack {
                         Rectangle()
                             .fill(Color.white.opacity(0.8))
                             .stroke(Color.black, lineWidth: 2)
-                            .frame(width: 170, height: 170)
+//                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * caveiraDerrotaW, height: UIScreen.main.bounds.height * caveiraDerrotaH)
                         
                         Text("defeat-title")
                             .font(.system(size: 64, weight: .bold))
@@ -36,26 +36,28 @@ struct GamePlayFeedbackView: View {
                             .minimumScaleFactor(0.5)
                         
                         VStack {
-                            HStack{
-                                Text("bots-title")
-                                    .font(.system(size: 24))
-                                    .minimumScaleFactor(0.5)
-                                Spacer()
-                                Text("numberOfBots-text")
-                                    .font(.system(size: 24))
-                                    .minimumScaleFactor(0.5)
+                            VStack{
+                                HStack{
+                                    Text("bots-title")
+                                        .font(.system(size: 24))
+                                        .minimumScaleFactor(0.5)
+                                    Spacer()
+                                    Text("numberOfBots-text")
+                                        .font(.system(size: 24))
+                                        .minimumScaleFactor(0.5)
+                                }
+                                
+                                HStack {
+                                    Text("health-title")
+                                        .font(.system(size: 24))
+                                        .minimumScaleFactor(0.5)
+                                    Spacer()
+                                    Text("health-text")
+                                        .font(.system(size: 24))
+                                        .minimumScaleFactor(0.5)
+                                }
                             }
-                            
-                            HStack {
-                                Text("health-title")
-                                    .font(.system(size: 24))
-                                    .minimumScaleFactor(0.5)
-                                Spacer()
-                                Text("health-text")
-                                    .font(.system(size: 24))
-                                    .minimumScaleFactor(0.5)
-                            }
-                            .padding(.vertical, 12)
+                            .padding(.bottom, 12)
                             
                             HStack {
                                 Spacer()
@@ -80,6 +82,8 @@ struct GamePlayFeedbackView: View {
                         } label: {
                             ZStack {
                                 Image("Default")
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                                 Text("playAgain-button")
                                     .font(.system(size: 20, weight: .bold))
                                     .tint(.black)
@@ -92,6 +96,8 @@ struct GamePlayFeedbackView: View {
                         } label: {
                             ZStack {
                                 Image("Default")
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                                 Text("quitGame-button")
                                     .font(.system(size: 20, weight: .bold))
                                     .tint(.black)
@@ -100,11 +106,10 @@ struct GamePlayFeedbackView: View {
                         }
                     }
                     .padding(.vertical, 20)
-                    .frame(height: 715)
+                    .frame(height: UIScreen.main.bounds.height * overlayBoxH)
                 }
                 .padding(.vertical, 20)
                 .padding(.horizontal, 12)
-                .ignoresSafeArea(.all)
             }
         }
 

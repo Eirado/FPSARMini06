@@ -24,9 +24,13 @@ struct SettingsView: View {
                     } label: {
                         ZStack {
                             Image("Top Bar")
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 36, weight: .bold))
-                                .tint(.black)
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
+                                .overlay{
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 36, weight: .bold))
+                                        .tint(.black)
+                                }
                         }
                     }
                     
@@ -35,7 +39,7 @@ struct SettingsView: View {
                     Text("settingsView-title")
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
-                        .padding(.trailing, 56)
+                        .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                         .minimumScaleFactor(0.5)
                     
                     Spacer()
@@ -46,7 +50,7 @@ struct SettingsView: View {
                 Spacer()
                 
                 ComponentePauseMenuBG5(toggleOn: $toggleOn)
-                    .padding(.bottom, 104)
+                    .padding(.bottom, 110)
                 
                 Spacer()
             }
