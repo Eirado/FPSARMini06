@@ -27,7 +27,11 @@ class MainScene: ARView {
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
+        
+        
         arViewGestureSetup()
+
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(sessionDidStart(_:)), name: .ARSessionDidStart, object: nil)
 
@@ -41,28 +45,23 @@ class MainScene: ARView {
         self.init(frame: UIScreen.main.bounds)
         
         
-
-        
-        
-        enemy = EnemyEntity()
-        
-        enemy?.position.x += 0.3
-        self.installGestures(.all, for: enemy!)
-        
+//        enemy = EnemyEntity()
+//
+//        enemy?.position.x += 0.3
+//        self.installGestures(.all, for: enemy!)
+//
         
         player = PlayerEntity()
         self.installGestures(.all, for: player!)
-        
-        player2 = PlayerEntity()
-        self.installGestures(.all, for: player2!)
+    
         
         
+        let worldAnchor = AnchorEntity(world: .zero)
         
+        self.scene.addAnchor(worldAnchor)
         
+        worldAnchor.addChild(player!)
 
-        
-        
-        
     }
     
     
@@ -85,27 +84,14 @@ class MainScene: ARView {
         
         guard let cameraTransform = self.session.currentFrame?.camera.transform else { print("erro")
             return }
+         
         let startPosition = simd_make_float3(cameraTransforms.columns.3.x, cameraTransforms.columns.3.y, cameraTransforms.columns.3.z)
     
         self.startPosition = startPosition
         self.cameraTransforms = cameraTransform
         
-        if !firstTap {
-            let worldAnchor = AnchorEntity(world: startPosition)
-    //        let worldAnchor = AnchorEntity(world: simd_float3(x: 0, y: 0, z: 0)) //valor anterior
-            let enemyClone = enemy?.clone(recursive: true)
-            let enemyClone2 = enemy?.clone(recursive: true)
             
-            worldAnchor.addChild(enemyClone2!)
-            worldAnchor.addChild(enemyClone!)
-            
-            self.pos = worldAnchor.position
-            
-            self.scene.addAnchor(worldAnchor)
-        }
-        
-        
-            player?.addBullet(cameraPosition: cameraTransforms)
+        player?.addBullet(cameraPosition: cameraTransforms)
         
     }
 }

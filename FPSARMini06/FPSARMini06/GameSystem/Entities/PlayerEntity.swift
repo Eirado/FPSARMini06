@@ -13,7 +13,7 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     var model: ModelEntity
     var animationRoot: Entity
     var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
-    var bullet:BulletEntity?
+    var bullet: BulletEntity?
     required init() {
         
         self.model = ModelEntity()
@@ -35,22 +35,34 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         
         self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
         
+        bullet = BulletEntity()
+        
         super.init()
         self.addChild(self.model)
         self.addChild(self.animationRoot)
     }
 }
+
 extension PlayerEntity{
     func addBullet(cameraPosition: simd_float4x4){
         print("entrou na funcao")
         let direction = normalize(simd_make_float3(-cameraPosition.columns.2.x, -cameraPosition.columns.2.y, -cameraPosition.columns.2.z))
+        
         var startPosition = simd_make_float3(cameraPosition.columns.3.x, cameraPosition.columns.3.y, cameraPosition.columns.3.z)
+       
         print(startPosition.debugDescription)
 
         startPosition.y -= 0.1
+    
+        guard var component = bullet?.components[AttackComponent.self] as? AttackComponent else { return }
+      
+        component.duration = 1
+        component.startPosition = startPosition
+        component.direction = direction
+        component.attackSpeed = 1
         
-        bullet = BulletEntity(startPosition: startPosition, direction: direction, attackSpeed: 8, damage: 2)
-        print(bullet?.startPosition.debugDescription)
+        bullet?.components[AttackComponent.self] = component
+        
         let clone = bullet?.clone(recursive: true)
         self.addChild(clone!)
     }

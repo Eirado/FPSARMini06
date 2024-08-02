@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MotionComponent.registerComponent()
         
+        AttackComponent.registerComponent()
+        
         MotionSystem.registerSystem()
         
         AttackSystem.registerSystem()

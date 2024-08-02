@@ -8,7 +8,10 @@
 import RealityKit
 import Foundation
 
-class AttackSystem: System{
+class AttackSystem: RealityKit.System {
+    
+    private static let query = EntityQuery(where: .has(AttackComponent.self))
+    
     
     required init(scene: Scene) {
         
@@ -16,23 +19,22 @@ class AttackSystem: System{
     
     
     func update(context: SceneUpdateContext) {
-        var hasAttackComponent = EntityQuery(where: .has(AttackComponent.self))
-
-        context.scene.performQuery(hasAttackComponent).forEach{ attackEntity in
+        
+        
+        context.scene.performQuery(AttackSystem.query).forEach{ attackEntity in
             
             guard let entityComponent = attackEntity.components[AttackComponent.self] as? AttackComponent else {return}
+            
             print("sistema de ataque, startposition:\(entityComponent.startPosition)")
-                let endPosition = entityComponent.startPosition + entityComponent.direction * entityComponent.attackSpeed
-                
-                attackEntity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: entityComponent.duration, timingFunction: .linear)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + entityComponent.duration) {
-                    
-                    attackEntity.removeFromParent()
-                    
-                }
+            let endPosition = entityComponent.startPosition + entityComponent.direction * entityComponent.attackSpeed
             
+            attackEntity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: entityComponent.duration, timingFunction: .linear)
             
+            DispatchQueue.main.asyncAfter(deadline: .now() + entityComponent.duration) {
+                
+                attackEntity.removeFromParent()
+                
+            }
         }
     }
 }
