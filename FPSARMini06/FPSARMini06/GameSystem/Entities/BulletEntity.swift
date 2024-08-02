@@ -13,19 +13,28 @@ class BulletEntity: Entity, HasCollision, HasModel{
     var model: ModelEntity
     var animationRoot: Entity
     var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
+    var startPosition:SIMD3<Float>
+    var direction:SIMD3<Float>
+    var attackSpeed:Float
+    var damage: Float
+   
     
     required init(startPosition:SIMD3<Float>,direction:SIMD3<Float>,attackSpeed:Float,damage: Float) {
         self.model = ModelEntity()
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
-
-        self.model.generateCollisionShapes(recursive: true)
+        self.startPosition = startPosition
+        self.direction = direction
+        self.attackSpeed = attackSpeed
+        self.damage = damage
         
+        //self.model.generateCollisionShapes(recursive: true)
+        print("entrou no primeiro, startPosition\(startPosition)")
         super.init()
         
-        self.model.components[AttackComponent.self] = AttackComponent(startPosition: startPosition, direction: direction, attackSpeed: attackSpeed,damage: damage, duration: 5)
-        self.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .bulletEntity)
-        self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
+        self.model.components[AttackComponent.self] = AttackComponent(startPosition: startPosition, direction: direction, attackSpeed: attackSpeed,damage: damage, duration: 1)
+        //self.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .bulletEntity)
+        //self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
         
         self.addChild(self.model)
@@ -34,9 +43,30 @@ class BulletEntity: Entity, HasCollision, HasModel{
         
     }
     
-    @MainActor required init() {
-        fatalError("init() has not been implemented")
+    required init() {
+        
+        self.model = ModelEntity()
+        self.animationRoot = Entity()
+        self.modelShape = .generateSphere(radius: 0.1)
+        self.startPosition = .zero
+        self.direction = .zero
+        self.attackSpeed = 0
+        self.damage = 0
+        print("entrou no segundo, startPosition\(startPosition)")
+
+        //self.model.generateCollisionShapes(recursive: true)
+        
+        super.init()
+        
+        self.model.components[AttackComponent.self] = AttackComponent(startPosition: startPosition, direction: direction, attackSpeed: attackSpeed,damage: damage, duration: 5)
+        //self.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .bulletEntity)
+        //self.model.collision = CollisionComponent(shapes: [modelShape], mode: .trigger, filter: .sensor)
+        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.2), materials: [SimpleMaterial(color: .yellow, isMetallic: true)])
+        
+        
+        
     }
+    
     
     
 }

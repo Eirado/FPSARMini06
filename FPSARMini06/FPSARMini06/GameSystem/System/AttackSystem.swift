@@ -10,15 +10,18 @@ import Foundation
 
 class AttackSystem: System{
     
-    required init(scene: Scene) {}
+    required init(scene: Scene) {
+        
+    }
     
-    private var hasAttackComponent = EntityQuery(where: .has(AttackComponent.self))
     
     func update(context: SceneUpdateContext) {
+        var hasAttackComponent = EntityQuery(where: .has(AttackComponent.self))
+
         context.scene.performQuery(hasAttackComponent).forEach{ attackEntity in
             
-            guard var entityComponent = attackEntity.components[AttackComponent.self] as? AttackComponent else {return}
-                
+            guard let entityComponent = attackEntity.components[AttackComponent.self] as? AttackComponent else {return}
+            print("sistema de ataque, startposition:\(entityComponent.startPosition)")
                 let endPosition = entityComponent.startPosition + entityComponent.direction * entityComponent.attackSpeed
                 
                 attackEntity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: entityComponent.duration, timingFunction: .linear)

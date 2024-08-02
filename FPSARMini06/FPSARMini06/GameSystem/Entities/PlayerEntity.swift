@@ -42,10 +42,15 @@ class PlayerEntity: Entity, HasCollision, HasModel {
 }
 extension PlayerEntity{
     func addBullet(cameraPosition: simd_float4x4){
+        print("entrou na funcao")
         let direction = normalize(simd_make_float3(-cameraPosition.columns.2.x, -cameraPosition.columns.2.y, -cameraPosition.columns.2.z))
         var startPosition = simd_make_float3(cameraPosition.columns.3.x, cameraPosition.columns.3.y, cameraPosition.columns.3.z)
+        print(startPosition.debugDescription)
+
         startPosition.y -= 0.1
+        
         bullet = BulletEntity(startPosition: startPosition, direction: direction, attackSpeed: 8, damage: 2)
+        print(bullet?.startPosition.debugDescription)
         let clone = bullet?.clone(recursive: true)
         self.addChild(clone!)
     }

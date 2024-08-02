@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MotionSystem.registerSystem()
         
+        AttackSystem.registerSystem()
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(toggleOn: $toggleOn)
             .environment(PageManager())
