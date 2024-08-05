@@ -24,10 +24,15 @@ class PlayerSystem:RealityKit.System{
             
             guard let cameraTransform = component.arView?.session.currentFrame?.camera.transform else { print("erro")
                 return }
-             
+            
             let startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
+//            context.scene.anchors.map { element in
+//                if element.name == "worldAnchor"{
+//                    element.position = startPosition
+//                }
+//            }
             entity.position = startPosition
-            print(entity.position)
+            //print(entity.position)
             
             
         }

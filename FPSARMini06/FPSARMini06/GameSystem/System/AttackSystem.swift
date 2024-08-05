@@ -21,18 +21,18 @@ class AttackSystem: RealityKit.System {
     func update(context: SceneUpdateContext) {
         
         
-        context.scene.performQuery(AttackSystem.query).forEach{ attackEntity in
+        context.scene.performQuery(AttackSystem.query).forEach{ entity in
             
-            guard let entityComponent = attackEntity.components[AttackComponent.self] as? AttackComponent else {return}
+            guard let component = entity.components[AttackComponent.self] as? AttackComponent else {return}
             
             //print("sistema de ataque, startposition:\(entityComponent.startPosition)")
-            let endPosition = entityComponent.startPosition + entityComponent.direction * entityComponent.attackSpeed
+            let endPosition = component.startPosition + component.direction * component.attackSpeed
             
-            attackEntity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: entityComponent.duration, timingFunction: .linear)
+            entity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: component.duration, timingFunction: .linear)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + entityComponent.duration) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + component.duration) {
                 
-                attackEntity.removeFromParent()
+                entity.removeFromParent()
                 
             }
         }

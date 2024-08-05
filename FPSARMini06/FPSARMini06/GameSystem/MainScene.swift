@@ -45,13 +45,15 @@ class MainScene: ARView {
 //        self.installGestures(.all, for: enemy!)
 //
         
-        player = PlayerEntity()
-        player?.movement(ar: self)
+        player = PlayerEntity(ar:self)
+        
         
         self.installGestures(.all, for: player!)
     
         
         let worldAnchor = AnchorEntity(world: .zero)
+        
+        worldAnchor.name = "worldAnchor"
         
         self.scene.addAnchor(worldAnchor)
         
@@ -67,20 +69,8 @@ class MainScene: ARView {
     
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        guard let cameraTransform = self.session.currentFrame?.camera.transform else { print("erro")
-            return }
-         
-        let startPosition = simd_make_float3(cameraTransforms.columns.3.x, cameraTransforms.columns.3.y, cameraTransforms.columns.3.z)
-    
-        self.startPosition = startPosition
-        self.cameraTransforms = cameraTransform
-        
-            
-        player?.addBullet(cameraPosition: cameraTransforms)
-        
+        player?.addBullet()
     }
 }
 
-extension Notification.Name {
-    static let ARSessionDidStart = Notification.Name("ARSessionDidStart")
-}
+
