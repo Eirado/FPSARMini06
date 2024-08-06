@@ -115,6 +115,7 @@ extension InventoryView{
         }
     }
 }
+
 struct ExtractedView: View {
     var body: some View {
         ZStack{
