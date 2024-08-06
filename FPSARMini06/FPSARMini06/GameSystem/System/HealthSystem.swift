@@ -8,8 +8,6 @@
 import Foundation
 import RealityKit
 
-//Esse system será responsável por matar a entidade q zerar a vida
-
 class HealthSystem: System {
     private static let query = EntityQuery(where: .has(HealthComponent.self))
     
@@ -19,14 +17,14 @@ class HealthSystem: System {
         
         context.scene.performQuery(Self.query).forEach { entity in
             
-            guard var component = entity.components[HealthComponent.self] as? HealthComponent else { return }
+            guard let component = entity.components[HealthComponent.self] as? HealthComponent else { return }
             
-            if component.totalHealth == 0{
+            if component.totalHealth == 0 {
                 die(entity: entity)
             }
         }
         
-        func die(entity: Entity) {// essa função deve retirar os elementos da tela quando o lifepoint chegar a zero
+        func die(entity: Entity) {
             entity.removeFromParent()
             
         }

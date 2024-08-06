@@ -21,49 +21,34 @@ class CollisionSystem: RealityKit.System {
         context.scene.performQuery(hasCollisionComponentQuery).forEach { collisorEntity in
             
             collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Began.self) { event in
-
-                guard let entity1 = event.entityA as? ModelEntity,
-                      let entity2 = event.entityB as? ModelEntity else { return }
+                var tomouDano: Bool = false
                 
-                if entity1.name == "BulletEntity" || entity2.name == "BulletEntity" {
-                    let bulletEntity = entity1.name == "BulletEntity" ? entity1 : entity2
-                    let otherEntity = bulletEntity == entity1 ? entity2 : entity1
-
-                    print("Colisão envolvendo BulletEntity")
-
-                    if var entidadeComVida = otherEntity.components[HealthComponent.self] as? HealthComponent {
-                        entidadeComVida.totalHealth -= 10
+                let entity1 = event.entityA
+                let entity2 = event.entityB
+                
+                let involvedNodes = [entity1, entity2]
+                
+                if (entity1.name == "BulletEntity" && entity2.name == "EnemyEntity") ||
+                    (entity1.name == "EnemyEntity" && entity2.name == "BulletEntity") {
+                    
+                    let enemyEntity = involvedNodes.first { $0.name == "EnemyEntity" }
+                    
+                    if var enemyHealth = enemyEntity?.components[HealthComponent.self] as? HealthComponent {
                         do {
-                            try self.verificarVida(entidade: entidadeComVida)
+                            if !tomouDano {
+                                print("dano 1 - \(enemyHealth.totalHealth)")
+                                enemyHealth.totalHealth -= 1
+                                tomouDano = true
+                                print("dano 2 - \(enemyHealth.totalHealth)")
+                                if enemyHealth.totalHealth < 0 {
+                                    throw HealthError.healthBelowZero
+                                }
+                            }
+                            enemyEntity?.components[HealthComponent.self] = enemyHealth
+                        } catch HealthError.healthBelowZero {
+                            print("morreu")
                         } catch {
-                            fatalError("A vida está abaixo de zero")
-                        }
-                    }
-                }
-
-                if (entity1.name == "PlayerEntity" && entity2.name == "EnemyEntity") ||
-                   (entity1.name == "EnemyEntity" && entity2.name == "PlayerEntity") {
-
-                    print("Colisão entre PlayerEntity e EnemyEntity")
-
-                    let playerEntity = entity1.name == "PlayerEntity" ? entity1 : entity2
-                    let enemyEntity = playerEntity == entity1 ? entity2 : entity1
-
-                    if var playerHealth = playerEntity.components[HealthComponent.self] as? HealthComponent {
-                        playerHealth.totalHealth -= 5
-                        do {
-                            try self.verificarVida(entidade: playerHealth)
-                        } catch {
-                            fatalError("A vida do jogador está abaixo de zero")
-                        }
-                    }
-
-                    if var enemyHealth = enemyEntity.components[HealthComponent.self] as? HealthComponent {
-                        enemyHealth.totalHealth -= 5
-                        do {
-                            try self.verificarVida(entidade: enemyHealth)
-                        } catch {
-                            fatalError("A vida do inimigo está abaixo de zero")
+                            print("Ocorreu um erro inesperado: \(error)")
                         }
                     }
                 }
@@ -71,10 +56,8 @@ class CollisionSystem: RealityKit.System {
         }
     }
     
-    func verificarVida(entidade: HealthComponent) throws {
-        if entidade.totalHealth < 0 {
-            throw fatalError()
-        }
-    }
 }
 
+enum HealthError: Error {
+    case healthBelowZero
+}

@@ -23,7 +23,7 @@ enum HealthEnum: Int {
     var rawValue: Int {
         switch self {
         case .enemyEntityHealth: return 200
-        case .playerEntityHealth: return 100
+        case .playerEntityHealth: return 500
         }
     }
 }

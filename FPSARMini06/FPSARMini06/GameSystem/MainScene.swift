@@ -38,8 +38,8 @@ class MainScene: ARView {
         
         self.debugOptions.insert([.showPhysics])
         
-        bulletEnemy = BulletEntity(quemAtirou: .otherEnemyEntityBitMask)
-        bulletPlayer = BulletEntity(quemAtirou: .playerEntityBitMask)
+        bulletEnemy = BulletEntity()
+        bulletPlayer = BulletEntity()
         
         enemy = EnemyEntity()
         enemy?.position.x += 0.3

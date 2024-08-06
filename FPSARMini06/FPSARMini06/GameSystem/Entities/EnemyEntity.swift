@@ -23,27 +23,17 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .red, isMetallic: true)])
         
         //Defino o comportamento de colisao aqui
-        self.model.components[GameCollisionComponent.self] = GameCollisionComponent(entityBitMask: .otherEnemyEntityBitMask)
+        self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
+        self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
         
         self.model.generateCollisionShapes(recursive: true)
-        
-        let extractedEntityBitMask = GameCollisionComponent(entityBitMask: .otherEnemyEntityBitMask)
-        let bitMask = extractedEntityBitMask.entityBitMask
-        
-        let enemyGroup = CollisionGroup(rawValue: bitMask!.rawValue)
-        
-        let entityMask = CollisionGroup.all.subtracting(enemyGroup)
-//        let entityMask = CollisionGroup(rawValue: bitMask!.rawValue)
-        
         self.model.collision = CollisionComponent(shapes: [modelShape])
         
         super.init()
         
         self.model.name = "EnemyEntity"
-        
-        let clone = self.model.clone(recursive: true)
 
-        self.addChild(clone)
+        self.addChild(self.model)
         self.addChild(self.animationRoot)
            
     }
