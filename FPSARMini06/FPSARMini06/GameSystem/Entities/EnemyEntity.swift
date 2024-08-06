@@ -8,33 +8,58 @@
 import Foundation
 import RealityKit
 
+import Foundation
+import RealityKit
+import Combine
+
 class EnemyEntity: Entity, HasCollision, HasModel {
     
     var model: ModelEntity
     var animationRoot: Entity
-    var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
+    var modelShape: ShapeResource // Tool to define the collision shape
     
+    private var cancellables: Set<AnyCancellable> = []
+
     required init() {
-        
-        self.model = ModelEntity()
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
         
-        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .red, isMetallic: true)])
-        
-        //Defino o comportamento de colisao aqui
-        self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
-        self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
-        
-        self.model.generateCollisionShapes(recursive: true)
-        self.model.collision = CollisionComponent(shapes: [modelShape])
+        self.model = ModelEntity()
         
         super.init()
-        
-        self.model.name = "EnemyEntity"
 
-        self.addChild(self.model)
-        self.addChild(self.animationRoot)
-           
+        self.model.name = "EnemyEntity"
+        
+        Entity.loadModelAsync()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("Model loading completed.")
+                case .failure(let error):
+                    print("Failed to load model: \(error)")
+                }
+            }, receiveValue: { [weak self] assetDict in
+                guard let self = self else { return }
+                
+
+                if let modelEntity = assetDict[.diver_anim_stand_idle] {
+                    
+                    self.model = modelEntity.clone(recursive: true)
+                    
+                    self.model.generateCollisionShapes(recursive: true)
+                    self.model.collision = CollisionComponent(shapes: [modelShape])
+                    self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
+                    self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
+
+                    self.addChild(self.model)
+                }
+               
+                self.addChild(self.animationRoot)
+                
+                self.components[MotionComponent.self] = MotionComponent()
+            })
+            .store(in: &cancellables)
     }
+    
+
 }

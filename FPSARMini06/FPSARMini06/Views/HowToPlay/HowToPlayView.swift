@@ -19,6 +19,8 @@ struct HowToPlayView: View {
                         pageManager.page = .menu
                     }, label: {
                         Image("Top Bar")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 36, weight: .bold))
@@ -31,7 +33,8 @@ struct HowToPlayView: View {
                     Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
                         .tint(.black)
-                        .padding(.trailing, 56)
+                        .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                 }
@@ -42,6 +45,7 @@ struct HowToPlayView: View {
                 
                 Text("LoremIpsum")
                     .padding()
+                    .minimumScaleFactor(0.5)
                 
                 Spacer()
                 
@@ -49,10 +53,13 @@ struct HowToPlayView: View {
                     pageManager.page = .gameScene
                 }, label: {
                     Image("Default")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         .overlay {
-                            Text("ready-text")
+                            Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 })
                 .padding(.vertical)

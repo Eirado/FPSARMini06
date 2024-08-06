@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import SwiftData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,16 +24,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MotionComponent.registerComponent()
         
+        AttackComponent.registerComponent()
+        
+        PlayerComponent.registerComponent()
+        
         MotionSystem.registerSystem()
         
         HealthComponent.registerComponent()
         
         HealthSystem.registerSystem()
         
+        AttackSystem.registerSystem()
+        
+        PlayerSystem.registerSystem()
+        
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(toggleOn: $toggleOn)
             .environment(PageManager())
-        
+            .modelContainer(for: UserData.self)
+
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIHostingController(rootView: contentView)

@@ -19,6 +19,7 @@ struct MenuView: View {
         ZStack{
             //MARK: Fundo
             Color.red.opacity(0.2)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
             VStack{
                 //MARK: Topo
@@ -27,6 +28,8 @@ struct MenuView: View {
                         pageManager.page = .howToPlay
                     } label: {
                         Image("Top Bar")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
                                 Image(systemName: "questionmark")
                                     .font(.system(size: 36, weight: .bold))
@@ -38,6 +41,8 @@ struct MenuView: View {
                         pageManager.page = .settings
                     } label: {
                         Image("Top Bar")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
                                 Image(systemName: "gear")
                                     .font(.system(size: 36, weight: .bold))
@@ -46,7 +51,7 @@ struct MenuView: View {
                     }
                     
                 }
-                .padding(.horizontal, 20)
+                .padding(20)
                 
                 Spacer()
                 
@@ -54,10 +59,13 @@ struct MenuView: View {
                     pageManager.page = .gameScene
                 } label: {
                     Image("Default")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * buttonBigW, height: UIScreen.main.bounds.height * buttonBigH)
                         .overlay{
-                            Text("PLAY")
+                            Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
                 
@@ -65,10 +73,13 @@ struct MenuView: View {
                     pageManager.page = .inventory
                 } label: {
                     Image("Default")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         .overlay{
-                            Text("INVENTORY")
+                            Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                 }
             }

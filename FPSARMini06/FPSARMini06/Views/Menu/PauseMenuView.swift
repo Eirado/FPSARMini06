@@ -16,72 +16,79 @@ struct PauseMenuView: View {
     @Binding var toggleOn: Bool
     
     var body: some View {
-        ZStack {
-            //MARK: Fundo
-            RoundedRectangle(cornerRadius: 20)
-                .fill(.gray.opacity(0.8))
-                .stroke(Color.black, lineWidth: 2)
-                .frame(height: 715)
-                .padding(.horizontal,4)
-            
-            VStack {
-                //MARK: Topo
-                HStack {
+            ZStack {
+                //MARK: Fundo
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.gray.opacity(0.8))
+                    .stroke(Color.black, lineWidth: 2)
+                    .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
+                
+                VStack {
+                    //MARK: Topo
+                    HStack {
+                        Button {
+                            pageManager.page = .gameScene
+                        } label: {
+                            ZStack{
+                                Image("Top Bar")
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 36, weight: .bold))
+                                    .tint(.black)
+                            }
+                        }
+                        Spacer()
+                        Text("pauseMenuView-title")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundStyle(Color.black)
+                            .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
+                            .minimumScaleFactor(0.5)
+                        Spacer()
+                        
+                    }
+                    .padding(.horizontal, 12)
+                    
+                    Spacer()
+                    
+                    //MARK: Componentes
+                    ComponentePauseMenuBG3(toggleOn: $toggleOn)
+                    
+                    Spacer()
+                    
                     Button {
                         pageManager.page = .gameScene
                     } label: {
                         ZStack{
-                            Image("Top Bar")
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 36, weight: .bold))
+                            Image("Default")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
+                            Text("resumeGame-button")
+                                .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
+                                .minimumScaleFactor(0.5)
                         }
                     }
-                    Spacer()
-                    Text("PAUSE")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundStyle(Color.black)
-                        .padding(.trailing, 56)
-                    Spacer()
-
-                }
-                .padding(.horizontal, 12)
-                
-                Spacer()
-                
-                //MARK: Componentes
-                ComponentePauseMenuBG3(toggleOn: $toggleOn)
-                
-                Spacer()
-                
-                Button {
-                    pageManager.page = .gameScene
-                } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("RESUME")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
+                    
+                    Button {
+                        pageManager.page = .menu
+                    } label: {
+                        ZStack{
+                            Image("Default")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
+                            Text("quitGame-button")
+                                .font(.system(size: 20, weight: .bold))
+                                .tint(.black)
+                                .minimumScaleFactor(0.5)
+                        }
                     }
                 }
-                
-                Button {
-                    pageManager.page = .menu
-                } label: {
-                    ZStack{
-                        Image("Default")
-                        Text("QUIT GAME")
-                            .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
-                    }
-                }
+                .padding(.vertical, 20)
+                .frame(height: UIScreen.main.bounds.height * overlayBoxH)
             }
             .padding(.vertical, 20)
-            .frame(height: 715)
-        }
-        .padding(.vertical, 20)
-        .padding(.horizontal, 12)
-        .ignoresSafeArea(.all)
+            .padding(.horizontal, 12)
     }
 }
 

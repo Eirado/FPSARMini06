@@ -15,6 +15,7 @@ A estrutura de pastas e arquivos do projeto é organizada da seguinte forma:
 
 ```
 FPSARMini06/
+├── Localizable.xcstrings
 │
 ├── FPSARMini06/
 │   ├── Model/
@@ -28,25 +29,41 @@ FPSARMini06/
 │   │   │   ├── InventoryView.swift
 │   │   │   └── InventoryViewModel.swift
 │   │   ├── Menu/
-│   │   │   └── MenuView.swift
+│   │   │   ├── MenuView.swift
+│   │   │   ├── PauseMenuView.swift
+│   │   │   ├── GamePlayFeedbackView.swift
+│   │   │   └── SettingsView.swift
+│   │   ├── HowToPlay/
+│   │   │   └── HowToPlayView.swift
 │   ├── GameSystem/
 │   │   ├── Components/
-│   │   │   ├── HealthComponent.swift
-│   │   │   ├── MovementComponent.swift
+│   │   │   ├── MotionComponent.swift
+│   │   │   ├── DamageComponent.swift
 │   │   │   ├── AttackComponent.swift
-│   │   │   └── VisualComponent.swift
+│   │   │   ├── VisualComponent.swift
+│   │   │   └── gameCollisionComponent.swift
 │   │   ├── Entities/
+│   │   │   ├── BulletEntity.swift
 │   │   │   ├── EnemyEntity.swift
-│   │   │   └── PlayerEntity.swift
+│   │   │   ├── PlayerEntity.swift
+│   │   │   └── FrogEntity.swift
+│   │   ├── System/
+│   │   │   ├── MotionSystem.swift
+│   │   │   └── CollisionSystem.swift
 │   │   └── MainScene.swift
 │   └── Utils/
-│       └── [SeuUtil].swift
+│   │   ├── frogDrone.usdz
+│   │   └── ComponentePauseMenu.swift
+│   │
 │   ├── AppDelegate.swift
 │   ├── ContentView.swift
+│   ├── GameController.swift
+│   │
 │   ├── Assets.xcassets/
 │   │   └── AppIcon.appiconset/
-│   ├── Info.plist
-│
+│   │
+│   └── Info.plist
+│   
 ├── NomeDoProjetoTests/
 │   └── [NomeDoProjetoTests].swift
 │

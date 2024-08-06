@@ -18,20 +18,19 @@ struct ComponentePauseMenuBG3: View {
             RoundedRectangle(cornerRadius: 8)
                 .fill(.gray.opacity(0.8))
                 .stroke(Color.black, lineWidth: 2)
-                .frame(width: 355, height: 186)
+                .frame(width: UIScreen.main.bounds.width * cBG3W, height: UIScreen.main.bounds.height * cBG3H)
             Rectangle()
                 .fill(.white.opacity(0.5))
-                .frame(width: 353, height: 62)
+                .frame(width: (UIScreen.main.bounds.width * cBG3W) - 2, height: UIScreen.main.bounds.height * (cBG3H/3)) // width - 2 por conta do lineWidth e height/3 já que queremos somente a altura de uma das linhas
             
             // MARK: Foreground
-            VStack{
+            VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
                 ComponentePauseMenuFG(toggleOn: toggleOn)
                 ComponentePauseMenuFG(toggleOn: toggleOn)
                 ComponentePauseMenuFG(toggleOn: toggleOn)
             }
-            .frame(width: 355, height: 186)
-            .padding()
+            .frame(width: UIScreen.main.bounds.width * cBG3W, height: UIScreen.main.bounds.height * cBG3H)
         }
     }
 }
@@ -44,19 +43,19 @@ struct ComponentePauseMenuBG5: View {
             RoundedRectangle(cornerRadius: 8)
                 .fill(.gray.opacity(0.8))
                 .stroke(Color.black, lineWidth: 2)
-                .frame(width: 355, height: 310)
+                .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
             VStack{
                 Rectangle()
                     .fill(.white.opacity(0.5))
-                    .frame(width: 353, height: 62)
+                    .frame(width: (UIScreen.main.bounds.width * cBG5W) - 2, height: UIScreen.main.bounds.height * (cBG5H/5)) // width - 2 por conta do lineWidth e height/5 já que queremos somente a altura de uma das linhas
                 Spacer()
                 Rectangle()
                     .fill(.white.opacity(0.5))
-                    .frame(width: 353, height: 62)
+                    .frame(width: (UIScreen.main.bounds.width * cBG5W) - 2, height: UIScreen.main.bounds.height * (cBG5H/5)) // width - 2 por conta do lineWidth e height/5 já que queremos somente a altura de uma das linhas
             }
-            .frame(height: 186)
+            .frame(height:  UIScreen.main.bounds.height * cBG3H)
             // MARK: Foreground
-            VStack{
+            VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
                 ComponentePauseMenuFG(toggleOn: toggleOn)
                 ComponentePauseMenuFG(toggleOn: toggleOn)
@@ -64,8 +63,7 @@ struct ComponentePauseMenuBG5: View {
                 ComponentePauseMenuFG(toggleOn: toggleOn)
                 ComponentePauseMenuFG(toggleOn: toggleOn)
             }
-            .frame(width: 355, height: 186)
-            .padding()
+            .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
         }
     }
 }
@@ -76,23 +74,21 @@ struct ComponentePauseMenuFG: View {
     var togglePause: LocalizedStringKey = ""
     
     var body: some View {
-        ZStack{
-//            RoundedRectangle(cornerRadius: 8)
-//                .fill(.red.opacity(0.5))
             HStack{
                 Rectangle()
                     .frame(width: 30, height: 30)
                     .padding(.leading)
                 Text("sound-text")
                     .font(.system(size: 18, weight: .bold))
+                    .minimumScaleFactor(0.5)
                 Spacer()
                 Text("on-text")
                     .font(.system(size: 18))
+                    .minimumScaleFactor(0.5)
                 Toggle(togglePause, isOn: $toggleOn)
                     .padding(.trailing)
             }
-        }
-        .frame(width: 353, height: 54)
+            .padding(.vertical, 12.5)
     }
 }
 

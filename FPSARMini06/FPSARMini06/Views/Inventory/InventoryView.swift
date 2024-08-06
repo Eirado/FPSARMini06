@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct InventoryView: View {
     @Environment(PageManager.self) var pageManager
-    
+    @Environment (\.modelContext) private var context
+    @Query private var data:[UserData]
     var body: some View {
         
         ZStack {
@@ -18,24 +20,28 @@ struct InventoryView: View {
                 .ignoresSafeArea()
             
             ScrollView(.vertical){
+                
                 VStack (spacing: 10){
                     HStack {
                         Button(action: {
                             pageManager.page = .menu
                         }, label: {
                             Image("Top Bar")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay{
                                     Image(systemName: "chevron.left")
                                         .font(.system(size: 36, weight: .bold))
                                         .tint(.black)
                                 }
                         })
-                        .frame(width: 81, height: 53)
+                        .padding(.leading)
                         Spacer()
-                        Text("INVENTORY")
+                        Text("inventoryView-title")
                             .font(.system(size: 24, weight: .bold))
                             .foregroundStyle(Color.black)
-                            .padding(.trailing, 56)
+                            .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
+                            .minimumScaleFactor(0.5)
                         Spacer()
                     }
                     
@@ -53,9 +59,8 @@ struct InventoryView: View {
                             Image(systemName: "photo")
                                 .resizable()
                                 .frame(width: 35, height: 27)
-                                .padding()
                         }
-                        .frame(width: 390, height: 490)
+                        .frame(width: UIScreen.main.bounds.width * cntrImgW, height: UIScreen.main.bounds.height * cntrImgH)
                     
                     HStack(spacing: 11) {
                         RoundedRectangle(cornerRadius: 7)
@@ -64,8 +69,10 @@ struct InventoryView: View {
                             .overlay{
                                 Image(systemName: "paintbrush.pointed.fill")
                                     .font(.system(size: 16))
+                                    .minimumScaleFactor(0.5)
                             }
-                            .frame(width: 50, height: 50)
+                //            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
                         
                         ExtractedView2()
                         ExtractedView3()
@@ -75,11 +82,11 @@ struct InventoryView: View {
                     }
                     
                     ExtractedView4()
-                    
                 }
-                .padding()
             }
             
+        }.task {
+            fetchData()
         }
     }
 }
@@ -89,30 +96,53 @@ struct InventoryView: View {
         .environment(PageManager())
 }
 
+extension InventoryView{
+    func addCosmetic(cosmeticID:Int, item:UserData){
+        
+        item.box_itens_ID.append(cosmeticID)
+        
+        do{
+            try context.save()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchData(){
+        if data.isEmpty{
+            let data = UserData(score: 0, box_itens_ID: [])
+            context.insert(data)
+        }
+    }
+}
+
 struct ExtractedView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 6.0)
                 .stroke(Color.black, lineWidth: 2)
                 .fill(.black.opacity(0.4))
-                .frame(width: 126, height: 108)
+                .frame(width: UIScreen.main.bounds.width * frameTopoW, height: UIScreen.main.bounds.height * frameTopoH)
             
             VStack{
                 RoundedRectangle(cornerRadius: 2)
                     .fill(.white.opacity(0.7))
                     .stroke(Color.black, lineWidth: 1.5)
+                    .frame(width: UIScreen.main.bounds.width * insideIconW, height: UIScreen.main.bounds.height * insideIconH)
                     .overlay {
                         Image(systemName: "photo")
                             .resizable()
                             .scaledToFit()
                             .padding(5)
                     }
-                    .frame(width: 38, height: 38)
-                Text("Best Score")
+                Text("bestScore-title")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(Color.black)
-                Text("XXXXX")
+                    .minimumScaleFactor(0.5)
+                Text("bestScore-text")
+                    .minimumScaleFactor(0.5)
             }
+            .frame(width: UIScreen.main.bounds.width * insideVsW, height: UIScreen.main.bounds.height * insideVsH)
         }
     }
 }
@@ -128,7 +158,8 @@ struct ExtractedView2: View {
                     .scaledToFit()
                     .padding()
             }
-            .frame(width: 50, height: 50)
+//            .resizable()
+            .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
     }
 }
 
@@ -145,7 +176,8 @@ struct ExtractedView3: View {
                 .padding()
             
         }
-        .frame(width: 50, height: 50)
+//            .resizable()
+        .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
         .opacity(0.5)
     }
 }
@@ -162,9 +194,9 @@ struct ExtractedView4: View {
                     RoundedRectangle(cornerRadius: 30)
                         .stroke(Color.black, lineWidth: 2)
                         .fill(.white.opacity(0.8))
-                        .frame(width: 58, height: 25)
+                        .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
                         .overlay{
-                            Text("Type")
+                            Text("type-title")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
                         }
@@ -172,12 +204,13 @@ struct ExtractedView4: View {
                     RoundedRectangle(cornerRadius: 30)
                         .stroke(Color.black, lineWidth: 2)
                         .fill(.white.opacity(0.8))
-                        .frame(width: 83, height: 25)
                         .overlay{
-                            Text("$$$ $$$")
+                            Text("money-text")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
+                                .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
                         }
+                        .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
                     
                 }
                 .padding(.horizontal)
@@ -191,21 +224,27 @@ struct ExtractedView4: View {
                             .frame(width: 35, height: 27)
                             .padding()
                     }
-                    .frame(width: 366, height: 126)
+                //            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * claimImgW, height: UIScreen.main.bounds.height * claimImgH)
                 
                 HStack{
-                    Text("Customization Name")
+                    Text("customizationName-title")
+                        .minimumScaleFactor(0.5)
                     Spacer()
                     Image("Claim")
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * buttonClaimW, height: UIScreen.main.bounds.height * buttonClaimH)
                         .overlay{
-                            Text("CLAIM")
+                            Text("claim-button")
                                 .font(.system(size: 16, weight: .bold))
+                                .minimumScaleFactor(0.5)
                         }
                 }
                 .padding(.horizontal)
                 
             }
         }
-        .frame(width: 390, height: 253)
+//            .resizable()
+        .frame(width: UIScreen.main.bounds.width * bgClaimClrW, height: UIScreen.main.bounds.height * bgClaimClrH)
     }
 }
