@@ -23,7 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MotionComponent.registerComponent()
         
+        AttackComponent.registerComponent()
+        
+        PlayerComponent.registerComponent()
+        
         MotionSystem.registerSystem()
+        
+        AttackSystem.registerSystem()
+        
+        PlayerSystem.registerSystem()
         
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView(toggleOn: $toggleOn)
