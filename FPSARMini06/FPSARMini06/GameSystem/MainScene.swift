@@ -26,7 +26,7 @@ class MainScene: ARView {
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         
-//        arViewGestureSetup()
+        arViewGestureSetup()
     }
     
     dynamic required init?(coder decoder: NSCoder) {
@@ -36,28 +36,17 @@ class MainScene: ARView {
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
         
-        
-//        enemy = EnemyEntity()
-//
-//        enemy?.position.x += 0.3
-//        self.installGestures(.all, for: enemy!)
-//
-        
-//        player = PlayerEntity(ar: self)
-        
-        
-        
-        
-//        self.installGestures(.all, for: player!)
+        player = PlayerEntity(ar: self)
     
-        
+        self.installGestures(.all, for: player!)
+    
         let worldAnchor = AnchorEntity(world: .zero)
         
         worldAnchor.name = "worldAnchor"
         
         self.scene.addAnchor(worldAnchor)
         
-//        worldAnchor.addChild(player!)
+        worldAnchor.addChild(player!)
        
         setupEnemies(anchor: worldAnchor)
         
@@ -65,18 +54,18 @@ class MainScene: ARView {
     
     func setupEnemies(anchor: AnchorEntity){
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 100)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 20)
     }
     
-//    func arViewGestureSetup() {
-//        
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
-//        self.addGestureRecognizer(tapGesture)
-//    }
+    func arViewGestureSetup() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
+        self.addGestureRecognizer(tapGesture)
+    }
     
     
-//    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-//        player?.addBullet()
-//    }
+    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        player?.addBullet()
+    }
 }
 
