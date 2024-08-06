@@ -16,6 +16,9 @@
 		12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */; };
 		12B308E22C5C23BE0005ADE1 /* GeometryReaderNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
+		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
+		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
+		70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */; };
 		70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */; };
 		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
 		AB364A642C616BA6009E33A1 /* LoadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB364A632C616BA6009E33A1 /* LoadModels.swift */; };
@@ -32,7 +35,7 @@
 		B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAA82C4EC3730038ECD9 /* EnemyEntity.swift */; };
 		B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAAA2C4EC37B0038ECD9 /* PlayerEntity.swift */; };
 		B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */; };
-		B868FAB72C4EC3B90038ECD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* Model.swift */; };
+		B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
 		B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */; };
 		B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A120A52C581173003603BC /* HowToPlayView.swift */; };
@@ -64,6 +67,9 @@
 		12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSARMini06Tests.swift; sourceTree = "<group>"; };
 		12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderNumbers.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
+		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
+		70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSystem.swift; sourceTree = "<group>"; };
 		70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogEntity.swift; sourceTree = "<group>"; };
 		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
 		AB364A632C616BA6009E33A1 /* LoadModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadModels.swift; sourceTree = "<group>"; };
@@ -80,7 +86,7 @@
 		B868FAA82C4EC3730038ECD9 /* EnemyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyEntity.swift; sourceTree = "<group>"; };
 		B868FAAA2C4EC37B0038ECD9 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		B868FAB62C4EC3B90038ECD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
 		B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCollisionComponent.swift; sourceTree = "<group>"; };
 		B8A120A52C581173003603BC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 			children = (
 				ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */,
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
+				70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */,
+				70AA701F2C5D67BD004C306A /* PlayerSystem.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -172,7 +180,7 @@
 		B868FA9A2C4EC2CB0038ECD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B868FAB62C4EC3B90038ECD9 /* Model.swift */,
+				B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
 				B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */,
+				70AA701D2C5D679A004C306A /* PlayerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -403,8 +412,10 @@
 				B8114BE42C52BF1B001940C2 /* DamageComponent.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
 				B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */,
+				70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */,
 				127DF4232C52EA03009C3231 /* ComponentePauseMenu.swift in Sources */,
 				B868FA9F2C4EC2F00038ECD9 /* MainScene.swift in Sources */,
+				70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				12B308E22C5C23BE0005ADE1 /* GeometryReaderNumbers.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
@@ -412,6 +423,7 @@
 				ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */,
 				B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */,
 				B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */,
+				70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */,
 				ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,7 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -621,7 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FXWX5Z987;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
