@@ -86,7 +86,7 @@ struct InventoryView: View {
             }
             
         }.task {
-            fetchData()
+            //fetchData()
         }
     }
 }
