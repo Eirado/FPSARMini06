@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct InventoryView: View {
     @Environment(PageManager.self) var pageManager
-    
+    @Environment (\.modelContext) private var context
+    @Query private var data:[UserData]
     var body: some View {
         
         ZStack {
@@ -83,6 +85,8 @@ struct InventoryView: View {
                 }
             }
             
+        }.task {
+            fetchData()
         }
     }
 }
@@ -92,6 +96,25 @@ struct InventoryView: View {
         .environment(PageManager())
 }
 
+extension InventoryView{
+    func addCosmetic(cosmeticID:Int, item:UserData){
+        
+        item.box_itens_ID.append(cosmeticID)
+        
+        do{
+            try context.save()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchData(){
+        if data.isEmpty{
+            let data = UserData(score: 0, box_itens_ID: [])
+            context.insert(data)
+        }
+    }
+}
 struct ExtractedView: View {
     var body: some View {
         ZStack{
