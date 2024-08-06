@@ -17,10 +17,8 @@ import SwiftUI
 class MainScene: ARView {
     
     var enemy: EnemyEntity? = nil
-    
+    var spawner: SpawnerEntity? = nil
     var player: PlayerEntity? = nil
-    var player2: PlayerEntity? = nil
-    var pos: SIMD3<Float> = simd_float3(x: 0.0, y: 0.0, z: 0.0)
     var cameraTransforms: simd_float4x4 = simd_float4x4(0)
     var startPosition:SIMD3<Float>?
     private var firstTap:Bool = false
@@ -28,7 +26,7 @@ class MainScene: ARView {
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         
-        arViewGestureSetup()
+//        arViewGestureSetup()
     }
     
     dynamic required init?(coder decoder: NSCoder) {
@@ -45,10 +43,12 @@ class MainScene: ARView {
 //        self.installGestures(.all, for: enemy!)
 //
         
-        player = PlayerEntity(ar:self)
+//        player = PlayerEntity(ar: self)
         
         
-        self.installGestures(.all, for: player!)
+        
+        
+//        self.installGestures(.all, for: player!)
     
         
         let worldAnchor = AnchorEntity(world: .zero)
@@ -57,20 +57,27 @@ class MainScene: ARView {
         
         self.scene.addAnchor(worldAnchor)
         
-        worldAnchor.addChild(player!)
-
-    }
-    
-    func arViewGestureSetup() {
+//        worldAnchor.addChild(player!)
+       
+        setupEnemies(anchor: worldAnchor)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
-        self.addGestureRecognizer(tapGesture)
     }
     
-    
-    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        player?.addBullet()
+    func setupEnemies(anchor: AnchorEntity){
+        enemy = EnemyEntity()
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 100)
     }
+    
+//    func arViewGestureSetup() {
+//        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
+//        self.addGestureRecognizer(tapGesture)
+//    }
+    
+    
+//    @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+//        player?.addBullet()
+//    }
 }
 
 
