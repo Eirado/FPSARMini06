@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CollisionSystem.registerSystem()
        
-        gameCollisionComponent.registerComponent()
+        GameCollisionComponent.registerComponent()
         
         MotionComponent.registerComponent()
         
@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PlayerComponent.registerComponent()
         
         MotionSystem.registerSystem()
+        
+        HealthComponent.registerComponent()
+        
+        HealthSystem.registerSystem()
         
         AttackSystem.registerSystem()
         

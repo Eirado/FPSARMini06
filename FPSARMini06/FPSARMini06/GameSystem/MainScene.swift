@@ -69,4 +69,3 @@ class MainScene: ARView {
     }
 }
 
-

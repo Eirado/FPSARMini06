@@ -14,7 +14,7 @@ import Combine
 
 class EnemyEntity: Entity, HasCollision, HasModel {
     
-    var model: Entity
+    var model: ModelEntity
     var animationRoot: Entity
     var modelShape: ShapeResource // Tool to define the collision shape
     
@@ -24,9 +24,11 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
         
-        self.model = Entity()
+        self.model = ModelEntity()
         
         super.init()
+
+        self.model.name = "EnemyEntity"
         
         Entity.loadModelAsync()
             .sink(receiveCompletion: { completion in
@@ -44,10 +46,11 @@ class EnemyEntity: Entity, HasCollision, HasModel {
                     
                     self.model = modelEntity.clone(recursive: true)
                     
-//                    self.model.generateCollisionShapes(recursive: true)
-//                    
-//                    self.model.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .enemyEntityBitMask)
-                    
+                    self.model.generateCollisionShapes(recursive: true)
+                    self.model.collision = CollisionComponent(shapes: [modelShape])
+                    self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
+                    self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
+
                     self.addChild(self.model)
                 }
                

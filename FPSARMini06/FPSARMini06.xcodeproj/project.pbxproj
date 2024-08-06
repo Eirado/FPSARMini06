@@ -38,13 +38,15 @@
 		B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */; };
 		B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
-		B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */; };
+		B885FF652C5424DF00761BDE /* GameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */; };
 		B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A120A52C581173003603BC /* HowToPlayView.swift */; };
 		B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F892C4AE1E100D56811 /* AppDelegate.swift */; };
 		B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F8B2C4AE1E100D56811 /* ContentView.swift */; };
 		B8C65F8E2C4AE1E200D56811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */; };
 		B8C65F912C4AE1E200D56811 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C65F902C4AE1E200D56811 /* Preview Assets.xcassets */; };
 		B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381F62C5AB29C0038463C /* BulletEntity.swift */; };
+		B8E381FB2C5ABE1D0038463C /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */; };
+		B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381FC2C5ABE620038463C /* HealthSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +92,7 @@
 		B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
-		B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCollisionComponent.swift; sourceTree = "<group>"; };
+		B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollisionComponent.swift; sourceTree = "<group>"; };
 		B8A120A52C581173003603BC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		B8C65F862C4AE1E100D56811 /* FPSARMini06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSARMini06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C65F892C4AE1E100D56811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,8 @@
 		B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8C65F902C4AE1E200D56811 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8E381F62C5AB29C0038463C /* BulletEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletEntity.swift; sourceTree = "<group>"; };
+		B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
+		B8E381FC2C5ABE620038463C /* HealthSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */,
+				B8E381FC2C5ABE620038463C /* HealthSystem.swift */,
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
 				70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */,
 				70AA701F2C5D67BD004C306A /* PlayerSystem.swift */,
@@ -206,7 +211,8 @@
 				B8114BE32C52BF1B001940C2 /* DamageComponent.swift */,
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				ABFA017A2C4EDCCB0096BA9F /* VisualComponent.swift */,
-				B885FF642C5424DF00761BDE /* gameCollisionComponent.swift */,
+				B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */,
+				B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */,
 				70AA701D2C5D679A004C306A /* PlayerComponent.swift */,
 			);
 			path = Components;
@@ -396,16 +402,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E381FB2C5ABE1D0038463C /* HealthComponent.swift in Sources */,
 				B868FAA52C4EC34D0038ECD9 /* InventoryViewModel.swift in Sources */,
 				ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */,
 				B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */,
+				B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */,
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
-				B885FF652C5424DF00761BDE /* gameCollisionComponent.swift in Sources */,
+				B885FF652C5424DF00761BDE /* GameCollisionComponent.swift in Sources */,
 				70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */,
 				12F2DF912C581C22001C663C /* SettingsView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */,

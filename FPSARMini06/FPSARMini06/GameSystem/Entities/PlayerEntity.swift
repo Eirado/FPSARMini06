@@ -28,25 +28,20 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         self.model?.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
     
         //Defino o comportamento de colisao aqui
-        self.model?.components[gameCollisionComponent.self] = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
         self.model?.generateCollisionShapes(recursive: true)
-        
-        let extractedEntityBitMask = gameCollisionComponent(entityBitMask: .playerEntityBitMask)
-        let bitMask = extractedEntityBitMask.entityBitMask
-        
-        let entityGroup = CollisionGroup(rawValue: bitMask.rawValue)
-        
-        let entityMask = CollisionGroup.all.subtracting(entityGroup)
-        
-        self.model?.collision = CollisionComponent(shapes: [modelShape!], mode: .trigger, filter: .init(group: entityGroup, mask: entityMask))
         
         bullet = BulletEntity()
         
         super.init()
         
         self.components[PlayerComponent.self] = PlayerComponent()
+        self.components[GameCollisionComponent.self] = GameCollisionComponent()
+        self.components[HealthComponent.self] = HealthComponent(totalHealth: .playerEntityHealth)
+//        self.model?.collision = CollisionComponent(shapes: [modelShape])
+
         movement()
-        self.name = "Player"
+        
+        self.name = "PlayerEntity"
         self.addChild(self.model!)
         self.addChild(self.animationRoot!)
     }
