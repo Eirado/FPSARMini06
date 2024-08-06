@@ -14,7 +14,7 @@ class BulletEntity: Entity, HasCollision, HasModel{
     var animationRoot: Entity
     var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
     var attackComponent: AttackComponent{
-        get{return components[AttackComponent.self] ?? AttackComponent(attackSpeed: 5, isHidden: false, damage: 1)}
+        get{return components[AttackComponent.self] ?? AttackComponent(attackSpeed: 5, isHidden: false)}
         set{ components[AttackComponent.self] = newValue}
     }
     var arView:ARView?
