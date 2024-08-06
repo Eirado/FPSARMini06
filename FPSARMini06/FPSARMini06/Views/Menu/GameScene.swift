@@ -28,6 +28,5 @@ struct GameScene: View {
             ARViewContainer()
         }
         .ignoresSafeArea()
-        ARViewContainer()
     }
 }
