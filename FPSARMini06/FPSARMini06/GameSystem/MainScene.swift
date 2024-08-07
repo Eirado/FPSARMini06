@@ -65,7 +65,9 @@ class MainScene: ARView {
     
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        player?.addBullet()
+        Task {
+            await player?.addBullet()
+        }
     }
     
     
