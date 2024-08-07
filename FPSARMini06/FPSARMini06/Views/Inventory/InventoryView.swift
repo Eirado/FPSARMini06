@@ -110,7 +110,7 @@ extension InventoryView{
     
     func fetchData(){
         if data.isEmpty{
-            let data = UserData(score: 0, box_itens_ID: [])
+            let data = UserData(score: 0, longestWave: 0, coins: 0, box_itens_ID: [])
             context.insert(data)
         }
     }

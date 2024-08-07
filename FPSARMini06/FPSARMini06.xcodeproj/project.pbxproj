@@ -21,6 +21,8 @@
 		70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */; };
 		70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */; };
 		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
+		70F757852C63EABF006CAC85 /* DamageFlashSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F757842C63EABF006CAC85 /* DamageFlashSystem.swift */; };
+		70F757872C63EAD6006CAC85 /* DamageFlashShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 70F757862C63EAD6006CAC85 /* DamageFlashShader.metal */; };
 		AB364A642C616BA6009E33A1 /* LoadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB364A632C616BA6009E33A1 /* LoadModels.swift */; };
 		AB364A662C62A104009E33A1 /* SpawnerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB364A652C62A104009E33A1 /* SpawnerEntity.swift */; };
 		ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1B692C52D73600AE13EF /* MotionComponent.swift */; };
@@ -75,6 +77,8 @@
 		70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSystem.swift; sourceTree = "<group>"; };
 		70E6A59E2C5ABDF200F7F7F5 /* FrogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrogEntity.swift; sourceTree = "<group>"; };
 		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
+		70F757842C63EABF006CAC85 /* DamageFlashSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageFlashSystem.swift; sourceTree = "<group>"; };
+		70F757862C63EAD6006CAC85 /* DamageFlashShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DamageFlashShader.metal; sourceTree = "<group>"; };
 		AB364A632C616BA6009E33A1 /* LoadModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadModels.swift; sourceTree = "<group>"; };
 		AB364A652C62A104009E33A1 /* SpawnerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnerEntity.swift; sourceTree = "<group>"; };
 		ABEC1B692C52D73600AE13EF /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */,
 				12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */,
 				AB364A632C616BA6009E33A1 /* LoadModels.swift */,
+				70F757862C63EAD6006CAC85 /* DamageFlashShader.metal */,
 			);
 			name = Utils;
 			path = ..;
@@ -150,6 +155,7 @@
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
 				70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */,
 				70AA701F2C5D67BD004C306A /* PlayerSystem.swift */,
+				70F757842C63EABF006CAC85 /* DamageFlashSystem.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -430,12 +436,14 @@
 				AB364A662C62A104009E33A1 /* SpawnerEntity.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
 				12B308E22C5C23BE0005ADE1 /* GeometryReaderNumbers.swift in Sources */,
+				70F757852C63EABF006CAC85 /* DamageFlashSystem.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
 				ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */,
 				B868FAAB2C4EC37B0038ECD9 /* PlayerEntity.swift in Sources */,
 				B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */,
 				70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */,
+				70F757872C63EAD6006CAC85 /* DamageFlashShader.metal in Sources */,
 				ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
