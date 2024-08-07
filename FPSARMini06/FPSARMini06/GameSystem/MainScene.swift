@@ -54,7 +54,7 @@ class MainScene: ARView {
     
     func setupEnemies(anchor: AnchorEntity){
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 20)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 2)
     }
     
     func arViewGestureSetup() {
@@ -67,5 +67,8 @@ class MainScene: ARView {
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
         player?.addBullet()
     }
+    
+    
+    
 }
 

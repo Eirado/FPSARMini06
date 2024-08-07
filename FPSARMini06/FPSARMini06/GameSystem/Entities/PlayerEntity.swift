@@ -14,7 +14,7 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     var animationRoot: Entity?
     var modelShape: ShapeResource? // Ferramenta para definir o shape da colisao
     var bullet: BulletEntity?
-    var ar:ARView?
+    var ar: ARView?
     
     required init() {
         super.init()
@@ -69,8 +69,6 @@ extension PlayerEntity{
         component.direction = direction
         component.duration = 1
         component.attackSpeed = 2
-        
-        
         
         bullet?.components[AttackComponent.self] = component
         let anchorBullet = AnchorEntity(world: startPosition)

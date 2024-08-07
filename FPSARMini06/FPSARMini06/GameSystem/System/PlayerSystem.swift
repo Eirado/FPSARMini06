@@ -31,7 +31,9 @@ class PlayerSystem:RealityKit.System{
 //                    element.position = startPosition
 //                }
 //            }
+            component.currentPos = startPosition
             entity.position = startPosition
+            
             //print(entity.position)
             
             
