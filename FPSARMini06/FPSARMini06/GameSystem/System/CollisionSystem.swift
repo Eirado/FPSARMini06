@@ -29,8 +29,8 @@ class CollisionSystem: RealityKit.System {
                 
                 let involvedNodes = [entity1, entity2]
                 
-                if (entity1.name == "EnemyEntity" && entity2.name == "EnemyEntity") ||
-                    (entity1.name == "EnemyEntity" && entity2.name == "EnemyEntity") {
+                if (entity1.name == "EnemyEntity" && entity2.name == "BulletEntity") ||
+                    (entity1.name == "BulletEntity" && entity2.name == "EnemyEntity") {
                     
                     guard let enemyEntity = involvedNodes.first(where: { $0.name == "EnemyEntity" }) else { return }
                     
