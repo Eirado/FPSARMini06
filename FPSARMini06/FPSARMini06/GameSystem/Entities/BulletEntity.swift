@@ -26,7 +26,7 @@ class BulletEntity: Entity, HasCollision, HasModel {
         self.model.name = "BulletEntity"
         self.model.generateCollisionShapes(recursive: true)
 
-        self.model.components[AttackComponent.self] = AttackComponent()
+        self.components[AttackComponent.self] = AttackComponent()
         self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
         self.model.collision = CollisionComponent(shapes: [modelShape])
         
