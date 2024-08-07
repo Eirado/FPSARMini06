@@ -18,10 +18,10 @@ class BulletEntity: Entity, HasCollision, HasModel {
         
         self.model = ModelEntity()
         self.animationRoot = Entity()
-        self.modelShape = .generateSphere(radius: 0.1)
+        self.modelShape = .generateSphere(radius: 0.01)
 
         super.init()
-        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.02), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
+        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.006), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
         
         self.model.name = "BulletEntity"
         self.model.generateCollisionShapes(recursive: true)

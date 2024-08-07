@@ -14,7 +14,7 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     var animationRoot: Entity?
     var modelShape: ShapeResource? // Ferramenta para definir o shape da colisao
     var bullet: BulletEntity?
-    var ar:ARView?
+    var ar: ARView?
     
     required init() {
         super.init()
@@ -49,38 +49,35 @@ class PlayerEntity: Entity, HasCollision, HasModel {
 
 extension PlayerEntity{
     
-    func addBullet(){
+    func addBullet() async {
         guard var component = bullet?.components[AttackComponent.self] as? AttackComponent else { return }
 
-        guard let cameraTransform = self.ar?.session.currentFrame?.camera.transform else { print("erro")
-            return }
-        
-        var startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
+        guard let cameraTransform = self.ar?.session.currentFrame?.camera.transform else {
+            print("error")
+            return
+        }
 
+        var startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
         var direction = normalize(simd_make_float3(-cameraTransform.columns.2.x, -cameraTransform.columns.2.y, -cameraTransform.columns.2.z))
-        
+
         startPosition.y -= 0.1
         startPosition.x += 0.05
-        
+
         direction.y += 0.08
         direction.x -= 0.03
-        
+
         component.startPosition = startPosition
         component.direction = direction
         component.duration = 1
         component.attackSpeed = 2
-        
-        
-        
+
         bullet?.components[AttackComponent.self] = component
         let anchorBullet = AnchorEntity(world: startPosition)
         let clone = bullet?.clone(recursive: true)
-        
+
         self.addChild(clone!)
-        //anchorBullet.addChild(clone!)
-        //ar?.scene.addAnchor(anchorBullet)
     }
-    
+
     func movement(){
         guard let component = self.components[PlayerComponent.self] as? PlayerComponent else {return}
         

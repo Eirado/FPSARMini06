@@ -6,6 +6,8 @@ class MotionSystem: RealityKit.System {
     
     private static let query = EntityQuery(where: .has(MotionComponent.self))
     
+    private static let playerQuery = EntityQuery(where: .has(PlayerComponent.self))
+    
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
     private let sphereRadius: Float = 0.3
@@ -19,6 +21,8 @@ class MotionSystem: RealityKit.System {
     func update(context: SceneUpdateContext) {
         
         let deltaTime = Float(context.deltaTime)
+        
+        let player = context.scene.performQuery(Self.playerQuery).map { $0 }
         
         context.scene.performQuery(Self.query).forEach { entity in
             
@@ -51,6 +55,19 @@ class MotionSystem: RealityKit.System {
             if distance(entity.transform.translation, targetNode) < 0.1 {
                 selectNewTargetNode()
             }
+            
+            let playerComponent = player.first?.components[PlayerComponent.self] as? PlayerComponent
+            
+            if let playerPosition = playerComponent?.currentPos {
+                let directionToPlayer = playerPosition - entity.position
+                let oppositeDirection = -directionToPlayer
+                let targetPosition = entity.position + oppositeDirection
+
+                entity.look(at: targetPosition, from: entity.position, relativeTo: nil)
+            } else {
+                entity.look(at: simd_float3(x: 0, y: 0, z: 0), from: entity.position, relativeTo: nil)
+            }
+
         }
     }
     
@@ -108,4 +125,5 @@ class MotionSystem: RealityKit.System {
             }
         }
     }
+
 }
