@@ -33,7 +33,7 @@ struct ARViewContainer: UIViewRepresentable {
 
 
 #Preview {
-struct ContentViewPreviewContainer: View{
+struct ContentViewPreviewContainer: View {
     @State private var toggleOn = false
     
     var body: some View {

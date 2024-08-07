@@ -33,12 +33,16 @@ class CollisionSystem: RealityKit.System {
                     (entity1.name == "BulletEntity" && entity2.name == "EnemyEntity") {
                     
                     guard let enemyEntity = involvedNodes.first(where: { $0.name == "EnemyEntity" }) else { return }
+                    guard let bulletEntity = involvedNodes.first(where: { $0.name == "BulletEntity" }) else { return }
+                   
+
                     
                     if var enemyHealth = enemyEntity.components[HealthComponent.self] as? HealthComponent {
                         do {
                             if !tomouDano {
                                 print("dano 1 - \(enemyHealth.totalHealth)")
-                                enemyHealth.totalHealth -= 1
+                                enemyHealth.totalHealth -= 10
+//                                bulletEntity.removeFromParent()
                                 self.tomouDano = true
                                 print("dano 2 - \(enemyHealth.totalHealth)")
                                 if enemyHealth.totalHealth < 0 {
@@ -52,6 +56,8 @@ class CollisionSystem: RealityKit.System {
                             print("Ocorreu um erro inesperado: \(error)")
                         }
                     }
+                } else {
+                    return
                 }
             })
             

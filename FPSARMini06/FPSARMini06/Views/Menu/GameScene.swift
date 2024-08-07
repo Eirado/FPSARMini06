@@ -17,15 +17,10 @@ struct GameScene: View {
     
     var body: some View {
         ZStack{
-            VStack{
-                HStack{
-                    
-                }
-            }
-            
-            Image("Mira")
-            
             ARViewContainer()
+                .overlay {
+                    Image("Mira")
+                }
         }
         .ignoresSafeArea()
     }
