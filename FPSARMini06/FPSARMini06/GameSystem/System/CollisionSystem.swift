@@ -42,7 +42,8 @@ class CollisionSystem: RealityKit.System {
                             if !tomouDano {
                                 print("dano 1 - \(enemyHealth.totalHealth)")
                                 enemyHealth.totalHealth -= 10
-//                                bulletEntity.removeFromParent()
+                                bulletEntity.stopAllAnimations(recursive: true)
+                                bulletEntity.removeFromParent()
                                 self.tomouDano = true
                                 print("dano 2 - \(enemyHealth.totalHealth)")
                                 if enemyHealth.totalHealth < 0 {
