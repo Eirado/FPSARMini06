@@ -70,7 +70,8 @@ extension PlayerEntity{
         component.direction = direction
         component.duration = 1
         component.attackSpeed = 2
-
+        component.hit = false
+        
         bullet?.components[AttackComponent.self] = component
         let anchorBullet = AnchorEntity(world: startPosition)
         let clone = bullet?.clone(recursive: true)

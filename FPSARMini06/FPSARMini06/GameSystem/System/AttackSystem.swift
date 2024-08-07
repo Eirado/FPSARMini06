@@ -27,8 +27,15 @@ class AttackSystem: RealityKit.System {
             
             //print("sistema de ataque, startposition:\(entityComponent.startPosition)")
             let endPosition = component.startPosition + component.direction * component.attackSpeed
+
+
+
+            if component.hit{
+                entity.removeFromParent()
+            }else{
+                entity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: component.duration, timingFunction: .linear)
+            }
             
-            entity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: component.duration, timingFunction: .linear)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + component.duration) {
                 
