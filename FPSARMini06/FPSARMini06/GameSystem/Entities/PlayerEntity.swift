@@ -16,6 +16,8 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     var bullet: BulletEntity?
     var ar:ARView?
     
+    
+    
     required init() {
         super.init()
     }
@@ -82,9 +84,14 @@ extension PlayerEntity{
     }
     
     func movement(){
+        
         guard let component = self.components[PlayerComponent.self] as? PlayerComponent else {return}
         
+        if component.score == nil{
+            component.score = 0
+        }
         component.arView = ar
+        
         self.components[PlayerComponent.self] = component
     }
     
