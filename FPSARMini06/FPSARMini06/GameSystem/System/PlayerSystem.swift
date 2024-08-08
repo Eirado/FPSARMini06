@@ -10,8 +10,9 @@ import RealityKit
 
 class PlayerSystem:RealityKit.System {
     private static let query = EntityQuery(where: .has(PlayerComponent.self))
-    
-    required init(scene: Scene) { }
+
+    required init(scene: Scene) {}
+
     
     func update(context: SceneUpdateContext) {
         context.scene.performQuery(PlayerSystem.query).forEach{ entity in
@@ -23,6 +24,7 @@ class PlayerSystem:RealityKit.System {
             let startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
             component.currentPos = startPosition
             entity.position = startPosition
+            
         }
     }
 }

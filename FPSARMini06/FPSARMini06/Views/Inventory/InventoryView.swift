@@ -10,6 +10,7 @@ import SwiftData
 
 struct InventoryView: View {
     @Environment(PageManager.self) var pageManager
+    
     @Environment (\.modelContext) private var context
     @Query private var data:[UserData]
     
@@ -83,35 +84,19 @@ struct InventoryView: View {
                     ExtractedView4()
                 }
             }
-        }.task {
-            fetchData()
+            
         }
+        
+        
     }
 }
+
 
 #Preview {
     InventoryView()
         .environment(PageManager())
 }
 
-extension InventoryView {
-    func addCosmetic(cosmeticID:Int, item:UserData) {
-        item.box_itens_ID.append(cosmeticID)
-        
-        do {
-            try context.save()
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
-    func fetchData() {
-        if data.isEmpty {
-            let data = UserData(score: 0, box_itens_ID: [])
-            context.insert(data)
-        }
-    }
-}
 
 struct ExtractedView: View {
     var body: some View {
@@ -178,6 +163,8 @@ struct ExtractedView3: View {
 }
 
 struct ExtractedView4: View {
+    @Environment (\.modelContext)  var context
+    @Query private var data:[UserData]
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
@@ -219,25 +206,45 @@ struct ExtractedView4: View {
                             .frame(width: 35, height: 27)
                             .padding()
                     }
-                            .frame(width: UIScreen.main.bounds.width * claimImgW, height: UIScreen.main.bounds.height * claimImgH)
+                    .frame(width: UIScreen.main.bounds.width * claimImgW, height: UIScreen.main.bounds.height * claimImgH)
                 
                 HStack {
                     Text("customizationName-title")
                         .minimumScaleFactor(0.5)
                     Spacer()
-                    Image("Claim")
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width * buttonClaimW, height: UIScreen.main.bounds.height * buttonClaimH)
-                        .overlay {
-                            Text("claim-button")
-                                .font(.system(size: 16, weight: .bold))
-                                .minimumScaleFactor(0.5)
-                        }
+                    
+                    Button(action: {
+                        
+                        //adicionar o ID do cosmetico
+                        
+                        addCosmetic(cosmeticID: 0, item: data.first!)
+                    }, label: {
+                        Image("Claim")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * buttonClaimW, height: UIScreen.main.bounds.height * buttonClaimH)
+                            .overlay{
+                                Text("claim-button")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .minimumScaleFactor(0.5)
+                            }
+                    })
+                    
                 }
                 .padding(.horizontal)
                 
             }
         }
         .frame(width: UIScreen.main.bounds.width * bgClaimClrW, height: UIScreen.main.bounds.height * bgClaimClrH)
+    }
+    
+    func addCosmetic(cosmeticID:Int, item:UserData){
+        
+        item.box_itens_ID.append(cosmeticID)
+        
+        do{
+            try context.save()
+        }catch{
+            print(error.localizedDescription)
+        }
     }
 }
