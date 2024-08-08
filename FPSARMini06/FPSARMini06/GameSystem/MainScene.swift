@@ -40,19 +40,15 @@ class MainScene: ARView {
         self.scene.addAnchor(worldAnchor)
         
         worldAnchor.addChild(player!)
+       
+        setupEnemies(anchor: worldAnchor)
     }
     
-    @MainActor required dynamic init?(coder decoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @MainActor override required dynamic init(frame frameRect: CGRect) {
-        fatalError("init(frame:) has not been implemented")
-    }
-    
-    func setupEnemies(anchor: AnchorEntity) {
+    func setupEnemies(anchor: AnchorEntity){
+       
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.7, entityCount: 20)
+        
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.8, entityCount: 6)
     }
     
     func arViewGestureSetup() {

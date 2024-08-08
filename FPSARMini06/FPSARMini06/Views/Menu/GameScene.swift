@@ -30,6 +30,14 @@ struct GameScene: View {
                     .cornerRadius(10)
                     .padding(.top, 50)
             }
+            
+          
+            ARViewContainer()
+                .overlay{
+                    Image("Mira")
+                    
+            }
+            
         }
         .ignoresSafeArea()
         .onChange(of: carregou) { _, newValue in
