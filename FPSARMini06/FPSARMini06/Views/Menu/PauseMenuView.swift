@@ -17,19 +17,17 @@ struct PauseMenuView: View {
     
     var body: some View {
             ZStack {
-                //MARK: Fundo
                 RoundedRectangle(cornerRadius: 20)
                     .fill(.gray.opacity(0.8))
                     .stroke(Color.black, lineWidth: 2)
                     .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
                 
                 VStack {
-                    //MARK: Topo
                     HStack {
                         Button {
                             pageManager.page = .gameScene
                         } label: {
-                            ZStack{
+                            ZStack {
                                 Image("Top Bar")
                                     .resizable()
                                     .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
@@ -51,7 +49,6 @@ struct PauseMenuView: View {
                     
                     Spacer()
                     
-                    //MARK: Componentes
                     ComponentePauseMenuBG3(toggleOn: $toggleOn)
                     
                     Spacer()
@@ -92,9 +89,6 @@ struct PauseMenuView: View {
     }
 }
 
-//#Preview {
-//    PauseMenuView()
-//}
 #Preview {
     struct PauseMenuPreviewContainer: View{
         @State private var toggleOn = false

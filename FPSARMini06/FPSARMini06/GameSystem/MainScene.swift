@@ -15,7 +15,6 @@ import SwiftUI
 // Mudanças para teste de componente
 
 class MainScene: ARView {
-    
     var enemy: EnemyEntity? = nil
     var spawner: SpawnerEntity? = nil
     var player: PlayerEntity? = nil
@@ -25,7 +24,6 @@ class MainScene: ARView {
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
-        
         arViewGestureSetup()
     }
     
@@ -40,21 +38,22 @@ class MainScene: ARView {
     
         self.installGestures(.all, for: player!)
     
+        let planeAnchor = AnchorEntity(plane: .horizontal)
         let worldAnchor = AnchorEntity(world: .zero)
         
-        worldAnchor.name = "worldAnchor"
+        planeAnchor.name = "Plane Anchor"
         
+        self.scene.addAnchor(planeAnchor)
         self.scene.addAnchor(worldAnchor)
         
         worldAnchor.addChild(player!)
        
-        setupEnemies(anchor: worldAnchor)
-        
+        setupEnemies(anchor: planeAnchor)
     }
     
-    func setupEnemies(anchor: AnchorEntity){
+    func setupEnemies(anchor: AnchorEntity) {
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 2)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.7, entityCount: 20)
     }
     
     func arViewGestureSetup() {
@@ -69,8 +68,5 @@ class MainScene: ARView {
             await player?.addBullet()
         }
     }
-    
-    
-    
 }
 

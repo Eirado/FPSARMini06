@@ -9,7 +9,6 @@ import Foundation
 import RealityKit
 
 class PlayerEntity: Entity, HasCollision, HasModel {
-    
     var model: ModelEntity?
     var animationRoot: Entity?
     var modelShape: ShapeResource? // Ferramenta para definir o shape da colisao
@@ -20,14 +19,12 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         super.init()
     }
     required init(ar: ARView) {
-        
         self.model = ModelEntity()
         self.animationRoot = Entity()
         self.modelShape = .generateBox(width: 0, height: 0, depth: 0)
         self.ar = ar
         self.model?.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
     
-        //Defino o comportamento de colisao aqui
         self.model?.generateCollisionShapes(recursive: true)
         
         bullet = BulletEntity()
@@ -37,7 +34,6 @@ class PlayerEntity: Entity, HasCollision, HasModel {
         self.components[PlayerComponent.self] = PlayerComponent()
         self.components[GameCollisionComponent.self] = GameCollisionComponent()
         self.components[HealthComponent.self] = HealthComponent(totalHealth: .playerEntityHealth)
-//        self.model?.collision = CollisionComponent(shapes: [modelShape])
 
         movement()
         
@@ -47,13 +43,12 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     }
 }
 
-extension PlayerEntity{
+extension PlayerEntity {
     
     func addBullet() async {
         guard var component = bullet?.components[AttackComponent.self] as? AttackComponent else { return }
 
         guard let cameraTransform = self.ar?.session.currentFrame?.camera.transform else {
-            print("error")
             return
         }
 
@@ -70,7 +65,8 @@ extension PlayerEntity{
         component.direction = direction
         component.duration = 1
         component.attackSpeed = 2
-
+        component.hit = false
+        
         bullet?.components[AttackComponent.self] = component
         let anchorBullet = AnchorEntity(world: startPosition)
         let clone = bullet?.clone(recursive: true)

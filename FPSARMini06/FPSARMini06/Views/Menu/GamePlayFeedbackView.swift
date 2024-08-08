@@ -15,9 +15,9 @@ struct GamePlayFeedbackView: View {
     @Environment(PageManager.self) var pageManager
     @Environment (\.modelContext) private var context
     @Query private var data:[UserData]
+    
     var body: some View {
         ZStack {
-            //MARK: Fundo
             RoundedRectangle(cornerRadius: 20)
                 .fill(.gray.opacity(0.8))
                 .stroke(Color.black, lineWidth: 2)
@@ -78,7 +78,6 @@ struct GamePlayFeedbackView: View {
                 
                 Spacer()
                 
-                //MARK: Componentes
                 Button {
                     pageManager.page = .gameScene
                 } label: {
@@ -115,7 +114,7 @@ struct GamePlayFeedbackView: View {
     }
 }
 
-extension GamePlayFeedbackView{
+extension GamePlayFeedbackView {
     func updateScore(score:Int, item:UserData){
         item.score = score
         do{

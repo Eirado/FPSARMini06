@@ -14,9 +14,7 @@ class HealthSystem: System {
     required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
-        
         context.scene.performQuery(Self.query).forEach { entity in
-            
             guard let component = entity.components[HealthComponent.self] as? HealthComponent else { return }
             
             if component.totalHealth == 0 {
@@ -26,7 +24,6 @@ class HealthSystem: System {
         
         func die(entity: Entity) {
             entity.removeFromParent()
-            
         }
     }
 }

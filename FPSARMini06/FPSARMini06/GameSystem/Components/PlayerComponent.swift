@@ -7,7 +7,7 @@
 
 import RealityKit
 
-class PlayerComponent: RealityKit.Component{
+class PlayerComponent: RealityKit.Component {
    
     var arView: ARView?
     
