@@ -25,7 +25,6 @@ class AttackSystem: RealityKit.System {
             
             guard let component = entity.components[AttackComponent.self] as? AttackComponent else {return}
             
-            //print("sistema de ataque, startposition:\(entityComponent.startPosition)")
             let endPosition = component.startPosition + component.direction * component.attackSpeed
             
             entity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: component.duration, timingFunction: .linear)

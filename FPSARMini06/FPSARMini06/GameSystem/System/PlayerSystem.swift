@@ -12,10 +12,7 @@ class PlayerSystem:RealityKit.System{
     
     private static let query = EntityQuery(where: .has(PlayerComponent.self))
     
-    required init(scene: Scene) {
-        
-    }
-    
+    required init(scene: Scene) {}
     
     func update(context: SceneUpdateContext) {
     
@@ -26,13 +23,8 @@ class PlayerSystem:RealityKit.System{
                 return }
             
             let startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
-//            context.scene.anchors.map { element in
-//                if element.name == "worldAnchor"{
-//                    element.position = startPosition
-//                }
-//            }
+
             entity.position = startPosition
-            //print(entity.position)
             
             
         }
