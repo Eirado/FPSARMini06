@@ -362,6 +362,9 @@
         }
       }
     },
+    "Tempo restante: %lld" : {
+
+    },
     "type-title" : {
       "localizations" : {
         "en" : {
