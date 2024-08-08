@@ -12,16 +12,16 @@ struct InventoryView: View {
     @Environment(PageManager.self) var pageManager
     @Environment (\.modelContext) private var context
     @Query private var data:[UserData]
+    
     var body: some View {
-        
         ZStack {
             Color.gray
                 .opacity(0.5)
                 .ignoresSafeArea()
             
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 
-                VStack (spacing: 10){
+                VStack (spacing: 10) {
                     HStack {
                         Button(action: {
                             pageManager.page = .menu
@@ -29,7 +29,7 @@ struct InventoryView: View {
                             Image("Top Bar")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
-                                .overlay{
+                                .overlay {
                                     Image(systemName: "chevron.left")
                                         .font(.system(size: 36, weight: .bold))
                                         .tint(.black)
@@ -66,12 +66,11 @@ struct InventoryView: View {
                         RoundedRectangle(cornerRadius: 7)
                             .stroke(Color.black, lineWidth: 2)
                             .fill(.white.opacity(0.5))
-                            .overlay{
+                            .overlay {
                                 Image(systemName: "paintbrush.pointed.fill")
                                     .font(.system(size: 16))
                                     .minimumScaleFactor(0.5)
                             }
-                //            .resizable()
                             .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
                         
                         ExtractedView2()
@@ -84,7 +83,6 @@ struct InventoryView: View {
                     ExtractedView4()
                 }
             }
-            
         }.task {
             fetchData()
         }
@@ -96,20 +94,19 @@ struct InventoryView: View {
         .environment(PageManager())
 }
 
-extension InventoryView{
-    func addCosmetic(cosmeticID:Int, item:UserData){
-        
+extension InventoryView {
+    func addCosmetic(cosmeticID:Int, item:UserData) {
         item.box_itens_ID.append(cosmeticID)
         
-        do{
+        do {
             try context.save()
-        }catch{
-            print(error.localizedDescription)
+        } catch {
+            fatalError(error.localizedDescription)
         }
     }
     
-    func fetchData(){
-        if data.isEmpty{
+    func fetchData() {
+        if data.isEmpty {
             let data = UserData(score: 0, box_itens_ID: [])
             context.insert(data)
         }
@@ -118,13 +115,13 @@ extension InventoryView{
 
 struct ExtractedView: View {
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 6.0)
                 .stroke(Color.black, lineWidth: 2)
                 .fill(.black.opacity(0.4))
                 .frame(width: UIScreen.main.bounds.width * frameTopoW, height: UIScreen.main.bounds.height * frameTopoH)
             
-            VStack{
+            VStack {
                 RoundedRectangle(cornerRadius: 2)
                     .fill(.white.opacity(0.7))
                     .stroke(Color.black, lineWidth: 1.5)
@@ -158,14 +155,13 @@ struct ExtractedView2: View {
                     .scaledToFit()
                     .padding()
             }
-//            .resizable()
             .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
     }
 }
 
 struct ExtractedView3: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Ellipse()
                 .fill(.white)
                 .stroke(Color.black, lineWidth: 2)
@@ -176,7 +172,6 @@ struct ExtractedView3: View {
                 .padding()
             
         }
-//            .resizable()
         .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
         .opacity(0.5)
     }
@@ -184,18 +179,18 @@ struct ExtractedView3: View {
 
 struct ExtractedView4: View {
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.black.opacity(0.3))
                 .stroke(Color.black, lineWidth: 2)
             
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     RoundedRectangle(cornerRadius: 30)
                         .stroke(Color.black, lineWidth: 2)
                         .fill(.white.opacity(0.8))
                         .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
-                        .overlay{
+                        .overlay {
                             Text("type-title")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
@@ -204,7 +199,7 @@ struct ExtractedView4: View {
                     RoundedRectangle(cornerRadius: 30)
                         .stroke(Color.black, lineWidth: 2)
                         .fill(.white.opacity(0.8))
-                        .overlay{
+                        .overlay {
                             Text("money-text")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
@@ -224,17 +219,16 @@ struct ExtractedView4: View {
                             .frame(width: 35, height: 27)
                             .padding()
                     }
-                //            .resizable()
                             .frame(width: UIScreen.main.bounds.width * claimImgW, height: UIScreen.main.bounds.height * claimImgH)
                 
-                HStack{
+                HStack {
                     Text("customizationName-title")
                         .minimumScaleFactor(0.5)
                     Spacer()
                     Image("Claim")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonClaimW, height: UIScreen.main.bounds.height * buttonClaimH)
-                        .overlay{
+                        .overlay {
                             Text("claim-button")
                                 .font(.system(size: 16, weight: .bold))
                                 .minimumScaleFactor(0.5)
@@ -244,7 +238,6 @@ struct ExtractedView4: View {
                 
             }
         }
-//            .resizable()
         .frame(width: UIScreen.main.bounds.width * bgClaimClrW, height: UIScreen.main.bounds.height * bgClaimClrH)
     }
 }

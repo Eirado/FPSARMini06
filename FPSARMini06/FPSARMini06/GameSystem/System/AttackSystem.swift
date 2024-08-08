@@ -12,35 +12,21 @@ class AttackSystem: RealityKit.System {
     
     private static let query = EntityQuery(where: .has(AttackComponent.self))
     
-    
-    required init(scene: Scene) {
-        
-    }
-    
+    required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
-        
-        
-        context.scene.performQuery(AttackSystem.query).forEach{ entity in
-            
-            guard let component = entity.components[AttackComponent.self] as? AttackComponent else {return}
-            
-            //print("sistema de ataque, startposition:\(entityComponent.startPosition)")
+        context.scene.performQuery(AttackSystem.query).forEach { entity in
+            guard let component = entity.components[AttackComponent.self] as? AttackComponent else { return }
             let endPosition = component.startPosition + component.direction * component.attackSpeed
-
-
-
-            if component.hit{
+            
+            if component.hit {
                 entity.removeFromParent()
-            }else{
+            }else {
                 entity.move(to: Transform(translation: endPosition), relativeTo: nil, duration: component.duration, timingFunction: .linear)
             }
             
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + component.duration) {
-                
                 entity.removeFromParent()
-                
             }
         }
     }

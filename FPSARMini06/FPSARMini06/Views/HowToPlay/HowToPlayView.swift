@@ -11,7 +11,7 @@ struct HowToPlayView: View {
     @Environment(PageManager.self) var pageManager
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color.blue.opacity(0.2)
             VStack {
                 HStack {

@@ -8,17 +8,12 @@
 import Foundation
 import RealityKit
 
-class PlayerSystem:RealityKit.System{
-    
+class PlayerSystem:RealityKit.System {
     private static let query = EntityQuery(where: .has(PlayerComponent.self))
     
-    required init(scene: Scene) {
-        
-    }
-    
+    required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
-    
         context.scene.performQuery(PlayerSystem.query).forEach{ entity in
             guard let component = entity.components[PlayerComponent.self] as? PlayerComponent else {return}
             
@@ -26,17 +21,8 @@ class PlayerSystem:RealityKit.System{
                 return }
             
             let startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
-//            context.scene.anchors.map { element in
-//                if element.name == "worldAnchor"{
-//                    element.position = startPosition
-//                }
-//            }
             component.currentPos = startPosition
             entity.position = startPosition
-            
-            //print(entity.position)
-            
-            
         }
     }
 }

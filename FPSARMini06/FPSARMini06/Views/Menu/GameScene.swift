@@ -16,7 +16,7 @@ struct GameScene: View {
     @Environment(PageManager.self) var pageManager
     
     var body: some View {
-        ZStack{
+        ZStack {
             ARViewContainer()
                 .overlay {
                     Image("Mira")

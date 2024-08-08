@@ -29,15 +29,14 @@ class EnemyEntity: Entity, HasCollision, HasModel {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("Model loading completed.")
+                    break
                 case .failure(let error):
-                    print("Failed to load model: \(error)")
+                    fatalError("Failed to load model: \(error)")
                 }
             }, receiveValue: { [weak self] assetDict in
                 guard let self = self else { return }
                 
                 if let modelEntity = assetDict[.diver_anim_stand_idle] {
-                    
                     self.model = modelEntity.clone(recursive: true)
                     self.model.generateCollisionShapes(recursive: true)
                     self.model.collision = CollisionComponent(shapes: [modelShape])
@@ -47,9 +46,8 @@ class EnemyEntity: Entity, HasCollision, HasModel {
 
                     self.addChild(self.model)
                 }
-               
+            
                 self.addChild(self.animationRoot)
-                
                 self.components[MotionComponent.self] = MotionComponent()
             })
             .store(in: &cancellables)

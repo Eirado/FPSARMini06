@@ -15,7 +15,6 @@ class BulletEntity: Entity, HasCollision, HasModel {
     var modelShape: ShapeResource
     
     required init() {
-        
         self.model = ModelEntity()
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.01)
