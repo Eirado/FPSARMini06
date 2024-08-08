@@ -22,8 +22,7 @@ class PlayerSystem:RealityKit.System{
         context.scene.performQuery(PlayerSystem.query).forEach{ entity in
             guard let component = entity.components[PlayerComponent.self] as? PlayerComponent else {return}
             
-            guard let cameraTransform = component.arView?.session.currentFrame?.camera.transform else { print("erro")
-                return }
+            guard let cameraTransform = component.arView?.session.currentFrame?.camera.transform else { return }
             
             let startPosition = simd_make_float3(cameraTransform.columns.3.x, cameraTransform.columns.3.y, cameraTransform.columns.3.z)
 //            context.scene.anchors.map { element in

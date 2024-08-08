@@ -53,7 +53,6 @@ extension PlayerEntity{
         guard var component = bullet?.components[AttackComponent.self] as? AttackComponent else { return }
 
         guard let cameraTransform = self.ar?.session.currentFrame?.camera.transform else {
-            print("error")
             return
         }
 

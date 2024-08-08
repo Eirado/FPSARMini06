@@ -49,12 +49,13 @@ class MainScene: ARView {
         worldAnchor.addChild(player!)
        
         setupEnemies(anchor: worldAnchor)
-        
     }
     
     func setupEnemies(anchor: AnchorEntity){
+       
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 2)
+        
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.2, entityCount: 2)
     }
     
     func arViewGestureSetup() {

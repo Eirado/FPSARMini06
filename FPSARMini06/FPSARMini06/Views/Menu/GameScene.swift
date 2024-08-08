@@ -23,9 +23,13 @@ struct GameScene: View {
                 }
             }
             
-            Image("Mira")
-            
+          
             ARViewContainer()
+                .overlay{
+                    Image("Mira")
+                    
+            }
+            
         }
         .ignoresSafeArea()
     }
