@@ -10,7 +10,7 @@ class MotionSystem: RealityKit.System {
     
     
     private var currentTargetIndex: Int?
-    private let sphereRadius: Float = 0.2
+    private let sphereRadius: Float = 0.8
     
     
     required init(scene: Scene) {
@@ -30,7 +30,7 @@ class MotionSystem: RealityKit.System {
                 entity.components[MotionComponent.self] = motion
             }
             
-            if !motion.nodes.isEmpty{
+            if motion.nodes.isEmpty{
                 generateNodes(for: &motion)
             }
 
@@ -74,10 +74,10 @@ class MotionSystem: RealityKit.System {
     }
     
     private func getCurrentTargetNode(for entity: Entity, with motion: inout MotionComponent) -> SIMD3<Float> {
-        if currentTargetIndex == nil || distance(entity.transform.translation, motion.nodes[currentTargetIndex!]) < 0.1 {
-            selectNewTargetNode(for: &motion)
-        }
-        return motion.nodes[currentTargetIndex!]
+
+        selectNewTargetNode(for: &motion)
+    
+        return motion.nodes[self.currentTargetIndex!]
     }
     
     private func selectNewTargetNode(for motion: inout MotionComponent) {

@@ -55,7 +55,7 @@ class MainScene: ARView {
        
         enemy = EnemyEntity()
         
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.2, entityCount: 2)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.8, entityCount: 6)
     }
     
     func arViewGestureSetup() {
