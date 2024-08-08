@@ -31,12 +31,6 @@ struct GameScene: View {
                     .padding(.top, 50)
             }
             
-          
-            ARViewContainer()
-                .overlay{
-                    Image("Mira")
-                    
-            }
             
         }
         .ignoresSafeArea()

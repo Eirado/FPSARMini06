@@ -41,7 +41,15 @@ class MainScene: ARView {
         
         worldAnchor.addChild(player!)
        
-        setupEnemies(anchor: worldAnchor)
+    }
+
+    
+    @MainActor required dynamic init(frame frameRect: CGRect) {
+        fatalError("init(frame:) has not been implemented")
+    }
+    
+    @MainActor required dynamic init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupEnemies(anchor: AnchorEntity){
