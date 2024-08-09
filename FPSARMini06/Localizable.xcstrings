@@ -72,6 +72,17 @@
         }
       }
     },
+    "daltonism-text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo Daltônico"
+          }
+        }
+      }
+    },
     "defeat-title" : {
       "localizations" : {
         "en" : {
@@ -162,6 +173,17 @@
         }
       }
     },
+    "light-dark" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light/Dark Mode"
+          }
+        }
+      }
+    },
     "LoremIpsum" : {
       "localizations" : {
         "en" : {
@@ -182,6 +204,17 @@
         }
       }
     },
+    "music-text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Música"
+          }
+        }
+      }
+    },
     "numberOfBots-text" : {
       "localizations" : {
         "en" : {
@@ -192,7 +225,14 @@
         }
       }
     },
+    "off" : {
+
+    },
+    "on" : {
+
+    },
     "on-text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -374,6 +414,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tipo"
+          }
+        }
+      }
+    },
+    "vibration-text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vibração"
           }
         }
       }
