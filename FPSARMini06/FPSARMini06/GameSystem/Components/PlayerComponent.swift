@@ -6,7 +6,10 @@
 //
 
 import RealityKit
-
-class PlayerComponent: RealityKit.Component{
+import SwiftUI
+class PlayerComponent: RealityKit.Component {
+   
     var arView: ARView?
+    var currentPos: SIMD3<Float>?
+    var score: Int = 0
 }

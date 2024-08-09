@@ -7,9 +7,6 @@
 
 import Foundation
 import RealityKit
-
-import Foundation
-import RealityKit
 import Combine
 
 class EnemyEntity: Entity, HasCollision, HasModel {
@@ -27,39 +24,32 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.model = ModelEntity()
         
         super.init()
-
-        self.model.name = "EnemyEntity"
         
         Entity.loadModelAsync()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("Model loading completed.")
+                    break
                 case .failure(let error):
-                    print("Failed to load model: \(error)")
+                    fatalError("Failed to load model: \(error)")
                 }
             }, receiveValue: { [weak self] assetDict in
                 guard let self = self else { return }
                 
-
                 if let modelEntity = assetDict[.diver_anim_stand_idle] {
-                    
                     self.model = modelEntity.clone(recursive: true)
-                    
                     self.model.generateCollisionShapes(recursive: true)
                     self.model.collision = CollisionComponent(shapes: [modelShape])
                     self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
                     self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
+                    self.model.name = "EnemyEntity"
 
                     self.addChild(self.model)
                 }
-               
+            
                 self.addChild(self.animationRoot)
-                
                 self.components[MotionComponent.self] = MotionComponent()
             })
             .store(in: &cancellables)
     }
-    
-
 }

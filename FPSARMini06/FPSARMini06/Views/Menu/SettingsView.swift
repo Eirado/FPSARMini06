@@ -13,11 +13,9 @@ struct SettingsView: View {
     
     var body: some View {
         ZStack {
-            //MARK: Fundo
             Color.green.opacity(0.2)
             
             VStack{
-                //MARK: Topo
                 HStack {
                     Button {
                         pageManager.page = .menu

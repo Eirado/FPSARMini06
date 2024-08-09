@@ -15,18 +15,17 @@ class BulletEntity: Entity, HasCollision, HasModel {
     var modelShape: ShapeResource
     
     required init() {
-        
         self.model = ModelEntity()
         self.animationRoot = Entity()
-        self.modelShape = .generateSphere(radius: 0.1)
+        self.modelShape = .generateSphere(radius: 0.01)
 
         super.init()
-        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.02), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
+        self.model.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.006), materials: [SimpleMaterial(color: .purple, isMetallic: true)])
         
         self.model.name = "BulletEntity"
         self.model.generateCollisionShapes(recursive: true)
 
-        self.model.components[AttackComponent.self] = AttackComponent()
+        self.components[AttackComponent.self] = AttackComponent()
         self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
         self.model.collision = CollisionComponent(shapes: [modelShape])
         

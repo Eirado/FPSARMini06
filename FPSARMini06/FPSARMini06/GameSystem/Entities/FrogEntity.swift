@@ -8,15 +8,13 @@ import Foundation
 import RealityKit
 import Combine
 
-class FrogEntity: Entity, HasCollision, HasModel{
+class FrogEntity: Entity, HasCollision, HasModel {
     var model: ModelEntity?
     var animationRoot: Entity
-    var modelShape: ShapeResource // Ferramenta para definir o shape da colisao
+    var modelShape: ShapeResource
     private var cancellable:AnyCancellable?
     
-    
     required init() {
-
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
          
@@ -26,20 +24,18 @@ class FrogEntity: Entity, HasCollision, HasModel{
            
     }
     
-    func asyncLoadModel(){
+    func asyncLoadModel() {
         let fileName = "frogDrone.usdz"
         self.cancellable = ModelEntity.loadModelAsync(named: fileName).sink(receiveCompletion: { loadCompletion in
             switch loadCompletion{
             case .failure(let erro):
-                print("Unable to load modelEntity for \(fileName).\nError:\(erro.localizedDescription)")
+                fatalError("Unable to load modelEntity for \(fileName).\nError:\(erro.localizedDescription)")
             case .finished:
                 break
             }
         }, receiveValue: { modelEntity in
-            
             self.model = modelEntity
             self.addChild(self.model ?? ModelEntity())
-            print("carregou")
         })
     }
 }

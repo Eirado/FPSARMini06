@@ -16,52 +16,49 @@ struct MenuView: View {
     @Binding var toggleOn: Bool
     
     var body: some View {
-        ZStack{
-            //MARK: Fundo
+        ZStack {
             Color.red.opacity(0.2)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
-            VStack{
-                //MARK: Topo
-                HStack{
-                    Button{
+            VStack {
+                HStack {
+                    Button {
                         pageManager.page = .howToPlay
                     } label: {
                         Image("button_nav")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
-                            .overlay{
+                            .overlay {
                                 Image(systemName: "questionmark")
                                     .font(.system(size: 36, weight: .bold))
                                     .tint(.black)
                             }
                     }
                     Spacer()
-                    Button{
+                    Button {
                         pageManager.page = .settings
                     } label: {
                         Image("button_nav")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
-                            .overlay{
+                            .overlay {
                                 Image(systemName: "gear")
                                     .font(.system(size: 36, weight: .bold))
                                     .tint(.black)
                             }
                     }
-                    
                 }
                 .padding(20)
                 
                 Spacer()
                 
-                Button{
+                Button {
                     pageManager.page = .gameScene
                 } label: {
                     Image("button_default")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonBigW, height: UIScreen.main.bounds.height * buttonBigH)
-                        .overlay{
+                        .overlay {
                             Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)
@@ -69,13 +66,13 @@ struct MenuView: View {
                         }
                 }
                 
-                Button{
+                Button {
                     pageManager.page = .inventory
                 } label: {
                     Image("button_default")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
-                        .overlay{
+                        .overlay {
                             Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.black)

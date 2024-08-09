@@ -10,10 +10,8 @@ import ARKit
 import RealityKit
 
 
-class GameController: UIViewController{
-    
+class GameController: UIViewController {
     override func viewDidLoad() {
-        
         let arView = ARView(frame: .zero)
         
         arView.automaticallyConfigureSession = false
@@ -21,7 +19,5 @@ class GameController: UIViewController{
         configuration.planeDetection=[.horizontal, .vertical]
         configuration.environmentTexturing = .automatic
         arView.session.run(configuration)
-        
-        
     }
 }

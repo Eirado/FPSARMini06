@@ -9,8 +9,6 @@ import Combine
 import RealityKit
 import UIKit.UIColor
 
-
-
 class SpawnerEntity {
     
     private var entity: Entity
