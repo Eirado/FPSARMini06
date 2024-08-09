@@ -9,14 +9,17 @@ class MotionSystem: RealityKit.System {
     private var currentTargetIndex: Int?
     private let sphereRadius: Float = 0.8
     
-    
+    private var playerEntity: [Entity]? = nil // this is a test
     required init(scene: Scene) {
-        
         
     }
     
     func update(context: SceneUpdateContext) {
         let deltaTime = Float(context.deltaTime)
+        
+        if playerEntity == nil {
+            self.playerEntity = context.scene.performQuery(Self.playerQuery).map { $0 }
+        }
         let player = context.scene.performQuery(Self.playerQuery).map { $0 }
         
         context.scene.performQuery(Self.query).forEach { entity in

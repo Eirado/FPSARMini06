@@ -32,15 +32,19 @@ class MainScene: ARView {
         self.installGestures(.all, for: player!)
         
         let planeAnchor = AnchorEntity(plane: .horizontal)
+        
         let worldAnchor = AnchorEntity(world: .zero)
         
         planeAnchor.name = "Plane Anchor"
         
         self.scene.addAnchor(planeAnchor)
+       
         self.scene.addAnchor(worldAnchor)
         
         worldAnchor.addChild(player!)
-       
+        
+        setupEnemies(anchor: worldAnchor)
+        
     }
 
     
@@ -57,6 +61,19 @@ class MainScene: ARView {
         enemy = EnemyEntity()
         
         spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.8, entityCount: 6)
+//        let motion = enemy?.components[MotionComponent.self] as MotionComponent
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     func arViewGestureSetup() {
@@ -72,6 +89,7 @@ class MainScene: ARView {
 }
 
 extension MainScene: ARCoachingOverlayViewDelegate {
+   
     func addCoaching() {
         let coachingOverlay = ARCoachingOverlayView()
         coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -93,4 +111,5 @@ extension MainScene: ARCoachingOverlayViewDelegate {
         addVirtualObjects()
         carregou = true
     }
+    
 }
