@@ -21,7 +21,6 @@ struct InventoryView: View {
                 .ignoresSafeArea()
             
             ScrollView(.vertical) {
-                
                 VStack (spacing: 10) {
                     HStack {
                         Button(action: {
@@ -45,14 +44,11 @@ struct InventoryView: View {
                             .minimumScaleFactor(0.5)
                         Spacer()
                     }
-                    
-                    
                     HStack(spacing: 5) {
                         ExtractedView(score: data.first?.score ?? 000)
                         ExtractedView(score: data.first?.score ?? 000)
                         ExtractedView(score: data.first?.score ?? 000) 
                     }
-                    
                     RoundedRectangle(cornerRadius: 25.0)// Image
                         .fill(.white.opacity(0.6))
                         .stroke(Color.black, lineWidth: 2)
@@ -80,10 +76,9 @@ struct InventoryView: View {
                         ExtractedView3()
                         ExtractedView3()
                     }
-                    
                     ExtractedView4()
                 }
-            }
+            }.padding(.top, 40)
         }
         
         

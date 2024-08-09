@@ -22,7 +22,7 @@ struct GameScene: View {
         ZStack {
             ARViewContainer(carregou: $carregou)
                 .overlay {
-                    Image("Mira")
+                    Image("Target")
                     VStack{
                         HStack{
                             Spacer()
@@ -86,3 +86,20 @@ struct GameScene: View {
     }
 }
 
+struct LoadingView: View {
+    var body: some View {
+        VStack {
+            Text("Loading...")
+                .font(.largeTitle)
+                .bold()
+                .foregroundColor(.white)
+            
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(1.5)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.8))
+        .edgesIgnoringSafeArea(.all)
+    }
+}

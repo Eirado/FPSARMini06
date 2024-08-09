@@ -35,7 +35,7 @@ class MainScene: ARView {
         let worldAnchor = AnchorEntity(world: .zero)
         
 //        planeAnchor.name = "Plane Anchor"
-//        
+//  
 //        self.scene.addAnchor(planeAnchor)
         self.scene.addAnchor(worldAnchor)
         
