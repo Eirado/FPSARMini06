@@ -11,7 +11,9 @@ import UIKit.UIColor
 
 class SpawnerSystem: RealityKit.System {
     
-    var query = EntityQuery(where: .has(MotionComponent.self))
+    static var dependencies: [SystemDependency] { [.before(MotionSystem.self)] }
+    
+    private static let query = EntityQuery(where: .has(MotionComponent.self))
     
     var querySpawner = EntityQuery(where: .has(SpawnerComponent.self))
     
@@ -25,8 +27,9 @@ class SpawnerSystem: RealityKit.System {
 
     func update(context: SceneUpdateContext) {
         
-        context.scene.performQuery(self.query).forEach { entity in
-        
+        context.scene.performQuery(SpawnerSystem.query).forEach { entity in
+            
+            print("aa")
             
             if spawnerComponent == nil {
                 
