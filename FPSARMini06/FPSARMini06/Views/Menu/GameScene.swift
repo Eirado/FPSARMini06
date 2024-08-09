@@ -15,8 +15,6 @@ struct GameScene: View {
     @State private var timeRemaining: Int = 5
     @State private var timerRunning: Bool = false
     
-    
-    
     @Environment (\.modelContext)  var context
     @Query private var data:[UserData]
     
@@ -29,7 +27,8 @@ struct GameScene: View {
                         HStack{
                             Spacer()
                             Button(action: {
-                                pageManager.page = .pause
+                                //adicionar açoes do pause
+                                //pageManager.page = .pause
                             }, label: {
                                 Image(systemName: "pause.circle.fill")
                                     .font(.system(size: 30))
