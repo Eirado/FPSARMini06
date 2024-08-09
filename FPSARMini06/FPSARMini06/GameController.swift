@@ -11,9 +11,7 @@ import RealityKit
 
 
 class GameController: UIViewController {
-    
     override func viewDidLoad() {
-        
         let arView = ARView(frame: .zero)
         
         arView.automaticallyConfigureSession = false
