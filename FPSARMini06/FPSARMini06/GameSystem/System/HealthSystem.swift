@@ -11,7 +11,7 @@ import RealityKit
 class HealthSystem: System {
     private static let query = EntityQuery(where: .has(HealthComponent.self))
     private static let queryPlayer = EntityQuery(where: .has(PlayerComponent.self))
-    public static var score:Int?
+
     required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
@@ -27,8 +27,8 @@ class HealthSystem: System {
             if entity != playerEntity{
                 guard let score = playerEntity?.components[PlayerComponent.self] as? PlayerComponent else { return }
                 
-                score.score! += 1
-                print("score \(String(describing: score.score?.description))")
+                ScoreController.score += 1
+                print("score \(String(describing: ScoreController.score.description))")
                 
                 playerEntity?.components.set(score)
             }

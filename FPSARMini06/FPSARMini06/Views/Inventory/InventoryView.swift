@@ -21,13 +21,12 @@ struct InventoryView: View {
                 .ignoresSafeArea()
             
             ScrollView(.vertical) {
-                
                 VStack (spacing: 10) {
                     HStack {
                         Button(action: {
                             pageManager.page = .menu
                         }, label: {
-                            Image("Top Bar")
+                            Image("button_nav")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay {
@@ -45,14 +44,11 @@ struct InventoryView: View {
                             .minimumScaleFactor(0.5)
                         Spacer()
                     }
-                    
-                    
                     HStack(spacing: 5) {
-                        ExtractedView()
-                        ExtractedView()
-                        ExtractedView()
+                        ExtractedView(score: data.first?.score ?? 000)
+                        ExtractedView(score: data.first?.score ?? 000)
+                        ExtractedView(score: data.first?.score ?? 000) 
                     }
-                    
                     RoundedRectangle(cornerRadius: 25.0)// Image
                         .fill(.white.opacity(0.6))
                         .stroke(Color.black, lineWidth: 2)
@@ -80,11 +76,9 @@ struct InventoryView: View {
                         ExtractedView3()
                         ExtractedView3()
                     }
-                    
                     ExtractedView4()
                 }
-            }
-            
+            }.padding(.top, 40)
         }
         
         
@@ -99,6 +93,7 @@ struct InventoryView: View {
 
 
 struct ExtractedView: View {
+    @State var score:Int
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 6.0)
@@ -121,7 +116,7 @@ struct ExtractedView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(Color.black)
                     .minimumScaleFactor(0.5)
-                Text("bestScore-text")
+                Text("bestScore-text: \(score)")
                     .minimumScaleFactor(0.5)
             }
             .frame(width: UIScreen.main.bounds.width * insideVsW, height: UIScreen.main.bounds.height * insideVsH)

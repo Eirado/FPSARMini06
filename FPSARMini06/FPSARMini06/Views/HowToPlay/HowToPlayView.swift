@@ -18,7 +18,7 @@ struct HowToPlayView: View {
                     Button(action: {
                         pageManager.page = .menu
                     }, label: {
-                        Image("Top Bar")
+                        Image("button_nav")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
@@ -52,7 +52,7 @@ struct HowToPlayView: View {
                 Button(action: {
                     pageManager.page = .gameScene
                 }, label: {
-                    Image("Default")
+                    Image("button_default")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         .overlay {

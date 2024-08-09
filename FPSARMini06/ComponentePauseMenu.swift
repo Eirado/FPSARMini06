@@ -26,9 +26,15 @@ struct ComponentePauseMenuBG3: View {
             // MARK: Foreground
             VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "sound-text") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "music-text") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "vibration-text") {
+                    print("action")
+                }
             }
             .frame(width: UIScreen.main.bounds.width * cBG3W, height: UIScreen.main.bounds.height * cBG3H)
         }
@@ -57,11 +63,21 @@ struct ComponentePauseMenuBG5: View {
             // MARK: Foreground
             VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
-                ComponentePauseMenuFG(toggleOn: toggleOn)
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "sound-text") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "music-text") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "vibration-text") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "light-dark") {
+                    print("action")
+                }
+                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "daltonism-text") {
+                    print("action")
+                }
             }
             .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
         }
@@ -71,24 +87,80 @@ struct ComponentePauseMenuBG5: View {
 struct ComponentePauseMenuFG: View {
     @State var toggleOn = false
     
+    @State var tittle: LocalizedStringKey
+    var action: () -> Void
     var togglePause: LocalizedStringKey = ""
     
     var body: some View {
-            HStack{
-                Rectangle()
-                    .frame(width: 30, height: 30)
-                    .padding(.leading)
-                Text("sound-text")
-                    .font(.system(size: 18, weight: .bold))
-                    .minimumScaleFactor(0.5)
-                Spacer()
-                Text("on-text")
-                    .font(.system(size: 18))
-                    .minimumScaleFactor(0.5)
-                Toggle(togglePause, isOn: $toggleOn)
-                    .padding(.trailing)
-            }
-            .padding(.vertical, 12.5)
+        HStack{
+            Rectangle()
+                .frame(width: 30, height: 30)
+                .padding(.leading)
+            Text(tittle)
+                .font(.system(size: 18, weight: .bold))
+                .minimumScaleFactor(0.5)
+            Spacer()
+//            Text("on-text")
+//                .font(.system(size: 18))
+//                .minimumScaleFactor(0.5)
+            
+            Toggle(togglePause, isOn: $toggleOn)
+                .toggleStyle(CustomToggleStyle())
+                .task {
+                    if toggleOn{
+                        action()
+                    }
+                }
+                .padding(.trailing)
+        }
+        .padding(.vertical, 12.5)
+    }
+    
+    
+}
+
+struct CustomToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            // Label on the left
+            configuration.label
+                .font(.headline)
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            // The toggle switch
+            
+            Rectangle()
+                .frame(width: 80, height: 25)
+                .foregroundColor(configuration.isOn ? Color.orange : Color.gray)
+                .overlay {
+                    HStack {
+                        if configuration.isOn {
+                            Text("on")
+                                .padding(2)
+                            Spacer()
+                        }
+                        
+                        Rectangle()
+                            .frame(width: 40, height: 20)
+                            .foregroundColor(.white)
+                            .padding(configuration.isOn ? .trailing : .leading, 5)
+                        
+                        if !configuration.isOn {
+                            Spacer()
+                            Text("off")
+                                .padding(2)
+                        }
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.2)){
+                        configuration.isOn.toggle()
+                    }
+                }
+        }
+        .padding(.horizontal)
     }
 }
 

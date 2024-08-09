@@ -39,7 +39,7 @@ class MainScene: ARView {
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
-        
+                        
         player = PlayerEntity(ar: self)
     
         self.installGestures(.all, for: player!)
@@ -48,6 +48,12 @@ class MainScene: ARView {
         
         worldAnchor.name = "worldAnchor"
         
+        
+        let planeAnchor = AnchorEntity(plane: .horizontal)
+        
+        planeAnchor.name = "Plane Anchor"
+//  
+        self.scene.addAnchor(planeAnchor)
         self.scene.addAnchor(worldAnchor)
         
         worldAnchor.addChild(player!)

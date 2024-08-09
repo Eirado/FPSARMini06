@@ -21,7 +21,7 @@ struct SettingsView: View {
                         pageManager.page = .menu
                     } label: {
                         ZStack {
-                            Image("Top Bar")
+                            Image("button_nav")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay{
