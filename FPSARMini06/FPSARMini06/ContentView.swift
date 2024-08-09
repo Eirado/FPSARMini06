@@ -35,9 +35,9 @@ class ARViewManager {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-    
     func makeUIView(context: Context) -> ARView {
-        return ARViewManager.shared
+        let arView = MainScene()
+        return arView
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
