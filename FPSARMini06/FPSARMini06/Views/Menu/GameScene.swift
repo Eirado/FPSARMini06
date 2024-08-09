@@ -23,7 +23,7 @@ struct GameScene: View {
                 }
             }
             
-            Image("Mira")
+            Image("Target")
             
             ARViewContainer()
         }

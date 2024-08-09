@@ -85,7 +85,7 @@ struct GamePlayFeedbackView: View {
                     pageManager.page = .gameScene
                 } label: {
                     ZStack {
-                        Image("Default")
+                        Image("button_playAR")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("playAgain-button")
@@ -99,7 +99,7 @@ struct GamePlayFeedbackView: View {
                     pageManager.page = .menu
                 } label: {
                     ZStack {
-                        Image("Default")
+                        Image("button_default")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("quitGame-button")

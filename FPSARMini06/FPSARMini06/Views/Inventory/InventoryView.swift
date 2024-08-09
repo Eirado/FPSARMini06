@@ -26,7 +26,7 @@ struct InventoryView: View {
                         Button(action: {
                             pageManager.page = .menu
                         }, label: {
-                            Image("Top Bar")
+                            Image("button_nav")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay{

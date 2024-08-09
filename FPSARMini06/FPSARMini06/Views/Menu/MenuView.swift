@@ -27,7 +27,7 @@ struct MenuView: View {
                     Button{
                         pageManager.page = .howToPlay
                     } label: {
-                        Image("Top Bar")
+                        Image("button_nav")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
@@ -40,7 +40,7 @@ struct MenuView: View {
                     Button{
                         pageManager.page = .settings
                     } label: {
-                        Image("Top Bar")
+                        Image("button_nav")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
@@ -58,7 +58,7 @@ struct MenuView: View {
                 Button{
                     pageManager.page = .gameScene
                 } label: {
-                    Image("Default")
+                    Image("button_default")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonBigW, height: UIScreen.main.bounds.height * buttonBigH)
                         .overlay{
@@ -72,7 +72,7 @@ struct MenuView: View {
                 Button{
                     pageManager.page = .inventory
                 } label: {
-                    Image("Default")
+                    Image("button_default")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         .overlay{
