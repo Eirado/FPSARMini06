@@ -13,7 +13,7 @@ import SwiftData
 
 struct GamePlayFeedbackView: View {
     @Environment(PageManager.self) var pageManager
-    @Environment (\.modelContext) private var context
+    @Environment (\.modelContext)  var context
     @Query private var data:[UserData]
     
     var body: some View {
@@ -116,19 +116,19 @@ struct GamePlayFeedbackView: View {
     }
 }
 
-extension GamePlayFeedbackView {
-    func updateScore(score:Int, item:UserData){
-        item.score = score
+
+extension GamePlayFeedbackView{
+    func updateScore(){
+        
+        let score = 0
+        
+        data.first?.score = score
+        
+        
         do{
             try context.save()
         }catch{
             print(error.localizedDescription)
-        }
-    }
-    func fetchData(){
-        if data.isEmpty{
-            let data = UserData(score: 0, box_itens_ID: [])
-            context.insert(data)
         }
     }
 }

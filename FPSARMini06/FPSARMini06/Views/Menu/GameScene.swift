@@ -35,6 +35,8 @@ struct GameScene: View {
                     .cornerRadius(10)
                     .padding(.top, 50)
             }
+            
+            
         }
         .ignoresSafeArea()
     }

@@ -8,12 +8,26 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import SwiftData
 
 struct ContentView : View {
     @Environment(PageManager.self) var pageManager
+    @Binding var toggleOn: Bool
+    @Environment (\.modelContext)  var context
+    @Query private var data:[UserData]
     
     var body: some View {
-        Navigator().edgesIgnoringSafeArea(.all)
+        Navigator(toggleOn: $toggleOn).edgesIgnoringSafeArea(.all)
+            .task {
+                fetchData()
+            }
+    }
+    
+    func fetchData(){
+        if data.isEmpty{
+            let data = UserData(score: 0, box_itens_ID: [])
+            context.insert(data)
+        }
     }
 }
 
