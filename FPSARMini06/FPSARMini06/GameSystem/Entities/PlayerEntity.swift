@@ -7,7 +7,7 @@
 
 import Foundation
 import RealityKit
-
+import SwiftUI
 class PlayerEntity: Entity, HasCollision, HasModel {
     var model: ModelEntity?
     var animationRoot: Entity?
@@ -15,8 +15,7 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     var bullet: BulletEntity?
     var ar: ARView?
     
-    
-    
+
     required init() {
         super.init()
     }
@@ -70,7 +69,6 @@ extension PlayerEntity {
         component.hit = false
         
         bullet?.components[AttackComponent.self] = component
-        let anchorBullet = AnchorEntity(world: startPosition)
         let clone = bullet?.clone(recursive: true)
 
         self.addChild(clone!)
@@ -79,7 +77,6 @@ extension PlayerEntity {
     func movement(){
         
         guard let component = self.components[PlayerComponent.self] as? PlayerComponent else {return}
-        
         if component.score == nil{
             component.score = 0
         }

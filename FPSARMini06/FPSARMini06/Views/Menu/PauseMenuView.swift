@@ -27,8 +27,8 @@ struct PauseMenuView: View {
                         Button {
                             pageManager.page = .gameScene
                         } label: {
-                            ZStack {
-                                Image("Top Bar")
+                            ZStack{
+                                Image("button_nav")
                                     .resizable()
                                     .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 Image(systemName: "chevron.left")
@@ -57,7 +57,7 @@ struct PauseMenuView: View {
                         pageManager.page = .gameScene
                     } label: {
                         ZStack{
-                            Image("Default")
+                            Image("button_default")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("resumeGame-button")
@@ -71,7 +71,7 @@ struct PauseMenuView: View {
                         pageManager.page = .menu
                     } label: {
                         ZStack{
-                            Image("Default")
+                            Image("button_default")
                                 .resizable()
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("quitGame-button")

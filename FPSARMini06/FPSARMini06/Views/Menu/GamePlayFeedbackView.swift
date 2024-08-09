@@ -11,6 +11,8 @@
 import SwiftUI
 import SwiftData
 
+//jjjj
+
 struct GamePlayFeedbackView: View {
     @Environment(PageManager.self) var pageManager
     @Environment (\.modelContext)  var context
@@ -84,7 +86,7 @@ struct GamePlayFeedbackView: View {
                     
                 } label: {
                     ZStack {
-                        Image("Default")
+                        Image("button_playAR")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("playAgain-button")
@@ -98,7 +100,7 @@ struct GamePlayFeedbackView: View {
                     pageManager.page = .menu
                 } label: {
                     ZStack {
-                        Image("Default")
+                        Image("button_default")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("quitGame-button")

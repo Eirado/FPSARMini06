@@ -7,11 +7,15 @@
 
 import Foundation
 import RealityKit
+import Combine
 
 class PlayerSystem:RealityKit.System {
-    private static let query = EntityQuery(where: .has(PlayerComponent.self))
+    
+    
+    required init(scene: Scene) {
+    }
 
-    required init(scene: Scene) {}
+    private static let query = EntityQuery(where: .has(PlayerComponent.self))
 
     
     func update(context: SceneUpdateContext) {
