@@ -28,8 +28,6 @@ class MainScene: ARView {
     required init(frame frameRect: CGRect) {
         
         super.init(frame: frameRect)
-        
-        self.debugOptions = [.showPhysics]
         arViewGestureSetup()
     }
     
@@ -57,7 +55,7 @@ class MainScene: ARView {
     
     func setupEnemies(anchor: AnchorEntity) {
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 2)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 10)
     }
     
     func arViewGestureSetup() {

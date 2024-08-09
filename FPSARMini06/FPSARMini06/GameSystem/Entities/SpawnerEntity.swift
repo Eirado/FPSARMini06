@@ -30,7 +30,7 @@ class SpawnerEntity {
     private func setupEntity() {
         
         let sphere = MeshResource.generateSphere(radius: spawnerRadius)
-        let material = SimpleMaterial(color: UIColor(white: .zero, alpha: 0.3), isMetallic: false)
+        let material = SimpleMaterial(color: UIColor(white: .zero, alpha: 0), isMetallic: false)
         let modelEntity = ModelEntity(mesh: sphere, materials: [material])
 
         
