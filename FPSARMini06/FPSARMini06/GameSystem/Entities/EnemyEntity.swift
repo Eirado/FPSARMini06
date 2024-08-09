@@ -21,6 +21,8 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.animationRoot = Entity()
         self.modelShape = .generateSphere(radius: 0.1)
         
+//        self.animationRoot = .gene
+        
         self.model = ModelEntity()
         
         super.init()
@@ -39,7 +41,7 @@ class EnemyEntity: Entity, HasCollision, HasModel {
                 if let modelEntity = assetDict[.diver_anim_stand_idle] {
                     self.model = modelEntity.clone(recursive: true)
                     self.model.generateCollisionShapes(recursive: true)
-                    self.model.collision = CollisionComponent(shapes: [modelShape])
+//                    self.model.collision = CollisionComponent(shapes: [modelShape])
                     self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
                     self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
                     self.model.name = "EnemyEntity"

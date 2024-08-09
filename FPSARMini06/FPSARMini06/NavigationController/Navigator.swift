@@ -14,12 +14,11 @@ import SwiftUI
 
 struct Navigator: View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
     
     var body: some View {
         switch pageManager.page {
         case .menu:
-            MenuView(toggleOn: $toggleOn)
+            MenuView()
         case .gameScene:
             GameScene()
         case .inventory:
@@ -27,9 +26,9 @@ struct Navigator: View {
         case .howToPlay:
             HowToPlayView()
         case .settings:
-            SettingsView(toggleOn: $toggleOn)
+            SettingsView()
         case .pause:
-            PauseMenuView(toggleOn: $toggleOn)
+            PauseMenuView()
         case .feedbackView:
             GamePlayFeedbackView()
         }

@@ -10,19 +10,24 @@ import SwiftUI
 
 struct GameScene: View {
     @Environment(PageManager.self) var pageManager
-    @State private var carregou: Bool = false
-    @State private var timeRemaining: Int = 30
-    @State private var timerRunning: Bool = false
+    @StateObject private var gameState = GameState()
 
     var body: some View {
         ZStack {
-            ARViewContainer(carregou: $carregou)
+            ARViewContainer()
+                .onAppear {
+                    ARViewManager.shared.resetScene()
+                    gameState.timerRunning = true
+                    startTimer()
+                }
                 .overlay {
-                    Image("Mira")
+                    if gameState.carregou {
+                        Image("Mira")
+                    }
                 }
             
-            if timerRunning {
-                Text("Tempo restante: \(timeRemaining)")
+            if gameState.timerRunning {
+                Text("Tempo restante: \(gameState.timeRemaining)")
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .padding()
@@ -34,21 +39,14 @@ struct GameScene: View {
             
         }
         .ignoresSafeArea()
-        .onChange(of: carregou) { _, newValue in
-            if newValue {
-                print("MainScene carregou!")
-                startTimer()
-            }
-        }
     }
     
     func startTimer() {
-        timerRunning = true
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
+            if gameState.timeRemaining > 0 {
+                gameState.timeRemaining -= 1
             } else {
-                timerRunning = false
+                gameState.timerRunning = false
                 timer.invalidate()
                 pageManager.page = .feedbackView
             }
