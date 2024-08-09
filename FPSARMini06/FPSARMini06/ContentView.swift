@@ -12,12 +12,11 @@ import SwiftData
 
 struct ContentView : View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
     @Environment (\.modelContext)  var context
     @Query private var data:[UserData]
     
     var body: some View {
-        Navigator(toggleOn: $toggleOn).edgesIgnoringSafeArea(.all)
+        Navigator().edgesIgnoringSafeArea(.all)
             .task {
                 fetchData()
             }
