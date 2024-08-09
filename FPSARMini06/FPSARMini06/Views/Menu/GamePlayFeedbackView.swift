@@ -79,7 +79,9 @@ struct GamePlayFeedbackView: View {
                 Spacer()
                 
                 Button {
+                    
                     pageManager.page = .gameScene
+                    
                 } label: {
                     ZStack {
                         Image("Default")

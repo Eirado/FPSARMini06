@@ -13,7 +13,7 @@ import SwiftUI
 
 struct MenuView: View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
+    @State var toggleOn: Bool = false
     
     var body: some View {
         ZStack {
@@ -91,7 +91,7 @@ struct MenuView: View {
         @State private var toggleOn = false
         
         var body: some View {
-            MenuView(toggleOn: $toggleOn)
+            MenuView()
                 .environment(PageManager())
         }
     }

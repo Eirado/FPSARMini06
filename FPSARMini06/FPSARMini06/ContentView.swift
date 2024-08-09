@@ -11,20 +11,20 @@ import ARKit
 
 struct ContentView : View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
     
     var body: some View {
-        Navigator(toggleOn: $toggleOn).edgesIgnoringSafeArea(.all)
+        Navigator().edgesIgnoringSafeArea(.all)
     }
 }
 
+class ARViewManager {
+    static let shared = MainScene()
+}
+
 struct ARViewContainer: UIViewRepresentable {
-    @Binding var carregou: Bool
     
     func makeUIView(context: Context) -> ARView {
-        let arView = MainScene(carregou: $carregou)
-        arView.addCoaching()
-        return arView
+        return ARViewManager.shared
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
@@ -35,7 +35,7 @@ struct ARViewContainer: UIViewRepresentable {
         @State private var toggleOn = false
         
         var body: some View {
-            ContentView(toggleOn: $toggleOn)
+            ContentView()
                 .environment(PageManager())
         }
     }
