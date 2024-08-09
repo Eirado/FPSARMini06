@@ -5,6 +5,7 @@
 
     },
     "bestScore-text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -13,6 +14,9 @@
           }
         }
       }
+    },
+    "bestScore-text: %lld" : {
+
     },
     "bestScore-title" : {
       "localizations" : {

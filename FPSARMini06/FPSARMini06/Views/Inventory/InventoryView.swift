@@ -48,9 +48,9 @@ struct InventoryView: View {
                     
                     
                     HStack(spacing: 5) {
-                        ExtractedView()
-                        ExtractedView()
-                        ExtractedView()
+                        ExtractedView(score: data.first?.score ?? 000)
+                        ExtractedView(score: data.first?.score ?? 000)
+                        ExtractedView(score: data.first?.score ?? 000) 
                     }
                     
                     RoundedRectangle(cornerRadius: 25.0)// Image
@@ -99,6 +99,7 @@ struct InventoryView: View {
 
 
 struct ExtractedView: View {
+    @State var score:Int
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 6.0)
@@ -121,7 +122,7 @@ struct ExtractedView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(Color.black)
                     .minimumScaleFactor(0.5)
-                Text("bestScore-text")
+                Text("bestScore-text: \(score)")
                     .minimumScaleFactor(0.5)
             }
             .frame(width: UIScreen.main.bounds.width * insideVsW, height: UIScreen.main.bounds.height * insideVsH)

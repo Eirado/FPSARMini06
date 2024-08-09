@@ -7,13 +7,19 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct GameScene: View {
     @Environment(PageManager.self) var pageManager
     @State private var carregou: Bool = false
-    @State private var timeRemaining: Int = 30
+    @State private var timeRemaining: Int = 5
     @State private var timerRunning: Bool = false
-
+    
+    
+    
+    @Environment (\.modelContext)  var context
+    @Query private var data:[UserData]
+    
     var body: some View {
         ZStack {
             ARViewContainer(carregou: $carregou)
@@ -39,7 +45,18 @@ struct GameScene: View {
             }
         }
     }
-    
+    func updateScore(){
+        
+        if data.first!.score < ScoreController.score{
+            data.first?.score = ScoreController.score
+            print("score final \(String(describing: data.first?.score))")
+            do{
+                try context.save()
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+    }
     func startTimer() {
         timerRunning = true
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -48,6 +65,7 @@ struct GameScene: View {
             } else {
                 timerRunning = false
                 timer.invalidate()
+                updateScore()
                 pageManager.page = .feedbackView
             }
         }

@@ -27,7 +27,7 @@ class MainScene: ARView {
         _carregou = carregou  // Inicializa o Binding antes de chamar super.init
         super.init(frame: UIScreen.main.bounds)
         arViewGestureSetup()
-        
+                
         player = PlayerEntity(ar: self)
         self.installGestures(.all, for: player!)
         
