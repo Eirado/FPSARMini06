@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PlayerComponent.registerComponent()
         
+        SpawnerComponent.registerComponent()
+        
+        SpawnerSystem.registerSystem()
+        
         MotionSystem.registerSystem()
         
         HealthComponent.registerComponent()

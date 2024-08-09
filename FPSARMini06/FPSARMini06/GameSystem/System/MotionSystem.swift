@@ -34,6 +34,7 @@ class MotionSystem: RealityKit.System {
             }
 
             
+            
             var newTransform = entity.transform
             
             let targetNode = getCurrentTargetNode(for: entity, with: &motion)

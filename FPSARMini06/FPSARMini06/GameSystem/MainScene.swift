@@ -18,6 +18,7 @@ class MainScene: ARView {
     var player: PlayerEntity? = nil
     var cameraTransforms: simd_float4x4 = simd_float4x4(0)
     var startPosition: SIMD3<Float>?
+    var worldAnchor: AnchorEntity? = nil
     private var firstTap: Bool = false
     
     @Binding var carregou: Bool
@@ -33,21 +34,20 @@ class MainScene: ARView {
         
         let planeAnchor = AnchorEntity(plane: .horizontal)
         
-        let worldAnchor = AnchorEntity(world: .zero)
+        self.worldAnchor = AnchorEntity(world: .zero)
         
         planeAnchor.name = "Plane Anchor"
         
         self.scene.addAnchor(planeAnchor)
        
-        self.scene.addAnchor(worldAnchor)
+        self.scene.addAnchor(self.worldAnchor!)
         
-        worldAnchor.addChild(player!)
+        self.worldAnchor!.addChild(player!)
         
-        setupEnemies(anchor: worldAnchor)
+        setupEnemies(anchor: self.worldAnchor!)
         
     }
 
-    
     @MainActor required dynamic init(frame frameRect: CGRect) {
         fatalError("init(frame:) has not been implemented")
     }
@@ -60,20 +60,17 @@ class MainScene: ARView {
        
         enemy = EnemyEntity()
         
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.8, entityCount: 6)
-//        let motion = enemy?.components[MotionComponent.self] as MotionComponent
+        spawner = SpawnerEntity()
         
         
+        anchor.addChild(spawner!)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        guard var component = spawner?.components[SpawnerComponent.self] as? SpawnerComponent else { return }
+
+        component.anchor = anchor
+        component.entity = enemy!
+        component.entityCount = 10
+        component.spawnerRadius = 0.8
     }
     
     func arViewGestureSetup() {
