@@ -12,7 +12,6 @@ struct AttackComponent: RealityKit.Component {
     var startPosition: SIMD3<Float> = .zero
     var direction: SIMD3<Float> = .zero
     var attackSpeed:Float = 0
-    var damage: Float = 0
     var duration:TimeInterval = 0
     var hit:Bool = false
 }

@@ -61,11 +61,10 @@ class MainScene: ARView {
     
     func setupEnemies(anchor: AnchorEntity) {
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 10)
+        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 3)
     }
     
     func arViewGestureSetup() {
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOnARView))
         self.addGestureRecognizer(tapGesture)
     }

@@ -11,7 +11,7 @@ import SwiftData
 
 class GameState: ObservableObject {
     @Published var carregou: Bool = false
-    @Published var timeRemaining: Int = 60
+    @Published var timeRemaining: Int = 5
     @Published var timerRunning: Bool = false
 }
 

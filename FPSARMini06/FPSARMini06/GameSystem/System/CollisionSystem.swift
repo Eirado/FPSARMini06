@@ -34,6 +34,7 @@ class CollisionSystem: RealityKit.System {
                         do {
                             if !hitLanded {
                                 enemyHealth.totalHealth -= damage
+                                print(enemyHealth.totalHealth)
                                 bulletEntity.components.set(AttackComponent(hit: true))
                                 self.hitLanded = true
                             }

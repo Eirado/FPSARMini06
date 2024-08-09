@@ -10,7 +10,6 @@ import RealityKit
 import UIKit.UIColor
 
 class SpawnerEntity {
-    
     private var entity: Entity
     private var anchor: AnchorEntity
     private var spawnerRadius: Float
@@ -22,19 +21,8 @@ class SpawnerEntity {
         self.anchor = anchor
         self.spawnerRadius = spawnerRadius
         self.entityCount = entityCount
-        setupEntity()
         spawnEntities()
 
-    }
-    
-    private func setupEntity() {
-        
-        let sphere = MeshResource.generateSphere(radius: spawnerRadius)
-        let material = SimpleMaterial(color: UIColor(white: .zero, alpha: 0), isMetallic: false)
-        let modelEntity = ModelEntity(mesh: sphere, materials: [material])
-
-        
-        anchor.addChild(modelEntity)
     }
     
     func spawnEntities() {
