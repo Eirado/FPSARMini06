@@ -12,11 +12,24 @@
             "state" : "translated",
             "value" : "XXXX"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXXX"
+          }
         }
       }
     },
     "bestScore-text: %lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bestScore-text: %lld"
+          }
+        }
+      }
     },
     "bestScore-title" : {
       "localizations" : {
@@ -73,6 +86,12 @@
             "state" : "translated",
             "value" : "Customization Name"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Customization Name"
+          }
         }
       }
     },
@@ -106,6 +125,12 @@
     "health-text" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "XXX"
@@ -195,12 +220,24 @@
             "state" : "translated",
             "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dignissim efficitur odio, sed auctor ipsum interdum at. Aenean tortor nisi, molestie condimentum venenatis quis, dapibus a velit. Ut eu ante ut libero molestie aliquet vel a velit. Integer sed luctus libero, vestibulum tempus sem."
+          }
         }
       }
     },
     "money-text" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$$$ $$$"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "$$$ $$$"
@@ -226,14 +263,34 @@
             "state" : "translated",
             "value" : "XXX"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
         }
       }
     },
     "off" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "off"
+          }
+        }
+      }
     },
     "on" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "on"
+          }
+        }
+      }
     },
     "on-text" : {
       "extractionState" : "stale",
@@ -355,6 +412,12 @@
             "state" : "translated",
             "value" : "XXX"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXX"
+          }
         }
       }
     },
@@ -407,7 +470,14 @@
       }
     },
     "Tempo restante: %lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo restante: %lld"
+          }
+        }
+      }
     },
     "type-title" : {
       "localizations" : {
