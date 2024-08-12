@@ -7,7 +7,7 @@ class MotionSystem: RealityKit.System {
     private static let playerQuery = EntityQuery(where: .has(PlayerComponent.self))
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
-    private let sphereRadius: Float = 2
+    private let sphereRadius: Float = 1
     
     private var playerEntity: [Entity]? = nil // this is a test
     required init(scene: Scene) {
@@ -90,7 +90,7 @@ class MotionSystem: RealityKit.System {
     }
     
     private func generateNodes(for motion: inout MotionComponent) {
-        let numberOfNodes = 10
+        let numberOfNodes = 8
         motion.nodes.removeAll()
         
         for i in 0..<numberOfNodes {
