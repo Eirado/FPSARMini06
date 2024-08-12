@@ -13,6 +13,8 @@ class SpawnerSystem: RealityKit.System {
     var spawner: Entity?
 
     var spawnerComponent: SpawnerComponent? = nil
+    
+    var enemyCount: Int = 0
 
     required init(scene: Scene) { }
 
