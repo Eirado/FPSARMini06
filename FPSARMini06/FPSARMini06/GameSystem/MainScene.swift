@@ -70,8 +70,6 @@ class MainScene: ARView {
         
         spawner?.components[SpawnerComponent.self] = component
         
-        print(component.entity?.name)
-        
         anchor.addChild(spawner!)
     }
     

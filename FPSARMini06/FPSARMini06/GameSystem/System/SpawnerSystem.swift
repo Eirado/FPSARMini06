@@ -4,8 +4,6 @@ import UIKit.UIColor
 
 class SpawnerSystem: RealityKit.System {
 
-    static var dependencies: [SystemDependency] { [.before(MotionSystem.self)] }
-
     private static let query = EntityQuery(where: .has(MotionComponent.self))
 
     var querySpawner = EntityQuery(where: .has(SpawnerComponent.self))
@@ -31,14 +29,13 @@ class SpawnerSystem: RealityKit.System {
                 self.spawnerComponent = component as? SpawnerComponent
             
                 spawnEntities(component: spawnerComponent!)
+                
             }
         }
     }
 
 
     func spawnEntities(component: SpawnerComponent) {
-        
-        print(component.entity?.name)
         
         let spawnPublisher = Publishers.Sequence(sequence: 0...component.entityCount!)
             .flatMap { _ -> AnyPublisher<Void, Never> in
