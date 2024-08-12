@@ -17,8 +17,9 @@ class MainScene: ARView {
     var spawner: SpawnerEntity? = nil
     var player: PlayerEntity? = nil
     var cameraTransforms: simd_float4x4 = simd_float4x4(0)
-    var startPosition:SIMD3<Float>?
-    private var firstTap:Bool = false
+    var startPosition: SIMD3<Float>?
+    var worldAnchor: AnchorEntity? = nil
+    private var firstTap: Bool = false
     
     func mata() {
         enemy = nil
@@ -41,8 +42,10 @@ class MainScene: ARView {
         player = PlayerEntity(ar: self)
     
         self.installGestures(.all, for: player!)
-    
-        let worldAnchor = AnchorEntity(world: .zero)
+        
+        let planeAnchor = AnchorEntity(plane: .horizontal)
+        
+        self.worldAnchor = AnchorEntity(world: .zero)
         
         worldAnchor.name = "worldAnchor"
         
@@ -52,16 +55,33 @@ class MainScene: ARView {
         planeAnchor.name = "Plane Anchor"
 //
         self.scene.addAnchor(planeAnchor)
-        self.scene.addAnchor(worldAnchor)
-        
-        worldAnchor.addChild(player!)
        
-        setupEnemies(anchor: worldAnchor)
+        self.scene.addAnchor(self.worldAnchor!)
+        
+        self.worldAnchor!.addChild(player!)
+        
+        setupEnemies(anchor: self.worldAnchor!)
+        
+    }
+
+    @MainActor required dynamic init(frame frameRect: CGRect) {
+        fatalError("init(frame:) has not been implemented")
     }
     
     func setupEnemies(anchor: AnchorEntity) {
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 3)
+        
+        spawner = SpawnerEntity()
+        
+        guard let component = spawner?.components[SpawnerComponent.self] as? SpawnerComponent else { return }
+
+        component.entity = enemy!
+        component.entityCount = 10
+        component.spawnerRadius = 0.8
+        
+        spawner?.components[SpawnerComponent.self] = component
+        
+        anchor.addChild(spawner!)
     }
     
     func arViewGestureSetup() {
@@ -75,29 +95,30 @@ class MainScene: ARView {
             await player?.addBullet()
         }
     }
-    
-    func destroyEntities() {
-            player = nil
-            enemy = nil
-            spawner = nil
-        }
-    
-    func resetScene() {
-            // Destrua entidades antigas
-            destroyEntities()
-            
-            // Reconfigure o ARView
-            self.scene.anchors.removeAll()
-            
-            player = PlayerEntity(ar: self)
-            self.installGestures(.all, for: player!)
-            
-            let worldAnchor = AnchorEntity(world: .zero)
-            worldAnchor.name = "worldAnchor"
-            self.scene.addAnchor(worldAnchor)
-            worldAnchor.addChild(player!)
-            
-            setupEnemies(anchor: worldAnchor)
-        }
+}
+
+extension MainScene: ARCoachingOverlayViewDelegate {
+   
+//    func addCoaching() {
+//        let coachingOverlay = ARCoachingOverlayView()
+//        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        coachingOverlay.goal = .horizontalPlane
+//        coachingOverlay.session = self.session
+//        coachingOverlay.delegate = self
+//        self.addSubview(coachingOverlay)
+//    }
+//    
+////    private func addVirtualObjects() {
+////        guard let anchor = self.scene.anchors.first(where: { $0.name == "Plane Anchor" }) else {
+////            return
+////        }
+//        
+//        setupEnemies(anchor: anchor as! AnchorEntity)
+//    }
+//    
+//    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
+//        addVirtualObjects()
+//        carregou = true
+//    }
     
 }
