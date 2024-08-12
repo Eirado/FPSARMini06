@@ -10,7 +10,6 @@ import RealityKit
 class SpawnerComponent: RealityKit.Component {
     
      var entity: Entity?
-     var anchor: AnchorEntity?
      var spawnerRadius: Float?
      var entityCount: Int?
     

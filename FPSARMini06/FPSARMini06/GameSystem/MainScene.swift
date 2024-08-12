@@ -62,15 +62,17 @@ class MainScene: ARView {
         
         spawner = SpawnerEntity()
         
-        
-        anchor.addChild(spawner!)
-        
-        guard var component = spawner?.components[SpawnerComponent.self] as? SpawnerComponent else { return }
+        guard let component = spawner?.components[SpawnerComponent.self] as? SpawnerComponent else { return }
 
-        component.anchor = anchor
         component.entity = enemy!
         component.entityCount = 10
         component.spawnerRadius = 0.8
+        
+        spawner?.components[SpawnerComponent.self] = component
+        
+        print(component.entity?.name)
+        
+        anchor.addChild(spawner!)
     }
     
     func arViewGestureSetup() {
@@ -87,26 +89,26 @@ class MainScene: ARView {
 
 extension MainScene: ARCoachingOverlayViewDelegate {
    
-    func addCoaching() {
-        let coachingOverlay = ARCoachingOverlayView()
-        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coachingOverlay.goal = .horizontalPlane
-        coachingOverlay.session = self.session
-        coachingOverlay.delegate = self
-        self.addSubview(coachingOverlay)
-    }
-    
-    private func addVirtualObjects() {
-        guard let anchor = self.scene.anchors.first(where: { $0.name == "Plane Anchor" }) else {
-            return
-        }
-        
-        setupEnemies(anchor: anchor as! AnchorEntity)
-    }
-    
-    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
-        addVirtualObjects()
-        carregou = true
-    }
+//    func addCoaching() {
+//        let coachingOverlay = ARCoachingOverlayView()
+//        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        coachingOverlay.goal = .horizontalPlane
+//        coachingOverlay.session = self.session
+//        coachingOverlay.delegate = self
+//        self.addSubview(coachingOverlay)
+//    }
+//    
+////    private func addVirtualObjects() {
+////        guard let anchor = self.scene.anchors.first(where: { $0.name == "Plane Anchor" }) else {
+////            return
+////        }
+//        
+//        setupEnemies(anchor: anchor as! AnchorEntity)
+//    }
+//    
+//    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
+//        addVirtualObjects()
+//        carregou = true
+//    }
     
 }

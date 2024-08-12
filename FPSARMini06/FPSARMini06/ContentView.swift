@@ -36,7 +36,6 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         let arView = MainScene(carregou: $carregou)
-        arView.addCoaching()
         return arView
     }
     

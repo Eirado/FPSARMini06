@@ -22,8 +22,10 @@ class EnemyEntity: Entity, HasCollision, HasModel {
         self.modelShape = .generateSphere(radius: 0.1)
         
         self.model = ModelEntity()
-        
+    
         super.init()
+        
+        self.name = "Enemy"
         
         Entity.loadModelAsync()
             .sink(receiveCompletion: { completion in
