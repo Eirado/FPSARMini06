@@ -27,12 +27,10 @@ struct HowToPlayView: View {
                                     .tint(.black)
                             }
                     })
-                    
-                    Spacer()
-                    
+                                        
                     Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
-                        .tint(.black)
+                        .foregroundStyle(.white)
                         .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                         .minimumScaleFactor(0.5)
                     
@@ -46,7 +44,7 @@ struct HowToPlayView: View {
                 Text("LoremIpsum")
                     .padding()
                     .minimumScaleFactor(0.5)
-                
+                    .foregroundStyle(.white)
                 Spacer()
                 
                 Button(action: {
@@ -58,7 +56,7 @@ struct HowToPlayView: View {
                         .overlay {
                             Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .foregroundStyle(.white)
                                 .minimumScaleFactor(0.5)
                         }
                 })

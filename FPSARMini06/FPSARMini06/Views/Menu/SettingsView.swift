@@ -36,7 +36,7 @@ struct SettingsView: View {
                     
                     Text("settingsView-title")
                         .font(.system(size: 20, weight: .bold))
-                        .tint(.black)
+                        .foregroundStyle(.white)
                         .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                         .minimumScaleFactor(0.5)
                     

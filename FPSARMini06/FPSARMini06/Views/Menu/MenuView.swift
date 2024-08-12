@@ -17,7 +17,9 @@ struct MenuView: View {
     
     var body: some View {
         ZStack {
-            Color.red.opacity(0.2)
+            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]),
+                                       startPoint: .topLeading,
+                                       endPoint: .bottomTrailing)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
             VStack {
@@ -61,8 +63,8 @@ struct MenuView: View {
                         .overlay {
                             Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                         }
                 }
                 
@@ -75,7 +77,7 @@ struct MenuView: View {
                         .overlay {
                             Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .foregroundStyle(.white)
                                 .minimumScaleFactor(0.5)
                         }
                 }

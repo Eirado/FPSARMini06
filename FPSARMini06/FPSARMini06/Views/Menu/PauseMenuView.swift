@@ -39,7 +39,7 @@ struct PauseMenuView: View {
                         Spacer()
                         Text("pauseMenuView-title")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(.white)
                             .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                             .minimumScaleFactor(0.5)
                         Spacer()
@@ -62,7 +62,7 @@ struct PauseMenuView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("resumeGame-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .foregroundStyle(.white)
                                 .minimumScaleFactor(0.5)
                         }
                     }
@@ -76,7 +76,7 @@ struct PauseMenuView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("quitGame-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .foregroundStyle(.white)
                                 .minimumScaleFactor(0.5)
                         }
                     }

@@ -6,8 +6,11 @@
 //
 
 import Foundation
-import Combine
 
 public class ScoreController: ObservableObject {
     public static var score: Int = 0
+}
+
+class settingsPersistence{
+    public static let defaults = UserDefaults.standard
 }

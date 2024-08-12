@@ -33,7 +33,9 @@ struct ComponentePauseMenuBG3: View {
                     print("action")
                 }
                 ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "vibration-text") {
-                    print("action")
+                    let generator = UIImpactFeedbackGenerator(style: .rigid)
+                    generator.impactOccurred()
+                    settingsPersistence.defaults.set(toggleOn, forKey: "vibration")
                 }
             }
             .frame(width: UIScreen.main.bounds.width * cBG3W, height: UIScreen.main.bounds.height * cBG3H)
@@ -43,6 +45,8 @@ struct ComponentePauseMenuBG3: View {
 
 struct ComponentePauseMenuBG5: View {
     @Binding var toggleOn: Bool
+    let defaults = UserDefaults.standard
+    
     var body: some View {
         ZStack{
             // MARK: Background
@@ -69,9 +73,16 @@ struct ComponentePauseMenuBG5: View {
                 ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "music-text") {
                     print("action")
                 }
-                ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "vibration-text") {
-                    print("action")
+                
+                ComponentePauseMenuFG(toggleOn: defaults.bool(forKey: "vibration"), tittle: "vibration-text") {
+                    if toggleOn{
+                        let generator = UIImpactFeedbackGenerator(style: .rigid)
+                        generator.impactOccurred()
+                    }
+                    settingsPersistence.defaults.set(toggleOn, forKey: "vibration")
+                    toggleOn.toggle()
                 }
+                
                 ComponentePauseMenuFG(toggleOn: toggleOn, tittle: "light-dark") {
                     print("action")
                 }
@@ -85,7 +96,7 @@ struct ComponentePauseMenuBG5: View {
 }
 
 struct ComponentePauseMenuFG: View {
-    @State var toggleOn = false
+    @State var toggleOn:Bool
     
     @State var tittle: LocalizedStringKey
     var action: () -> Void
@@ -99,19 +110,19 @@ struct ComponentePauseMenuFG: View {
             Text(tittle)
                 .font(.system(size: 18, weight: .bold))
                 .minimumScaleFactor(0.5)
+                .foregroundStyle(.white)
             Spacer()
-//            Text("on-text")
-//                .font(.system(size: 18))
-//                .minimumScaleFactor(0.5)
+            //            Text("on-text")
+            //                .font(.system(size: 18))
+            //                .minimumScaleFactor(0.5)
             
             Toggle(togglePause, isOn: $toggleOn)
-                .toggleStyle(CustomToggleStyle())
-                .task {
-                    if toggleOn{
-                        action()
-                    }
-                }
+                .toggleStyle(CustomToggleStyle(toggleOn: $toggleOn))
                 .padding(.trailing)
+                .onChange(of: toggleOn, {
+                    action()
+                })
+            
         }
         .padding(.vertical, 12.5)
     }
@@ -120,6 +131,7 @@ struct ComponentePauseMenuFG: View {
 }
 
 struct CustomToggleStyle: ToggleStyle {
+    @Binding var toggleOn:Bool
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             // Label on the left
@@ -138,6 +150,7 @@ struct CustomToggleStyle: ToggleStyle {
                     HStack {
                         if configuration.isOn {
                             Text("on")
+                                .foregroundStyle(.white)
                                 .padding(2)
                             Spacer()
                         }
@@ -150,10 +163,13 @@ struct CustomToggleStyle: ToggleStyle {
                         if !configuration.isOn {
                             Spacer()
                             Text("off")
+                                .foregroundStyle(.white)
                                 .padding(2)
                         }
                     }
-                }
+                }.onAppear(perform: {
+                    configuration.isOn = toggleOn
+                })
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 0.2)){
                         configuration.isOn.toggle()
