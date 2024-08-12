@@ -27,6 +27,8 @@ struct ContentView : View {
             let data = UserData(score: 0, box_itens_ID: [])
             context.insert(data)
         }
+        
+        
     }
 }
 

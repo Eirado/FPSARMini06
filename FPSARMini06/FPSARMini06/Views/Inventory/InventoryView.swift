@@ -32,14 +32,14 @@ struct InventoryView: View {
                                 .overlay {
                                     Image(systemName: "chevron.left")
                                         .font(.system(size: 36, weight: .bold))
-                                        .tint(.black)
+                                        .foregroundStyle(.white)
                                 }
                         })
                         .padding(.leading)
                         Spacer()
                         Text("inventoryView-title")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(.white)
                             .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                             .minimumScaleFactor(0.5)
                         Spacer()
@@ -114,10 +114,11 @@ struct ExtractedView: View {
                     }
                 Text("bestScore-title")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(.white)
                     .minimumScaleFactor(0.5)
                 Text("bestScore-text: \(score)")
                     .minimumScaleFactor(0.5)
+                    .foregroundStyle(.white)
             }
             .frame(width: UIScreen.main.bounds.width * insideVsW, height: UIScreen.main.bounds.height * insideVsH)
         }
@@ -176,6 +177,7 @@ struct ExtractedView4: View {
                             Text("type-title")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                         }
                     Spacer()
                     RoundedRectangle(cornerRadius: 30)
@@ -185,6 +187,7 @@ struct ExtractedView4: View {
                             Text("money-text")
                                 .font(.system(size: 14))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                                 .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
                         }
                         .frame(width: UIScreen.main.bounds.width * bgTypePillW, height: UIScreen.main.bounds.height * bgTypePillH)
@@ -206,6 +209,7 @@ struct ExtractedView4: View {
                 HStack {
                     Text("customizationName-title")
                         .minimumScaleFactor(0.5)
+                        .foregroundStyle(.white)
                     Spacer()
                     
                     Button(action: {
@@ -221,6 +225,7 @@ struct ExtractedView4: View {
                                 Text("claim-button")
                                     .font(.system(size: 16, weight: .bold))
                                     .minimumScaleFactor(0.5)
+                                    .foregroundStyle(.white)
                             }
                     })
                     

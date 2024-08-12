@@ -18,6 +18,7 @@ struct MenuView: View {
     var body: some View {
         ZStack {
             Image("Background Gradient")
+
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
             VStack {

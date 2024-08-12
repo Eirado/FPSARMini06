@@ -29,9 +29,7 @@ struct HowToPlayView: View {
                                     .tint(.white)
                             }
                     })
-                    
-                    Spacer()
-                    
+                                        
                     Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundStyle(.white)
@@ -44,11 +42,12 @@ struct HowToPlayView: View {
                 .padding(.horizontal, 12)
                 
                 Spacer()
-                    Text("LoremIpsum")
-                        .foregroundStyle(.white)
-                        .padding()
-                        .minimumScaleFactor(0.5)
                 
+                Text("LoremIpsum")
+                    .padding()
+                    .minimumScaleFactor(0.5)
+                    .foregroundStyle(.white)
+
                 Spacer()
                 
                 Button(action: {

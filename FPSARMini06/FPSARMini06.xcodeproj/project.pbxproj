@@ -16,7 +16,8 @@
 		12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */; };
 		12B308E22C5C23BE0005ADE1 /* GeometryReaderNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */; };
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
-		700CCAE32C655CF900544531 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* ScoreController.swift */; };
+		700CCAE32C655CF900544531 /* UtilsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* UtilsGame.swift */; };
+		700CCAE72C66B1F500544531 /* TestUpdateScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE62C66B1F500544531 /* TestUpdateScore.swift */; };
 		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
 		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
 		70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */; };
@@ -69,8 +70,10 @@
 		12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSARMini06Tests.swift; sourceTree = "<group>"; };
 		12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderNumbers.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4C4923C12C66BA83004A68C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		700CCAE22C655CF900544531 /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
+
+		700CCAE22C655CF900544531 /* UtilsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsGame.swift; sourceTree = "<group>"; };
+		700CCAE62C66B1F500544531 /* TestUpdateScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateScore.swift; sourceTree = "<group>"; };
+
 		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
 		70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSystem.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */,
+				700CCAE62C66B1F500544531 /* TestUpdateScore.swift */,
 			);
 			path = FPSARMini06Tests;
 			sourceTree = "<group>";
@@ -272,8 +276,8 @@
 				B868FA982C4EC2B10038ECD9 /* Views */,
 				B868FA972C4EC2A00038ECD9 /* GameSystem */,
 				B8C65F892C4AE1E100D56811 /* AppDelegate.swift */,
+				700CCAE22C655CF900544531 /* UtilsGame.swift */,
 				B8C65F8B2C4AE1E100D56811 /* ContentView.swift */,
-				700CCAE22C655CF900544531 /* ScoreController.swift */,
 				ABFA01782C4ED1BB0096BA9F /* GameController.swift */,
 				127DF4242C52EA08009C3231 /* Utils */,
 				B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */,
@@ -394,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12B308DB2C5AD8B60005ADE1 /* FPSARMini06Tests.swift in Sources */,
+				700CCAE72C66B1F500544531 /* TestUpdateScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +416,7 @@
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
 				127DF41D2C502749009C3231 /* PageManager.swift in Sources */,
-				700CCAE32C655CF900544531 /* ScoreController.swift in Sources */,
+				700CCAE32C655CF900544531 /* UtilsGame.swift in Sources */,
 				B8C65F8C2C4AE1E100D56811 /* ContentView.swift in Sources */,
 				B885FF652C5424DF00761BDE /* GameCollisionComponent.swift in Sources */,
 				70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */,
@@ -612,7 +617,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+
+				DEVELOPMENT_TEAM = CU2V2363W7;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
@@ -651,7 +658,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+
+				DEVELOPMENT_TEAM = CU2V2363W7;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;

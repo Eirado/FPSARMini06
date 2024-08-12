@@ -19,6 +19,7 @@ class MainScene: ARView {
     var cameraTransforms: simd_float4x4 = simd_float4x4(0)
     var startPosition:SIMD3<Float>?
     private var firstTap:Bool = false
+    let generator = UIImpactFeedbackGenerator(style: .rigid)
     
     func mata() {
         enemy = nil
@@ -37,11 +38,11 @@ class MainScene: ARView {
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
-                        
+        
         player = PlayerEntity(ar: self)
-    
+        
         self.installGestures(.all, for: player!)
-    
+        
         let worldAnchor = AnchorEntity(world: .zero)
         
         worldAnchor.name = "worldAnchor"
@@ -49,13 +50,15 @@ class MainScene: ARView {
         
         let planeAnchor = AnchorEntity(plane: .horizontal)
         
+
         planeAnchor.name = "Plane Anchor"
 //
         self.scene.addAnchor(planeAnchor)
+
         self.scene.addAnchor(worldAnchor)
         
         worldAnchor.addChild(player!)
-       
+        
         setupEnemies(anchor: worldAnchor)
     }
     
@@ -71,33 +74,36 @@ class MainScene: ARView {
     
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
+        if settingsPersistence.defaults.bool(forKey: "vibration"){
+            generator.impactOccurred()
+        }
         Task {
             await player?.addBullet()
         }
     }
     
     func destroyEntities() {
-            player = nil
-            enemy = nil
-            spawner = nil
-        }
+        player = nil
+        enemy = nil
+        spawner = nil
+    }
     
     func resetScene() {
-            // Destrua entidades antigas
-            destroyEntities()
-            
-            // Reconfigure o ARView
-            self.scene.anchors.removeAll()
-            
-            player = PlayerEntity(ar: self)
-            self.installGestures(.all, for: player!)
-            
-            let worldAnchor = AnchorEntity(world: .zero)
-            worldAnchor.name = "worldAnchor"
-            self.scene.addAnchor(worldAnchor)
-            worldAnchor.addChild(player!)
-            
-            setupEnemies(anchor: worldAnchor)
-        }
+        // Destrua entidades antigas
+        destroyEntities()
+        
+        // Reconfigure o ARView
+        self.scene.anchors.removeAll()
+        
+        player = PlayerEntity(ar: self)
+        self.installGestures(.all, for: player!)
+        
+        let worldAnchor = AnchorEntity(world: .zero)
+        worldAnchor.name = "worldAnchor"
+        self.scene.addAnchor(worldAnchor)
+        worldAnchor.addChild(player!)
+        
+        setupEnemies(anchor: worldAnchor)
+    }
     
 }

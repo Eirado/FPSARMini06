@@ -35,9 +35,11 @@ struct GamePlayFeedbackView: View {
                 Text("defeat-title")
                     .font(.system(size: 64, weight: .bold))
                     .minimumScaleFactor(0.5)
+                    .foregroundStyle(.white)
                 Text("waveNumber-text")
                     .font(.system(size: 36, weight: .bold))
                     .minimumScaleFactor(0.5)
+                    .foregroundStyle(.white)
                 
                 VStack {
                     VStack{
@@ -45,20 +47,24 @@ struct GamePlayFeedbackView: View {
                             Text("bots-title")
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                             Spacer()
                             Text("numberOfBots-text")
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                         }
                         
                         HStack {
                             Text("health-title")
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                             Spacer()
                             Text("health-text")
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
+                                .foregroundStyle(.white)
                         }
                     }
                     .padding(.bottom, 12)
@@ -68,10 +74,12 @@ struct GamePlayFeedbackView: View {
                         Text("reward-title")
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
+                            .foregroundStyle(.white)
                         Spacer()
                         Text("reward-text")
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
+                            .foregroundStyle(.white)
                         Spacer()
                     }
                 }
@@ -91,7 +99,7 @@ struct GamePlayFeedbackView: View {
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("playAgain-button")
                             .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
+                            .foregroundStyle(.white)
                             .minimumScaleFactor(0.5)
                     }
                 }
@@ -105,7 +113,7 @@ struct GamePlayFeedbackView: View {
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("quitGame-button")
                             .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
+                            .foregroundStyle(.white)
                             .minimumScaleFactor(0.5)
                     }
                 }
