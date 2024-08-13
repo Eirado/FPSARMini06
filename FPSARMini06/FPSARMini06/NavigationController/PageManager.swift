@@ -23,6 +23,6 @@ enum Page {
 }
 
 @Observable class PageManager {
-    var page: Page = .howToPlay // MARK: Comentar linha quando for testar o jogo em si
+    var page: Page = .menu // MARK: Comentar linha quando for testar o jogo em si
 //    var page: Page = .gameScene // MARK: Comentar página quando for testar o menu
 }
