@@ -15,10 +15,6 @@ class SpawnerEntity: Entity{
         super.init()
         
         self.components[SpawnerComponent.self] = SpawnerComponent()
-        
-//        self.components[ModelComponent.self] = ModelComponent(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial(color: .black, isMetallic: true)])
-//        
-        
     }
 }
     
