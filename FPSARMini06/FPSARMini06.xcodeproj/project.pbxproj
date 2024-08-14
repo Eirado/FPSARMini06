@@ -626,7 +626,7 @@
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access camera to start the game";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access camera to start the game";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
