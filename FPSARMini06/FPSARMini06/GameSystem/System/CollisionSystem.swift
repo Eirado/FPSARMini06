@@ -13,7 +13,7 @@ class CollisionSystem: RealityKit.System {
     private let hasCollisionComponentQuery = EntityQuery(where: .has(GameCollisionComponent.self))
     var collisionSubscriptions = [Cancellable]()
     var hitLanded: Bool = false
-    let damage: Int = 10
+    let damage: Int = 70
     
     required init(scene: Scene) { }
     
@@ -34,6 +34,7 @@ class CollisionSystem: RealityKit.System {
                         do {
                             if !hitLanded {
                                 enemyHealth.totalHealth -= damage
+                                print(enemyHealth.totalHealth)
                                 bulletEntity.components.set(AttackComponent(hit: true))
                                 self.hitLanded = true
                             }

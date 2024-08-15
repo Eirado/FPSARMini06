@@ -9,12 +9,16 @@ import UIKit
 import SwiftUI
 import SwiftData
 
+class GameState: ObservableObject {
+    @Published var carregou: Bool = false
+    @Published var timeRemaining: Int = 60
+    @Published var timerRunning: Bool = false
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    @State var toggleOn: Bool = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -28,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PlayerComponent.registerComponent()
         
+        SpawnerComponent.registerComponent()
+        
+        SpawnerSystem.registerSystem()
+        
         MotionSystem.registerSystem()
         
         HealthComponent.registerComponent()
@@ -38,12 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PlayerSystem.registerSystem()
         
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(toggleOn: $toggleOn)
+        let contentView = ContentView()
             .environment(PageManager())
+            .environmentObject(GameState())
             .modelContainer(for: UserData.self)
 
-        // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window

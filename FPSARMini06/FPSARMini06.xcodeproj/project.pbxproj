@@ -46,6 +46,8 @@
 		B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381F62C5AB29C0038463C /* BulletEntity.swift */; };
 		B8E381FB2C5ABE1D0038463C /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */; };
 		B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E381FC2C5ABE620038463C /* HealthSystem.swift */; };
+		B8ED20A62C6E6379009C26F0 /* SpawnerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED20A52C6E6379009C26F0 /* SpawnerComponent.swift */; };
+		B8ED20A82C6E638B009C26F0 /* SpawnerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED20A72C6E638B009C26F0 /* SpawnerSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		B8E381F62C5AB29C0038463C /* BulletEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletEntity.swift; sourceTree = "<group>"; };
 		B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
 		B8E381FC2C5ABE620038463C /* HealthSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSystem.swift; sourceTree = "<group>"; };
+		B8ED20A52C6E6379009C26F0 /* SpawnerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnerComponent.swift; sourceTree = "<group>"; };
+		B8ED20A72C6E638B009C26F0 /* SpawnerSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnerSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		B8114BDF2C5196A6001940C2 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				B8ED20A72C6E638B009C26F0 /* SpawnerSystem.swift */,
 				ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */,
 				B8E381FC2C5ABE620038463C /* HealthSystem.swift */,
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
@@ -208,6 +213,7 @@
 				ABEC1B692C52D73600AE13EF /* MotionComponent.swift */,
 				B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */,
 				B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */,
+				B8ED20A52C6E6379009C26F0 /* SpawnerComponent.swift */,
 				B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */,
 				70AA701D2C5D679A004C306A /* PlayerComponent.swift */,
 			);
@@ -405,6 +411,8 @@
 				B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */,
 				B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */,
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
+				B8ED20A62C6E6379009C26F0 /* SpawnerComponent.swift in Sources */,
+				B8ED20A82C6E638B009C26F0 /* SpawnerSystem.swift in Sources */,
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
@@ -610,7 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -641,7 +649,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

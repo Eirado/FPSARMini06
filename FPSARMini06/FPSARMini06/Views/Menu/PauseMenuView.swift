@@ -13,7 +13,7 @@ import SwiftUI
 
 struct PauseMenuView: View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
+    @State var toggleOn: Bool = false
     
     var body: some View {
             ZStack {
@@ -94,7 +94,7 @@ struct PauseMenuView: View {
         @State private var toggleOn = false
         
         var body: some View {
-            PauseMenuView(toggleOn: $toggleOn)
+            PauseMenuView()
                 .environment(PageManager())
         }
     }

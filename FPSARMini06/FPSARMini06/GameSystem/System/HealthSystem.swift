@@ -18,10 +18,11 @@ class HealthSystem: System {
         context.scene.performQuery(Self.query).forEach { entity in
             guard let component = entity.components[HealthComponent.self] as? HealthComponent else { return }
             
-            if component.totalHealth == 0 {
+            if component.totalHealth <= 0 {
                 die(entity: entity)
             }
         }
+        
         func die(entity: Entity) {
             let playerEntity = context.scene.performQuery(Self.queryPlayer).map({$0}).first
             if entity != playerEntity{
