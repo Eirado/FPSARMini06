@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "type=playAR.png",
+      "filename" : "button_playAR.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
