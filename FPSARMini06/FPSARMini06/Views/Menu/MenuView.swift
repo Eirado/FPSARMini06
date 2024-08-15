@@ -61,7 +61,7 @@ struct MenuView: View {
                         .overlay {
                             Text("play-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.white)
+                                .tint(.black)
                                 .minimumScaleFactor(0.5)
                         }
                 }
