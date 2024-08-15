@@ -1,6 +1,7 @@
 import Foundation
 import RealityKit
 import UIKit
+import Combine
 
 class MotionSystem: RealityKit.System {
     private static let query = EntityQuery(where: .has(MotionComponent.self))
@@ -8,7 +9,6 @@ class MotionSystem: RealityKit.System {
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
     private let sphereRadius: Float = 0.8
-    
     
     required init(scene: Scene) {
         
@@ -29,7 +29,7 @@ class MotionSystem: RealityKit.System {
             if motion.nodes.isEmpty{
                 generateNodes(for: &motion)
             }
-
+            
             
             var newTransform = entity.transform
             
@@ -70,9 +70,9 @@ class MotionSystem: RealityKit.System {
     }
     
     private func getCurrentTargetNode(for entity: Entity, with motion: inout MotionComponent) -> SIMD3<Float> {
-
+        
         selectNewTargetNode(for: &motion)
-    
+        
         return motion.nodes[self.currentTargetIndex!]
     }
     

@@ -14,7 +14,8 @@ import SwiftUI
 struct PauseMenuView: View {
     @Environment(PageManager.self) var pageManager
     @State var toggleOn: Bool = false
-    
+    @StateObject var timerManager: TimerManager
+    @Binding var pause: Bool
     var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -25,7 +26,8 @@ struct PauseMenuView: View {
                 VStack {
                     HStack {
                         Button {
-                            pageManager.page = .gameScene
+                            timerManager.resumeTimer()
+                            pause = false
                         } label: {
                             ZStack{
                                 Image("button_nav")
@@ -54,7 +56,8 @@ struct PauseMenuView: View {
                     Spacer()
                     
                     Button {
-                        pageManager.page = .gameScene
+                        timerManager.resumeTimer()
+                        pause = false
                     } label: {
                         ZStack{
                             Image("button_default")
@@ -89,14 +92,14 @@ struct PauseMenuView: View {
     }
 }
 
-#Preview {
-    struct PauseMenuPreviewContainer: View{
-        @State private var toggleOn = false
-        
-        var body: some View {
-            PauseMenuView()
-                .environment(PageManager())
-        }
-    }
-    return PauseMenuPreviewContainer()
-}
+//#Preview {
+//    struct PauseMenuPreviewContainer: View{
+//        @State private var toggleOn = false
+//        
+//        var body: some View {
+//            PauseMenuView( pause: .constant(true), timerManager: <#TimerManager#>)
+//                .environment(PageManager())
+//        }
+//    }
+//    return PauseMenuPreviewContainer()
+//}

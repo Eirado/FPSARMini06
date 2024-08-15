@@ -17,7 +17,7 @@ struct ContentView : View {
     
     var body: some View {
         Navigator().edgesIgnoringSafeArea(.all)
-            .task {
+            .onAppear() {
                 fetchData()
             }
     }

@@ -10,6 +10,7 @@
  */
 
 import SwiftUI
+import SwiftData
 
 struct MenuView: View {
     @Environment(PageManager.self) var pageManager
@@ -84,6 +85,7 @@ struct MenuView: View {
             .padding(.vertical, 20)
         }
         .ignoresSafeArea(.all)
+        
     }
 }
 

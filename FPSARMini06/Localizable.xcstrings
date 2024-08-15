@@ -213,9 +213,6 @@
         }
       }
     },
-    "Loading..." : {
-
-    },
     "LoremIpsum" : {
       "localizations" : {
         "en" : {
@@ -409,6 +406,7 @@
       }
     },
     "reward-text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

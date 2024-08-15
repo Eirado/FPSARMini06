@@ -25,7 +25,8 @@ struct Navigator: View {
         case .settings:
             SettingsView()
         case .pause:
-            PauseMenuView()
+            SettingsView()
+//            PauseMenuView()
         case .feedbackView:
             GamePlayFeedbackView()
         }

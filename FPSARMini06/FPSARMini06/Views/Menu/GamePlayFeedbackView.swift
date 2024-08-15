@@ -76,7 +76,7 @@ struct GamePlayFeedbackView: View {
                             .minimumScaleFactor(0.5)
                             .foregroundStyle(.white)
                         Spacer()
-                        Text("reward-text")
+                        Text(data.first?.score.description ?? "0")
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
                             .foregroundStyle(.white)
@@ -123,22 +123,20 @@ struct GamePlayFeedbackView: View {
         }
         .padding(.vertical, 20)
         .padding(.horizontal, 12)
+        .onAppear(perform: {
+            updateScore()
+        })
     }
-}
-
-
-extension GamePlayFeedbackView{
     func updateScore(){
-        
-        let score = 0
-        
-        data.first?.score = score
-        
-        
-        do{
-            try context.save()
-        }catch{
-            print(error.localizedDescription)
+        if data.first!.score < ScoreController.score{
+            data.first?.score = ScoreController.score
+            print("score final \(String(describing: data.first?.score))")
+            ScoreController.score = 0
+            do{
+                try context.save()
+            }catch{
+                print(error.localizedDescription)
+            }
         }
     }
 }

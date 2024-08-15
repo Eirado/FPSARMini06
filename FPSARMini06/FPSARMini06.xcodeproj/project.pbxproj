@@ -18,6 +18,7 @@
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		700CCAE32C655CF900544531 /* UtilsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* UtilsGame.swift */; };
 		700CCAE72C66B1F500544531 /* TestUpdateScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE62C66B1F500544531 /* TestUpdateScore.swift */; };
+		706ABC782C6A8B2900059D18 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706ABC772C6A8B2900059D18 /* TimerManager.swift */; };
 		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
 		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
 		70D9C7B42C5C032B003DCEA4 /* AttackSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */; };
@@ -70,10 +71,9 @@
 		12B308DA2C5AD8B60005ADE1 /* FPSARMini06Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSARMini06Tests.swift; sourceTree = "<group>"; };
 		12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderNumbers.swift; sourceTree = "<group>"; };
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-
 		700CCAE22C655CF900544531 /* UtilsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsGame.swift; sourceTree = "<group>"; };
 		700CCAE62C66B1F500544531 /* TestUpdateScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateScore.swift; sourceTree = "<group>"; };
-
+		706ABC772C6A8B2900059D18 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
 		70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackSystem.swift; sourceTree = "<group>"; };
@@ -227,6 +227,7 @@
 				127DF4202C52D6CD009C3231 /* PauseMenuView.swift */,
 				127DF4252C542A8D009C3231 /* GamePlayFeedbackView.swift */,
 				12F2DF902C581C22001C663C /* SettingsView.swift */,
+				706ABC772C6A8B2900059D18 /* TimerManager.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -270,7 +271,6 @@
 		B8C65F882C4AE1E100D56811 /* FPSARMini06 */ = {
 			isa = PBXGroup;
 			children = (
-				4C4923C12C66BA83004A68C7 /* Info.plist */,
 				B868FA9A2C4EC2CB0038ECD9 /* Model */,
 				B868FA992C4EC2B70038ECD9 /* NavigationController */,
 				B868FA982C4EC2B10038ECD9 /* Views */,
@@ -432,6 +432,7 @@
 				70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */,
 				AB364A662C62A104009E33A1 /* SpawnerEntity.swift in Sources */,
 				127DF41F2C5028F6009C3231 /* GameScene.swift in Sources */,
+				706ABC782C6A8B2900059D18 /* TimerManager.swift in Sources */,
 				12B308E22C5C23BE0005ADE1 /* GeometryReaderNumbers.swift in Sources */,
 				B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */,
 				B868FAA32C4EC3420038ECD9 /* InventoryView.swift in Sources */,
@@ -617,9 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-
 				DEVELOPMENT_TEAM = CU2V2363W7;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
@@ -658,9 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-
 				DEVELOPMENT_TEAM = CU2V2363W7;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
