@@ -20,7 +20,7 @@ struct GameScene: View {
         ZStack {
             ARViewContainer()
                 .onAppear {
-                    ARViewManager.shared.resetScene()
+//                    ARViewManager.shared.resetScene()
                     gameState.timerRunning = true
                     startTimer()
                 }

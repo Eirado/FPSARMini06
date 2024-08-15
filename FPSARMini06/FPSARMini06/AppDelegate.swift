@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PlayerComponent.registerComponent()
         
+        SpawnerComponent.registerComponent()
+        
+        SpawnerSystem.registerSystem()
+        
         MotionSystem.registerSystem()
         
         HealthComponent.registerComponent()
@@ -42,13 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PlayerSystem.registerSystem()
         
-        // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
             .environment(PageManager())
             .environmentObject(GameState())
             .modelContainer(for: UserData.self)
 
-        // Use a UIHostingController as window root view controller.
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window

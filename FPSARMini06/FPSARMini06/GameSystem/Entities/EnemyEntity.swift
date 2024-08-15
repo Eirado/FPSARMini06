@@ -24,8 +24,10 @@ class EnemyEntity: Entity, HasCollision, HasModel {
 //        self.animationRoot = .gene
         
         self.model = ModelEntity()
-        
+    
         super.init()
+        
+        self.name = "Enemy"
         
         Entity.loadModelAsync()
             .sink(receiveCompletion: { completion in

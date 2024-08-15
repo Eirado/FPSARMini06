@@ -25,6 +25,8 @@
 		70E6A5A12C5ABE1200F7F7F5 /* frogDrone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */; };
 		AB364A642C616BA6009E33A1 /* LoadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB364A632C616BA6009E33A1 /* LoadModels.swift */; };
 		AB364A662C62A104009E33A1 /* SpawnerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB364A652C62A104009E33A1 /* SpawnerEntity.swift */; };
+		AB3DE5DE2C6689E0004C9EA0 /* SpawnerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DE5DD2C6689E0004C9EA0 /* SpawnerSystem.swift */; };
+		AB3DE5E02C668E8B004C9EA0 /* SpawnerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DE5DF2C668E8B004C9EA0 /* SpawnerComponent.swift */; };
 		ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC1B692C52D73600AE13EF /* MotionComponent.swift */; };
 		ABF1DE8C2C5AAEE800272AB4 /* MotionSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */; };
 		ABFA01792C4ED1BB0096BA9F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA01782C4ED1BB0096BA9F /* GameController.swift */; };
@@ -81,6 +83,8 @@
 		70E6A5A02C5ABE1200F7F7F5 /* frogDrone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = frogDrone.usdz; sourceTree = "<group>"; };
 		AB364A632C616BA6009E33A1 /* LoadModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadModels.swift; sourceTree = "<group>"; };
 		AB364A652C62A104009E33A1 /* SpawnerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnerEntity.swift; sourceTree = "<group>"; };
+		AB3DE5DD2C6689E0004C9EA0 /* SpawnerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnerSystem.swift; sourceTree = "<group>"; };
+		AB3DE5DF2C668E8B004C9EA0 /* SpawnerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnerComponent.swift; sourceTree = "<group>"; };
 		ABEC1B692C52D73600AE13EF /* MotionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionComponent.swift; sourceTree = "<group>"; };
 		ABF1DE8B2C5AAEE800272AB4 /* MotionSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSystem.swift; sourceTree = "<group>"; };
 		ABFA01782C4ED1BB0096BA9F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				B8114BDE2C5196A6001940C2 /* CollisionSystem.swift */,
 				70D9C7B32C5C032B003DCEA4 /* AttackSystem.swift */,
 				70AA701F2C5D67BD004C306A /* PlayerSystem.swift */,
+				AB3DE5DD2C6689E0004C9EA0 /* SpawnerSystem.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */,
 				B8E381FA2C5ABE1D0038463C /* HealthComponent.swift */,
 				70AA701D2C5D679A004C306A /* PlayerComponent.swift */,
+				AB3DE5DF2C668E8B004C9EA0 /* SpawnerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */,
 				B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */,
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
+				AB3DE5E02C668E8B004C9EA0 /* SpawnerComponent.swift in Sources */,
 				B8114BE02C5196A6001940C2 /* CollisionSystem.swift in Sources */,
 				B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */,
 				127DF4212C52D6CD009C3231 /* PauseMenuView.swift in Sources */,
@@ -422,6 +429,7 @@
 				70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */,
 				12F2DF912C581C22001C663C /* SettingsView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */,
+				AB3DE5DE2C6689E0004C9EA0 /* SpawnerSystem.swift in Sources */,
 				AB364A642C616BA6009E33A1 /* LoadModels.swift in Sources */,
 				127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */,
 				B868FAA92C4EC3730038ECD9 /* EnemyEntity.swift in Sources */,
@@ -620,12 +628,13 @@
 
 				DEVELOPMENT_TEAM = CU2V2363W7;
 
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -666,7 +675,7 @@
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.\nCamera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
