@@ -18,23 +18,23 @@ struct ContentView : View {
     var body: some View {
         Navigator().edgesIgnoringSafeArea(.all)
             .onAppear() {
-            
+                
                 requestCameraAccess()
-
+                
                 fetchData()
-            
+                
+            }
     }
-    
-    func fetchData() {
-        if data.isEmpty{
-            let data = UserData(score: 0, box_itens_ID: [])
-            context.insert(data)
+        func fetchData() {
+            if data.isEmpty{
+                let data = UserData(score: 0, box_itens_ID: [])
+                context.insert(data)
+            }
+            
+            
         }
         
-        
-    }
-    
-    func requestCameraAccess() {
+        func requestCameraAccess() {
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .authorized:
                 // Já autorizado
@@ -55,19 +55,19 @@ struct ContentView : View {
                 fatalError("Unknown camera authorization status")
             }
         }
-}
-
-class ARViewManager {
-    static let shared = MainScene()
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    func makeUIView(context: Context) -> ARView {
-        return ARViewManager.shared
     }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-}
+
+    class ARViewManager {
+        static let shared = MainScene()
+    }
+
+    struct ARViewContainer: UIViewRepresentable {
+        func makeUIView(context: Context) -> ARView {
+            return ARViewManager.shared
+        }
+        
+        func updateUIView(_ uiView: ARView, context: Context) {}
+    }
 
 #Preview {
     struct ContentViewPreviewContainer: View {

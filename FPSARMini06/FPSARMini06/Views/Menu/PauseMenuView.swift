@@ -15,7 +15,6 @@ struct PauseMenuView: View {
     @Environment(PageManager.self) var pageManager
     @State var toggleOn: Bool = false
     @StateObject var timerManager: TimerManager
-    @Binding var pause: Bool
     var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -27,7 +26,7 @@ struct PauseMenuView: View {
                     HStack {
                         Button {
                             timerManager.resumeTimer()
-                            pause = false
+                            settingsPersistence.pauseGame = false
                         } label: {
                             ZStack{
                                 Image("button_nav")
@@ -57,7 +56,7 @@ struct PauseMenuView: View {
                     
                     Button {
                         timerManager.resumeTimer()
-                        pause = false
+                        settingsPersistence.pauseGame = false
                     } label: {
                         ZStack{
                             Image("button_default")

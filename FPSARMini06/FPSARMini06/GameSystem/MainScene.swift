@@ -89,7 +89,7 @@ class MainScene: ARView {
     
     
     @objc func tappedOnARView(_ sender: UITapGestureRecognizer) {
-        if settingsPersistence.defaults.bool(forKey: "vibration"){
+        if settingsPersistence.defaults.bool(forKey: "vibration") && !settingsPersistence.pauseGame{
             generator.impactOccurred()
         }
         Task {

@@ -15,7 +15,7 @@ class AttackSystem: RealityKit.System {
     required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
-
+        guard !settingsPersistence.pauseGame else {return}
         context.scene.performQuery(AttackSystem.query).forEach { entity in
             guard let component = entity.components[AttackComponent.self] as? AttackComponent else { return }
             

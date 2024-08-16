@@ -17,6 +17,9 @@ class MotionSystem: RealityKit.System {
     }
     
     func update(context: SceneUpdateContext) {
+        guard !settingsPersistence.pauseGame else {return}
+        
+        
         let deltaTime = Float(context.deltaTime)
         
         if playerEntity == nil {

@@ -12,5 +12,7 @@ public class ScoreController: ObservableObject {
 }
 
 class settingsPersistence{
+    public static var pauseGame:Bool = false
     public static let defaults = UserDefaults.standard
+    
 }

@@ -8,13 +8,13 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import ARKit
 
 struct GameScene: View {
     @Environment(PageManager.self) var pageManager
     @StateObject private var gameState = GameState()
     @StateObject var timerManager = TimerManager()
-    @State var pause:Bool = false
-    
+
     var body: some View {
         ZStack {
             ARViewContainer()
@@ -25,7 +25,7 @@ struct GameScene: View {
                 }
                 .overlay {
                     if timerManager.timerRunning {
-                        TimerHud(timerManager: timerManager, pause: $pause)
+                        TimerHud(timerManager: timerManager)
                         
                     }else if timerManager.timeRemaining == 0{
                         Text("fim").onAppear {
@@ -33,8 +33,8 @@ struct GameScene: View {
                         }
                         
                     }
-                    if pause{
-                        PauseMenuView(timerManager: timerManager, pause: $pause)
+                    if settingsPersistence.pauseGame{
+                        PauseMenuView(timerManager: timerManager)
                     }
                 }
                 .ignoresSafeArea()
@@ -58,9 +58,11 @@ struct GameScene: View {
         //    }
     }
 }
+
+
+
 struct TimerHud:View {
     @StateObject var timerManager : TimerManager
-    @Binding var pause:Bool
     var body: some View {
         Image("Target")
         VStack {
@@ -75,7 +77,7 @@ struct TimerHud:View {
                 Spacer()
                 Button(action: {
                     timerManager.pauseTimer()
-                    self.pause = true
+                    settingsPersistence.pauseGame = true
                     //                                    pageManager.page = .pause
                 }, label: {
                     Image(systemName: "pause.circle.fill")

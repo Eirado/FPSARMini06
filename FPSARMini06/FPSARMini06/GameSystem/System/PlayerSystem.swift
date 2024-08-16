@@ -19,6 +19,7 @@ class PlayerSystem:RealityKit.System {
 
     
     func update(context: SceneUpdateContext) {
+        guard !settingsPersistence.pauseGame else {return}
         context.scene.performQuery(PlayerSystem.query).forEach{ entity in
             guard let component = entity.components[PlayerComponent.self] as? PlayerComponent else {return}
             
