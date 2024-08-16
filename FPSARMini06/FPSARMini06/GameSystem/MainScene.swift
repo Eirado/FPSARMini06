@@ -20,6 +20,8 @@ class MainScene: ARView {
     var startPosition:SIMD3<Float>?
     private var firstTap:Bool = false
     let generator = UIImpactFeedbackGenerator(style: .rigid)
+    var worldAnchor: AnchorEntity? = nil
+
     
     func mata() {
         enemy = nil
@@ -40,6 +42,7 @@ class MainScene: ARView {
         self.init(frame: UIScreen.main.bounds)
         
         player = PlayerEntity(ar: self)
+
         
         self.installGestures(.all, for: player!)
         
@@ -60,11 +63,23 @@ class MainScene: ARView {
         worldAnchor.addChild(player!)
         
         setupEnemies(anchor: worldAnchor)
+
     }
     
     func setupEnemies(anchor: AnchorEntity) {
         enemy = EnemyEntity()
-        spawner = SpawnerEntity(entity: enemy!, anchor: anchor, spawnerRadius: 0.3, entityCount: 3)
+        
+        spawner = SpawnerEntity()
+        
+        guard let component = spawner?.components[SpawnerComponent.self] as? SpawnerComponent else { return }
+
+        component.entity = enemy!
+        component.entityCount = 5
+        component.spawnerRadius = 1
+        
+        spawner?.components[SpawnerComponent.self] = component
+        
+        anchor.addChild(spawner!)
     }
     
     func arViewGestureSetup() {
@@ -81,6 +96,7 @@ class MainScene: ARView {
             await player?.addBullet()
         }
     }
+
     
     func destroyEntities() {
         player = nil
@@ -106,4 +122,6 @@ class MainScene: ARView {
         setupEnemies(anchor: worldAnchor)
     }
     
+
 }
+

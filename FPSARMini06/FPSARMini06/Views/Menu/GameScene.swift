@@ -21,6 +21,7 @@ struct GameScene: View {
                 .onAppear {
                     ARViewManager.shared.resetScene()
                     timerManager.startTimer()
+
                 }
                 .overlay {
                     if timerManager.timerRunning {
