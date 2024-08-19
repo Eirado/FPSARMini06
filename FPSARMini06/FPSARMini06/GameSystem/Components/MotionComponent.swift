@@ -19,6 +19,8 @@ struct MotionComponent: RealityKit.Component {
     var forces = [Force]()
     var velocity: SIMD3<Float> = SIMD3<Float>.zero
     var lookAtEntity: Entity?
+    
+    var nodes: [SIMD3<Float>] = []
 }
     
 

@@ -81,7 +81,9 @@ struct GamePlayFeedbackView: View {
                 Spacer()
                 
                 Button {
+                    
                     pageManager.page = .gameScene
+                    
                 } label: {
                     ZStack {
                         Image("button_playAR")

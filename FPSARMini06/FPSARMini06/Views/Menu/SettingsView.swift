@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
+    @State var toggleOn: Bool = false
     
     var body: some View {
         ZStack {
@@ -63,7 +63,7 @@ struct SettingsView: View {
         @State private var toggleOn = false
         
         var body: some View {
-            SettingsView(toggleOn: $toggleOn)
+            SettingsView()
                 .environment(PageManager())
         }
     }

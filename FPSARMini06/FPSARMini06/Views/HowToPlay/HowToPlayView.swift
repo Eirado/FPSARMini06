@@ -12,7 +12,9 @@ struct HowToPlayView: View {
     
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.2)
+            Image("Background Gradient")
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            
             VStack {
                 HStack {
                     Button(action: {
@@ -24,7 +26,7 @@ struct HowToPlayView: View {
                             .overlay{
                                 Image(systemName: "chevron.left")
                                     .font(.system(size: 36, weight: .bold))
-                                    .tint(.black)
+                                    .tint(.white)
                             }
                     })
                     
@@ -32,7 +34,7 @@ struct HowToPlayView: View {
                     
                     Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
-                        .tint(.black)
+                        .foregroundStyle(.white)
                         .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                         .minimumScaleFactor(0.5)
                     
@@ -42,10 +44,10 @@ struct HowToPlayView: View {
                 .padding(.horizontal, 12)
                 
                 Spacer()
-                
-                Text("LoremIpsum")
-                    .padding()
-                    .minimumScaleFactor(0.5)
+                    Text("LoremIpsum")
+                        .foregroundStyle(.white)
+                        .padding()
+                        .minimumScaleFactor(0.5)
                 
                 Spacer()
                 
@@ -58,18 +60,19 @@ struct HowToPlayView: View {
                         .overlay {
                             Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .tint(.white)
                                 .minimumScaleFactor(0.5)
                         }
                 })
                 .padding(.vertical)
             }
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .ignoresSafeArea()
     }
 }
 
-#Preview {
-    HowToPlayView()
-        .environment(PageManager())
-}
+//#Preview {
+//    HowToPlayView()
+//        .environment(PageManager())
+//}

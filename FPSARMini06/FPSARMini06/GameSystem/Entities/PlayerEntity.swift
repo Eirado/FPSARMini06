@@ -77,7 +77,7 @@ extension PlayerEntity {
     func movement(){
         
         guard let component = self.components[PlayerComponent.self] as? PlayerComponent else {return}
-        if component.score == nil{
+        if component.score == nil {
             component.score = 0
         }
         component.arView = ar

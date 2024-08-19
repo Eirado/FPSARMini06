@@ -13,11 +13,11 @@ import SwiftUI
 
 struct MenuView: View {
     @Environment(PageManager.self) var pageManager
-    @Binding var toggleOn: Bool
+    @State var toggleOn: Bool = false
     
     var body: some View {
         ZStack {
-            Color.red.opacity(0.2)
+            Image("Background Gradient")
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
             VStack {
@@ -31,7 +31,7 @@ struct MenuView: View {
                             .overlay {
                                 Image(systemName: "questionmark")
                                     .font(.system(size: 36, weight: .bold))
-                                    .tint(.black)
+                                    .tint(.white)
                             }
                     }
                     Spacer()
@@ -44,7 +44,7 @@ struct MenuView: View {
                             .overlay {
                                 Image(systemName: "gear")
                                     .font(.system(size: 36, weight: .bold))
-                                    .tint(.black)
+                                    .tint(.white)
                             }
                     }
                 }
@@ -55,7 +55,7 @@ struct MenuView: View {
                 Button {
                     pageManager.page = .gameScene
                 } label: {
-                    Image("button_default")
+                    Image("button_play")
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width * buttonBigW, height: UIScreen.main.bounds.height * buttonBigH)
                         .overlay {
@@ -75,7 +75,7 @@ struct MenuView: View {
                         .overlay {
                             Text("inventory-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
+                                .tint(.white)
                                 .minimumScaleFactor(0.5)
                         }
                 }
@@ -86,14 +86,14 @@ struct MenuView: View {
     }
 }
 
-#Preview {
-    struct MenuPreviewContainer: View{
-        @State private var toggleOn = false
-        
-        var body: some View {
-            MenuView(toggleOn: $toggleOn)
-                .environment(PageManager())
-        }
-    }
-    return MenuPreviewContainer()
-}
+//#Preview {
+//    struct MenuPreviewContainer: View{
+//        @State private var toggleOn = false
+//        
+//        var body: some View {
+//            MenuView()
+//                .environment(PageManager())
+//        }
+//    }
+//    return MenuPreviewContainer()
+//}

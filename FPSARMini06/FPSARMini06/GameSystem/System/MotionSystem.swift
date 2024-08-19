@@ -7,16 +7,20 @@ class MotionSystem: RealityKit.System {
     private static let playerQuery = EntityQuery(where: .has(PlayerComponent.self))
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
-    private let sphereRadius: Float = 0.3
+    private let sphereRadius: Float = 1
     
+    private var playerEntity: [Entity]? = nil // this is a test
     required init(scene: Scene) {
-        generateNodes()
-        selectNewTargetNode()
-        visualizeSphereAndNodes(in: scene)
+        
     }
     
     func update(context: SceneUpdateContext) {
         let deltaTime = Float(context.deltaTime)
+        
+        if playerEntity == nil {
+            self.playerEntity = context.scene.performQuery(Self.playerQuery).map { $0 }
+        }
+        
         let player = context.scene.performQuery(Self.playerQuery).map { $0 }
         
         context.scene.performQuery(Self.query).forEach { entity in
@@ -25,9 +29,14 @@ class MotionSystem: RealityKit.System {
             defer {
                 entity.components[MotionComponent.self] = motion
             }
-        
+            
+            if motion.nodes.isEmpty{
+                generateNodes(for: &motion)
+            }
+
             var newTransform = entity.transform
-            let targetNode = getCurrentTargetNode(for: entity)
+            
+            let targetNode = getCurrentTargetNode(for: entity, with: &motion)
             let direction = normalize(targetNode - entity.transform.translation)
             let speed: Float = 1.0
             let acceleration = direction * speed * 0.1
@@ -46,7 +55,7 @@ class MotionSystem: RealityKit.System {
             entity.move(to: newTransform, relativeTo: nil)
             
             if distance(entity.transform.translation, targetNode) < 0.1 {
-                selectNewTargetNode()
+                selectNewTargetNode(for: &motion)
             }
             
             let playerComponent = player.first?.components[PlayerComponent.self] as? PlayerComponent
@@ -55,11 +64,23 @@ class MotionSystem: RealityKit.System {
                 let directionToPlayer = playerPosition - entity.position
                 let oppositeDirection = -directionToPlayer
                 let targetPosition = entity.position + oppositeDirection
+                
                 entity.look(at: targetPosition, from: entity.position, relativeTo: nil)
             } else {
                 entity.look(at: simd_float3(x: 0, y: 0, z: 0), from: entity.position, relativeTo: nil)
             }
         }
+    }
+    
+    private func getCurrentTargetNode(for entity: Entity, with motion: inout MotionComponent) -> SIMD3<Float> {
+
+        selectNewTargetNode(for: &motion)
+    
+        return motion.nodes[self.currentTargetIndex!]
+    }
+    
+    private func selectNewTargetNode(for motion: inout MotionComponent) {
+        currentTargetIndex = Int.random(in: 0..<motion.nodes.count)
     }
     
     private func combinedForces(values: [MotionComponent.Force]) -> SIMD3<Float> {
@@ -68,9 +89,9 @@ class MotionSystem: RealityKit.System {
         }
     }
     
-    private func generateNodes() {
-        let numberOfNodes = 10
-        nodes.removeAll()
+    private func generateNodes(for motion: inout MotionComponent) {
+        let numberOfNodes = 8
+        motion.nodes.removeAll()
         
         for i in 0..<numberOfNodes {
             let theta = Float(i) * (2.0 * .pi / Float(numberOfNodes))
@@ -81,37 +102,10 @@ class MotionSystem: RealityKit.System {
             let z = sphereRadius * cos(phi)
             
             let node = SIMD3<Float>(x, y, z)
-            nodes.append(node)
-        }
-    }
-    
-    private func getCurrentTargetNode(for entity: Entity) -> SIMD3<Float> {
-        if currentTargetIndex == nil || distance(entity.transform.translation, nodes[currentTargetIndex!]) < 0.1 {
-            selectNewTargetNode()
-        }
-        return nodes[currentTargetIndex!]
-    }
-    
-    private func selectNewTargetNode() {
-        currentTargetIndex = Int.random(in: 0..<nodes.count)
-    }
-    
-    private func visualizeSphereAndNodes(in scene: Scene) {
-        scene.performQuery(MotionSystem.query).forEach { entity in
-            let sphereMesh = MeshResource.generateSphere(radius: sphereRadius)
-            let sphereMaterial = SimpleMaterial(color: UIColor(white: .zero, alpha: 0.1), isMetallic: false)
-            let sphereEntity = ModelEntity(mesh: sphereMesh, materials: [sphereMaterial])
-            entity.addChild(sphereEntity)
-            sphereEntity.position = .zero
-            
-            let nodeRadius: Float = 0.02 
-            for nodePosition in nodes {
-                let nodeMesh = MeshResource.generateSphere(radius: nodeRadius)
-                let nodeMaterial = SimpleMaterial(color: .red, isMetallic: false)
-                let nodeEntity = ModelEntity(mesh: nodeMesh, materials: [nodeMaterial])
-                nodeEntity.position = nodePosition
-                entity.addChild(nodeEntity)
-            }
+            motion.nodes.append(node)
         }
     }
 }
+
+
+
