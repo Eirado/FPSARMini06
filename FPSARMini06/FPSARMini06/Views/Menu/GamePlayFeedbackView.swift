@@ -19,23 +19,22 @@ struct GamePlayFeedbackView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(.gray.opacity(0.8))
-                .stroke(Color.black, lineWidth: 2)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10.0))
                 .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
             
             VStack {
-                Rectangle()
-                    .fill(Color.white.opacity(0.8))
-                    .stroke(Color.black, lineWidth: 2)
-                //                            .resizable()
+                Image("defeat icon red")
+                    .resizable()
                     .frame(width: UIScreen.main.bounds.width * caveiraDerrotaW, height: UIScreen.main.bounds.height * caveiraDerrotaH)
                 
                 Text("defeat-title")
-                    .font(.system(size: 64, weight: .bold))
+                    .font(.system(size: 48, weight: .bold))
                     .minimumScaleFactor(0.5)
+                    .tint(.white)
                 Text("waveNumber-text")
-                    .font(.system(size: 36, weight: .bold))
+                    .font(.system(size: 28, weight: .bold))
                     .minimumScaleFactor(0.5)
+                    .tint(.white)
                 
                 VStack {
                     VStack{
@@ -63,11 +62,12 @@ struct GamePlayFeedbackView: View {
                     
                     HStack {
                         Spacer()
-                        Text("reward-title")
+                        Text("reward-title").tint(.white)
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
                         Spacer()
                         Text("reward-text")
+                            .tint(.white)
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
                         Spacer()
@@ -84,12 +84,12 @@ struct GamePlayFeedbackView: View {
                     
                 } label: {
                     ZStack {
-                        Image("button_playAR")
+                        Image("button_defeatView")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("playAgain-button")
                             .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
+                            .tint(.white)
                             .minimumScaleFactor(0.5)
                     }
                 }
@@ -98,13 +98,14 @@ struct GamePlayFeedbackView: View {
                     pageManager.page = .menu
                 } label: {
                     ZStack {
-                        Image("button_default")
+                        Image("button_defeatView")
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                         Text("quitGame-button")
                             .font(.system(size: 20, weight: .bold))
-                            .tint(.black)
+                            .tint(.white)
                             .minimumScaleFactor(0.5)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                 }
             }
