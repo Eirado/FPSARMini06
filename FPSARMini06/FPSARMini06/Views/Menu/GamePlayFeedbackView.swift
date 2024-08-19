@@ -11,8 +11,6 @@
 import SwiftUI
 import SwiftData
 
-//jjjj
-
 struct GamePlayFeedbackView: View {
     @Environment(PageManager.self) var pageManager
     @Environment (\.modelContext)  var context

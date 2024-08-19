@@ -86,14 +86,14 @@ struct MenuView: View {
     }
 }
 
-//#Preview {
-//    struct MenuPreviewContainer: View{
-//        @State private var toggleOn = false
-//        
-//        var body: some View {
-//            MenuView()
-//                .environment(PageManager())
-//        }
-//    }
-//    return MenuPreviewContainer()
-//}
+#Preview {
+    struct MenuPreviewContainer: View{
+        @State private var toggleOn = false
+        
+        var body: some View {
+            MenuView()
+                .environment(PageManager())
+        }
+    }
+    return MenuPreviewContainer()
+}
