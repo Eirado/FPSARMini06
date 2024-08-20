@@ -18,42 +18,43 @@ struct GamePlayFeedbackView: View {
     
     var body: some View {
         ZStack {
+        
             RoundedRectangle(cornerRadius: 20)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10.0))
                 .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
             
             VStack {
-                Image("defeat icon red")
+                Image("defeat icon")
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width * caveiraDerrotaW, height: UIScreen.main.bounds.height * caveiraDerrotaH)
+                    .frame(width: UIScreen.main.bounds.width * caveiraDerrotaW, height: UIScreen.main.bounds.height * caveiraDerrotaH).shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 
                 Text("defeat-title")
                     .font(.system(size: 48, weight: .bold))
                     .minimumScaleFactor(0.5)
-                    .tint(.white)
+                    .foregroundStyle(.white)
                 Text("waveNumber-text")
                     .font(.system(size: 28, weight: .bold))
                     .minimumScaleFactor(0.5)
-                    .tint(.white)
+                    .foregroundStyle(.white)
                 
                 VStack {
                     VStack{
                         HStack{
-                            Text("bots-title")
+                            Text("bots-title") .foregroundStyle(.white)
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
                             Spacer()
-                            Text("numberOfBots-text")
+                            Text("numberOfBots-text") .foregroundStyle(.white)
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
                         }
                         
                         HStack {
-                            Text("health-title")
+                            Text("health-title") .foregroundStyle(.white)
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
                             Spacer()
-                            Text("health-text")
+                            Text("health-text") .foregroundStyle(.white)
                                 .font(.system(size: 24))
                                 .minimumScaleFactor(0.5)
                         }
@@ -62,12 +63,12 @@ struct GamePlayFeedbackView: View {
                     
                     HStack {
                         Spacer()
-                        Text("reward-title").tint(.white)
+                        Text("reward-title") .foregroundStyle(.white)
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
                         Spacer()
                         Text("reward-text")
-                            .tint(.white)
+                            .foregroundStyle(.white)
                             .font(.system(size: 24, weight: .bold))
                             .minimumScaleFactor(0.5)
                         Spacer()

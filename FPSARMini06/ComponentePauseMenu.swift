@@ -14,15 +14,6 @@ struct ComponentePauseMenuBG3: View {
     @Binding var toggleOn: Bool
     var body: some View {
         ZStack{
-            // MARK: Background
-            RoundedRectangle(cornerRadius: 8)
-                .fill(.gray.opacity(0.8))
-                .stroke(Color.black, lineWidth: 2)
-                .frame(width: UIScreen.main.bounds.width * cBG3W, height: UIScreen.main.bounds.height * cBG3H)
-            Rectangle()
-                .fill(.white.opacity(0.5))
-                .frame(width: (UIScreen.main.bounds.width * cBG3W) - 2, height: UIScreen.main.bounds.height * (cBG3H/3)) // width - 2 por conta do lineWidth e height/3 já que queremos somente a altura de uma das linhas
-            
             // MARK: Foreground
             VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
@@ -44,22 +35,7 @@ struct ComponentePauseMenuBG3: View {
 struct ComponentePauseMenuBG5: View {
     @Binding var toggleOn: Bool
     var body: some View {
-        ZStack{
-            // MARK: Background
-            RoundedRectangle(cornerRadius: 8)
-                .fill(.gray.opacity(0.8))
-                .stroke(Color.black, lineWidth: 2)
-                .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
-            VStack{
-                Rectangle()
-                    .fill(.white.opacity(0.5))
-                    .frame(width: (UIScreen.main.bounds.width * cBG5W) - 2, height: UIScreen.main.bounds.height * (cBG5H/5)) // width - 2 por conta do lineWidth e height/5 já que queremos somente a altura de uma das linhas
-                Spacer()
-                Rectangle()
-                    .fill(.white.opacity(0.5))
-                    .frame(width: (UIScreen.main.bounds.width * cBG5W) - 2, height: UIScreen.main.bounds.height * (cBG5H/5)) // width - 2 por conta do lineWidth e height/5 já que queremos somente a altura de uma das linhas
-            }
-            .frame(height:  UIScreen.main.bounds.height * cBG3H)
+   
             // MARK: Foreground
             VStack(spacing: 0){
                 // TODO: Adicionar componente parte escrita
@@ -82,7 +58,7 @@ struct ComponentePauseMenuBG5: View {
             .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
         }
     }
-}
+
 
 struct ComponentePauseMenuFG: View {
     @State var toggleOn = false
@@ -125,19 +101,19 @@ struct CustomToggleStyle: ToggleStyle {
             // Label on the left
             configuration.label
                 .font(.headline)
-                .foregroundColor(.white)
             
             Spacer()
             
             // The toggle switch
             
             Rectangle()
-                .frame(width: 80, height: 25)
-                .foregroundColor(configuration.isOn ? Color.orange : Color.gray)
+                .frame(width: 82, height: 32)
+                .foregroundColor(configuration.isOn ? Color.green : Color.gray)
                 .overlay {
                     HStack {
                         if configuration.isOn {
                             Text("on")
+                                .foregroundColor(.black)
                                 .padding(2)
                             Spacer()
                         }
@@ -150,6 +126,7 @@ struct CustomToggleStyle: ToggleStyle {
                         if !configuration.isOn {
                             Spacer()
                             Text("off")
+                                .foregroundColor(.white)
                                 .padding(2)
                         }
                     }

@@ -17,13 +17,12 @@ struct MenuView: View {
     
     var body: some View {
         ZStack {
-            Color.black
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
             Image("nuvem")
                 .resizable().scaledToFit().opacity(0.4)
             
             Image("logotipo")
-                .resizable().scaledToFit() .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 5)
+                .resizable().scaledToFit().shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 5)
             
             VStack {
                 HStack {

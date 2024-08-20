@@ -12,8 +12,7 @@ struct HowToPlayView: View {
     
     var body: some View {
         ZStack {
-            Image("Background Gradient")
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            Color.black.ignoresSafeArea()
             
             VStack {
                 HStack {
@@ -25,12 +24,12 @@ struct HowToPlayView: View {
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay{
                                 Image(systemName: "chevron.left")
-                                    .font(.system(size: 36, weight: .bold))
-                                    .tint(.white)
+                                    .font(.system(size: 28, weight: .bold))
+                                    .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                             }
                     })
                     
-                    Spacer()
+//                    Spacer()
                     
                     Text("howToPlayView-title")
                         .font(.system(size: 20, weight: .bold))
@@ -44,9 +43,10 @@ struct HowToPlayView: View {
                 .padding(.horizontal, 12)
                 
                 Spacer()
-                    Text("LoremIpsum")
-                        .foregroundStyle(.white)
+                    TextTitle(text: "LoremIpsum")
+                    .foregroundStyle(.white)
                         .padding()
+                        .multilineTextAlignment(.center)
                         .minimumScaleFactor(0.5)
                 
                 Spacer()
@@ -60,8 +60,8 @@ struct HowToPlayView: View {
                         .overlay {
                             Text("ready-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.white)
                                 .minimumScaleFactor(0.5)
+                                .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                 })
                 .padding(.vertical)
@@ -72,7 +72,7 @@ struct HowToPlayView: View {
     }
 }
 
-//#Preview {
-//    HowToPlayView()
-//        .environment(PageManager())
-//}
+#Preview {
+    HowToPlayView()
+        .environment(PageManager())
+}

@@ -16,9 +16,7 @@ struct InventoryView: View {
     
     var body: some View {
         ZStack {
-            Color.gray
-                .opacity(0.5)
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
             
             ScrollView(.vertical) {
                 VStack (spacing: 10) {
@@ -31,15 +29,15 @@ struct InventoryView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay {
                                     Image(systemName: "chevron.left")
-                                        .font(.system(size: 36, weight: .bold))
-                                        .tint(.black)
+                                        .font(.system(size: 28, weight: .bold))
+                                        .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                                 }
                         })
                         .padding(.leading)
-                        Spacer()
+//                        Spacer()
                         Text("inventoryView-title")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color.white)
                             .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                             .minimumScaleFactor(0.5)
                         Spacer()
@@ -50,22 +48,22 @@ struct InventoryView: View {
                         ExtractedView(score: data.first?.score ?? 000) 
                     }
                     RoundedRectangle(cornerRadius: 25.0)// Image
-                        .fill(.white.opacity(0.6))
-                        .stroke(Color.black, lineWidth: 2)
+                        .fill(.white.opacity(0.3))
+                        .stroke(Color.white, lineWidth: 1)
                         .overlay{
                             Image(systemName: "photo")
-                                .resizable()
+                                .resizable().foregroundColor(.white)
                                 .frame(width: 35, height: 27)
                         }
-                        .frame(width: UIScreen.main.bounds.width * cntrImgW, height: UIScreen.main.bounds.height * cntrImgH)
+                        .frame(width: UIScreen.main.bounds.width * cntrImgW, height: UIScreen.main.bounds.height * cntrImgH).padding(.vertical)
                     
                     HStack(spacing: 11) {
                         RoundedRectangle(cornerRadius: 7)
-                            .stroke(Color.black, lineWidth: 2)
-                            .fill(.white.opacity(0.5))
+                            .stroke(Color.white, lineWidth: 2)
+                            .fill(.black.opacity(0.5))
                             .overlay {
                                 Image(systemName: "paintbrush.pointed.fill")
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 16)).foregroundColor(.white)
                                     .minimumScaleFactor(0.5)
                             }
                             .frame(width: UIScreen.main.bounds.width * shotColorsW, height: UIScreen.main.bounds.height * shotColorsH)
@@ -104,7 +102,7 @@ struct ExtractedView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 2)
                     .fill(.white.opacity(0.7))
-                    .stroke(Color.black, lineWidth: 1.5)
+                    .stroke(Color.white, lineWidth: 1.5)
                     .frame(width: UIScreen.main.bounds.width * insideIconW, height: UIScreen.main.bounds.height * insideIconH)
                     .overlay {
                         Image(systemName: "photo")
@@ -114,10 +112,10 @@ struct ExtractedView: View {
                     }
                 Text("bestScore-title")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(Color.white)
                     .minimumScaleFactor(0.5)
-                Text("bestScore-text: \(score)")
-                    .minimumScaleFactor(0.5)
+                Text("\(score)")
+                    .minimumScaleFactor(0.5).foregroundStyle(Color.white)
             }
             .frame(width: UIScreen.main.bounds.width * insideVsW, height: UIScreen.main.bounds.height * insideVsH)
         }
@@ -128,7 +126,7 @@ struct ExtractedView2: View {
     var body: some View {
         Ellipse()
             .fill(.white.opacity(0.8))
-            .stroke(Color.black, lineWidth: 2)
+            .stroke(Color.white, lineWidth: 2)
             .overlay {
                 Image(systemName: "photo")
                     .resizable()
@@ -163,8 +161,7 @@ struct ExtractedView4: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(.black.opacity(0.3))
-                .stroke(Color.black, lineWidth: 2)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20.0))
             
             VStack {
                 HStack {

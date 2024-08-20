@@ -13,7 +13,7 @@ struct SettingsView: View {
     
     var body: some View {
         ZStack {
-            Color.green.opacity(0.2)
+            Color.black.ignoresSafeArea()
             
             VStack{
                 HStack {
@@ -26,17 +26,17 @@ struct SettingsView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 .overlay{
                                     Image(systemName: "chevron.left")
-                                        .font(.system(size: 36, weight: .bold))
-                                        .tint(.black)
+                                        .font(.system(size: 28, weight: .bold))
+                                        .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                                 }
                         }
                     }
                     
-                    Spacer()
+//                    Spacer()
                     
                     Text("settingsView-title")
                         .font(.system(size: 20, weight: .bold))
-                        .tint(.black)
+                        .foregroundStyle(Color.white)
                         .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                         .minimumScaleFactor(0.5)
                     
