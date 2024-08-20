@@ -23,7 +23,7 @@ struct MenuView: View {
                 .resizable().scaledToFit().opacity(0.4)
             
             Image("logotipo")
-                .resizable().scaledToFit()
+                .resizable().scaledToFit() .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 5)
             
             VStack {
                 HStack {
@@ -36,7 +36,7 @@ struct MenuView: View {
                             .overlay {
                                 Image(systemName: "questionmark")
                                     .font(.system(size: 28, weight: .bold))
-                                    .tint(.white)
+                                    .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                             }
                     }
                     Spacer()
