@@ -18,8 +18,7 @@ struct PauseMenuView: View {
     var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.gray.opacity(0.8))
-                    .stroke(Color.black, lineWidth: 2)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10.0))
                     .frame(width: UIScreen.main.bounds.width * overlayBoxW, height: UIScreen.main.bounds.height * overlayBoxH)
                 
                 VStack {
@@ -32,14 +31,14 @@ struct PauseMenuView: View {
                                     .resizable()
                                     .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                                 Image(systemName: "chevron.left")
-                                    .font(.system(size: 36, weight: .bold))
-                                    .tint(.black)
+                                    .font(.system(size: 28, weight: .bold))
+                                    .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                             }
                         }
-                        Spacer()
+//                        Spacer()
                         Text("pauseMenuView-title")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color.white)
                             .padding(.trailing, UIScreen.main.bounds.width * buttonSmallW)
                             .minimumScaleFactor(0.5)
                         Spacer()
@@ -62,8 +61,7 @@ struct PauseMenuView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("resumeGame-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
-                                .minimumScaleFactor(0.5)
+                                .minimumScaleFactor(0.5).tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
                     
@@ -76,8 +74,7 @@ struct PauseMenuView: View {
                                 .frame(width: UIScreen.main.bounds.width * buttonRegW, height: UIScreen.main.bounds.height * buttonRegH)
                             Text("quitGame-button")
                                 .font(.system(size: 20, weight: .bold))
-                                .tint(.black)
-                                .minimumScaleFactor(0.5)
+                                .minimumScaleFactor(0.5).tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
                 }

@@ -17,8 +17,12 @@ struct MenuView: View {
     
     var body: some View {
         ZStack {
-            Image("Background Gradient")
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            Color.black.ignoresSafeArea()
+            Image("nuvem")
+                .resizable().scaledToFit().opacity(0.4)
+            
+            Image("logotipo")
+                .resizable().scaledToFit().shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 5)
             
             VStack {
                 HStack {
@@ -30,8 +34,8 @@ struct MenuView: View {
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay {
                                 Image(systemName: "questionmark")
-                                    .font(.system(size: 36, weight: .bold))
-                                    .tint(.white)
+                                    .font(.system(size: 28, weight: .bold))
+                                    .tint(.white) .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                             }
                     }
                     Spacer()
@@ -43,8 +47,10 @@ struct MenuView: View {
                             .frame(width: UIScreen.main.bounds.width * buttonSmallW, height: UIScreen.main.bounds.height * buttonSmallH)
                             .overlay {
                                 Image(systemName: "gear")
-                                    .font(.system(size: 36, weight: .bold))
+                                    .font(.system(size: 26, weight: .bold))
                                     .tint(.white)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                
                             }
                     }
                 }
@@ -77,6 +83,7 @@ struct MenuView: View {
                                 .font(.system(size: 20, weight: .bold))
                                 .tint(.white)
                                 .minimumScaleFactor(0.5)
+                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                 }
             }
@@ -86,14 +93,7 @@ struct MenuView: View {
     }
 }
 
-//#Preview {
-//    struct MenuPreviewContainer: View{
-//        @State private var toggleOn = false
-//        
-//        var body: some View {
-//            MenuView()
-//                .environment(PageManager())
-//        }
-//    }
-//    return MenuPreviewContainer()
-//}
+#Preview {
+    MenuView()
+        .environment(PageManager())
+}
