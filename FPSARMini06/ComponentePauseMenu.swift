@@ -55,7 +55,7 @@ struct ComponentePauseMenuBG5: View {
                     print("action")
                 }
             }
-            .frame(width: UIScreen.main.bounds.width * cBG5W, height: UIScreen.main.bounds.height * cBG5H)
+           
         }
     }
 
@@ -68,28 +68,34 @@ struct ComponentePauseMenuFG: View {
     var togglePause: LocalizedStringKey = ""
     
     var body: some View {
-        HStack{
-            Rectangle()
-                .frame(width: 30, height: 30)
-                .padding(.leading)
-            Text(tittle)
-                .font(.system(size: 18, weight: .bold))
-                .minimumScaleFactor(0.5)
-            Spacer()
-//            Text("on-text")
-//                .font(.system(size: 18))
-//                .minimumScaleFactor(0.5)
-            
-            Toggle(togglePause, isOn: $toggleOn)
-                .toggleStyle(CustomToggleStyle())
-                .task {
-                    if toggleOn{
-                        action()
+        VStack {
+            HStack{
+                Rectangle()
+                    .frame(width: 20, height: 20)
+                    .padding(.leading).foregroundColor(.white)
+//                    .cornerRadius(10.0)
+                Text(tittle)
+//                    .font(.system(size: 20, weight: .bold))
+                    .minimumScaleFactor(0.5).foregroundColor(.white)
+    //            Spacer()
+                
+                Toggle(togglePause, isOn: $toggleOn)
+                    .toggleStyle(CustomToggleStyle())
+                    .task {
+                        if toggleOn{
+                            action()
+                        }
                     }
-                }
-                .padding(.trailing)
+                   
+//                    .padding(.trailing)
+                
+            }
+            .padding(.vertical, 12.5)
+            .padding(.horizontal,5)
+            Divider()
+                .background(Color.white)
+                .frame(maxWidth: .maximum(340, 3))
         }
-        .padding(.vertical, 12.5)
     }
     
     
@@ -107,25 +113,30 @@ struct CustomToggleStyle: ToggleStyle {
             // The toggle switch
             
             Rectangle()
-                .frame(width: 82, height: 32)
-                .foregroundColor(configuration.isOn ? Color.green : Color.gray)
+                .frame(width: 90, height: 42)
+                .cornerRadius(1.0)
+                .foregroundColor(configuration.isOn ? Color("green_dark") : Color("green_opacity"))
                 .overlay {
                     HStack {
                         if configuration.isOn {
-                            Text("on")
-                                .foregroundColor(.black)
+                            Text("ON")
+                                .foregroundColor(.white)
+                                .font(.footnote)
                                 .padding(2)
+                            
                             Spacer()
                         }
                         
                         Rectangle()
-                            .frame(width: 40, height: 20)
-                            .foregroundColor(.white)
+                            .frame(width: 40, height: 30)
+                            .foregroundColor(Color("green_light"))
+                            .cornerRadius(2.0)
                             .padding(configuration.isOn ? .trailing : .leading, 5)
                         
                         if !configuration.isOn {
                             Spacer()
-                            Text("off")
+                            Text("OFF")
+                                .font(.footnote)
                                 .foregroundColor(.white)
                                 .padding(2)
                         }
