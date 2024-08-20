@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%lld" : {
+
+    },
     "bestScore-text" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -22,6 +25,7 @@
       }
     },
     "bestScore-text: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
@@ -214,6 +218,7 @@
       }
     },
     "LoremIpsum" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
