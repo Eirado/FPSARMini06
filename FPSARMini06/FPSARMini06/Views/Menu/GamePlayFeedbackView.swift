@@ -29,7 +29,7 @@ struct GamePlayFeedbackView: View {
                     .frame(width: UIScreen.main.bounds.width * caveiraDerrotaW, height: UIScreen.main.bounds.height * caveiraDerrotaH).shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 
                 Text("defeat-title")
-                    .font(.system(size: 48, weight: .bold))
+                    .font(FontManager.shared.customFont(style: .title, sizer: .SizerLargeText))
                     .minimumScaleFactor(0.5)
                     .foregroundStyle(.white)
                 Text("waveNumber-text")

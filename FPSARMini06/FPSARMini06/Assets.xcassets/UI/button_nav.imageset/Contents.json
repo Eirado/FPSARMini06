@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "type=navBar.png",
+      "filename" : "button_nav.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

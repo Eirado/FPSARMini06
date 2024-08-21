@@ -38,7 +38,7 @@ class FontManager {
     // Método para obter a fonte personalizada com base no estilo fornecido
     func customFont(style: FontStyle, sizer: FontSizer) -> Font {
 
-        if let url = Bundle.main.url(forResource: style.fileName, withExtension: "ttf"){
+        if let url = Bundle.main.url(forResource: style.fileName, withExtension: "ttf") {
             CTFontManagerRegisterFontsForURL(url as CFURL, CTFontManagerScope.process, nil)
 
             let myFont = UIFont(name: style.fileName, size: sizer.FontSizerText) ?? UIFont.systemFont(ofSize: sizer.FontSizerText)
