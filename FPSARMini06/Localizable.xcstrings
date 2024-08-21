@@ -483,6 +483,7 @@
       }
     },
     "Tempo restante: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {

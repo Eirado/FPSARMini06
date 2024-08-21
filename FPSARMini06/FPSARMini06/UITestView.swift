@@ -11,25 +11,102 @@ struct UITestView: View {
     
     @StateObject private var gameState = GameState()
     
+ // TESTE DE UI - HUD Game Scene
     
     var body: some View {
+        
             Image("Target")
-            VStack {
-                Text("Tempo restante: \(gameState.timeRemaining)")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.7))
-                    .cornerRadius(10)
-                    .padding(.top, 50)
+            .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 5)
+        VStack(alignment: .leading) {
+            
+  //HUD Game Scene
+            HStack(alignment: .top) {
+                 VStack {
+    //Bullet Feedback
+                    HStack {
+                        Image("bullet_HUD")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .overlay {
+                                Image("bullet")
+                                    .resizable()
+                                    .frame(width: 35,height: 35)
+                        }
+
+                            RoundedRectangle(cornerRadius: 2.0)
+                                .fill(Color("orange_dark"))
+                                .stroke(Color.orange, lineWidth: 2)
+                            .frame(width: 140,height: 35)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 2.0)
+                                    .fill(
+                                        LinearGradient(
+                                                    gradient: Gradient(colors: [Color("orange_medium"), Color("orange_light")]),
+                                                    startPoint: .leading,
+                                                    endPoint: .trailing
+                                                ))
+                                    .stroke(Color.orange, lineWidth: 2)
+                                    .frame(width: 140,height: 35)
+                            }
+                Spacer()
+                    }
+    //Health Feedback
+                    
+        HStack {
+            Image("health_HUD")
+                .resizable()
+                .frame(width: 60, height: 60)
+                .overlay {
+                    Image("health")
+                        .resizable()
+                        .frame(width: 25,height: 25)
+                    }
+    // Health Status
+            RoundedRectangle(cornerRadius: 2.0)
+                    .fill(.red.opacity(0.3))
+                    .stroke(Color("blue_dark"), lineWidth: 2)
+                    .frame(width: 140,height: 35)
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 2.0)
+                            .fill(Color("blue_dark"))
+                            .stroke(Color("blue_light"), lineWidth: 2)
+                            .frame(width: 140,height: 35)
+                    }
+            Spacer()
+        }
+      
+    }
+                      
+        // Timer
+                Image("timer")
+                    .resizable()
+                    .frame(width: 100,height: 60)
+                    .overlay{
+                    Text("\(gameState.timeRemaining)")
+                            .font(.largeTitle).bold().italic()
+                            .foregroundColor(.white)
+                            
+                    }.padding()
+                
+            }
+            
+            
                 HStack {
-                    Spacer()
+                    
+     //PAUSE BUTTON
                     Button(action: {
 //                        pageManager.page = .pause
                     }, label: {
-                        Image(systemName: "pause.circle.fill")
-                            .font(.system(size: 30))
-                            .foregroundStyle(.gray)
+
+                        Image("button_nav")
+                            .resizable()
+                            .opacity(0.75)
+                            .frame(width: 50, height: 50)
+                            .overlay {
+                                Image(systemName: "pause")
+                                    .font(.system(size: 28, weight: .bold))
+                                    .tint(.white) .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                            }
                     })
                     .padding(.top, 35)
                     .padding(.horizontal, 15)
