@@ -18,6 +18,7 @@
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		4C79FBF62C751A9C009C8765 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF52C751A9C009C8765 /* FontManager.swift */; };
 		4C79FBF82C751AFE009C8765 /* TextLibary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF72C751AFE009C8765 /* TextLibary.swift */; };
+		4CB58EBE2C7629D600089BC6 /* UITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB58EBD2C7629D600089BC6 /* UITestView.swift */; };
 		700CCAE32C655CF900544531 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* ScoreController.swift */; };
 		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
 		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
@@ -78,6 +79,7 @@
 		4C79FBF92C752DA8009C8765 /* DharmaGothicE-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DharmaGothicE-BoldItalic.ttf"; path = "../../../../Mini06/Assets/Fonts/DharmaGothicE-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4C79FBFA2C752DC9009C8765 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "WorkSans-Regular.ttf"; path = "../../../../Mini06/Assets/Fonts/Work Sans/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		4C79FBFB2C752DC9009C8765 /* WorkSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "WorkSans-BoldItalic.ttf"; path = "../../../../Mini06/Assets/Fonts/Work Sans/WorkSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4CB58EBD2C7629D600089BC6 /* UITestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITestView.swift; path = FPSARMini06/UITestView.swift; sourceTree = SOURCE_ROOT; };
 		700CCAE22C655CF900544531 /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				B868FA9A2C4EC2CB0038ECD9 /* Model */,
 				B868FA992C4EC2B70038ECD9 /* NavigationController */,
 				B868FA982C4EC2B10038ECD9 /* Views */,
+				4CB58EBD2C7629D600089BC6 /* UITestView.swift */,
 				B868FA972C4EC2A00038ECD9 /* GameSystem */,
 				B8C65F892C4AE1E100D56811 /* AppDelegate.swift */,
 				B8C65F8B2C4AE1E100D56811 /* ContentView.swift */,
@@ -422,6 +425,7 @@
 				ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */,
 				B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */,
 				B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */,
+				4CB58EBE2C7629D600089BC6 /* UITestView.swift in Sources */,
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B8ED20A62C6E6379009C26F0 /* SpawnerComponent.swift in Sources */,
 				B8ED20A82C6E638B009C26F0 /* SpawnerSystem.swift in Sources */,
