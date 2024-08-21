@@ -11,12 +11,18 @@ import Foundation
 class AttackSystem: RealityKit.System {
     
     private static let query = EntityQuery(where: .has(AttackComponent.self))
+    private static let queryPlayer = EntityQuery(where: .has(PlayerComponent.self))
+    private static let queryEnemy = EntityQuery(where: .has(MotionComponent.self))
     
     required init(scene: Scene) { }
     
     func update(context: SceneUpdateContext) {
+        
+        
+        
         guard !settingsPersistence.pauseGame else {return}
         context.scene.performQuery(AttackSystem.query).forEach { entity in
+            
             guard let component = entity.components[AttackComponent.self] as? AttackComponent else { return }
             
             let endPosition = component.startPosition + component.direction * component.attackSpeed
@@ -30,6 +36,7 @@ class AttackSystem: RealityKit.System {
             DispatchQueue.main.asyncAfter(deadline: .now() + component.duration) {
                 entity.removeFromParent()
             }
+            entity.components[AttackComponent.self] = component
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 public class ScoreController: ObservableObject {
     public static var score: Int = 0
+    public static var final: Bool = false
 }
 
 class settingsPersistence{

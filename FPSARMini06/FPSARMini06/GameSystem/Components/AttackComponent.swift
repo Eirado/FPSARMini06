@@ -13,5 +13,12 @@ struct AttackComponent: RealityKit.Component {
     var direction: SIMD3<Float> = .zero
     var attackSpeed:Float = 0
     var duration:TimeInterval = 0
+    var type:Types = .nill
     var hit:Bool = false
+    
+    enum Types{
+        case nill
+        case enemy
+        case player
+    }
 }

@@ -43,16 +43,17 @@ class EnemyEntity: Entity, HasCollision, HasModel {
                 if let modelEntity = assetDict[.diver_anim_stand_idle] {
                     self.model = modelEntity.clone(recursive: true)
                     self.model.generateCollisionShapes(recursive: true)
-//                    self.model.collision = CollisionComponent(shapes: [modelShape])
+                    self.model.collision = CollisionComponent(shapes: [modelShape])
                     self.model.components[GameCollisionComponent.self] = GameCollisionComponent()
                     self.model.components[HealthComponent.self] = HealthComponent(totalHealth: .enemyEntityHealth)
                     self.model.name = "EnemyEntity"
 
                     self.addChild(self.model)
                 }
-            
-                self.addChild(self.animationRoot)
                 self.components[MotionComponent.self] = MotionComponent()
+                self.addChild(self.animationRoot)
+                
+                
             })
             .store(in: &cancellables)
     }

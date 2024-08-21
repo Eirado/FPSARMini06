@@ -25,23 +25,56 @@ class CollisionSystem: RealityKit.System {
                 let entity2 = event.entityB
                 let involvedNodes = [entity1, entity2]
                 
-                if (entity1.name == "EnemyEntity" && entity2.name == "BulletEntity") ||
-                    (entity1.name == "BulletEntity" && entity2.name == "EnemyEntity") {
+                if (involvedNodes.contains(where: {$0.name == "EnemyEntity"}) && involvedNodes.contains(where: {$0.name == "PlayerBullet"})) {
+
                     guard let enemyEntity = involvedNodes.first(where: { $0.name == "EnemyEntity" }) else { return }
-                    guard let bulletEntity = involvedNodes.first(where: { $0.name == "BulletEntity" }) else { return }
-                    
-                    if var enemyHealth = enemyEntity.components[HealthComponent.self] as? HealthComponent {
-                        do {
-                            if !hitLanded {
-                                enemyHealth.totalHealth -= damage
-                                print(enemyHealth.totalHealth)
-                                bulletEntity.components.set(AttackComponent(hit: true))
-                                self.hitLanded = true
+                    guard let bulletEntity = involvedNodes.first(where: { $0.name == "PlayerBullet" }) else { return }
+                    if !bulletEntity.components.has(AttackComponent.self){
+                        bulletEntity.components.set(AttackComponent(type: .player, hit: false))
+                    }
+                    guard var attackComponent = bulletEntity.components[AttackComponent.self] as? AttackComponent else{return}
+                        if var enemyHealth = enemyEntity.components[HealthComponent.self] as? HealthComponent {
+                            do {
+                                if !attackComponent.hit{
+                                    enemyHealth.totalHealth -= damage
+                                    print("vida do inimigo \(enemyHealth.totalHealth)")
+                                    bulletEntity.components.set(AttackComponent(hit: true))
+                                    attackComponent.hit = true
+                                    bulletEntity.components[AttackComponent.self] = attackComponent
+                                }
+                                enemyEntity.components[HealthComponent.self] = enemyHealth
                             }
-                            enemyEntity.components[HealthComponent.self] = enemyHealth
+                        }
+                    
+                    self.hitLanded = true
+                }
+                
+                else if (involvedNodes.contains(where: {$0.name == "PlayerEntity"}) && involvedNodes.contains(where: {$0.name == "EnemyBullet"})) {
+
+                    guard let playerEntity = involvedNodes.first(where: { $0.name == "PlayerEntity" }) else { return }
+                    guard let bulletEntity = involvedNodes.first(where: { $0.name == "EnemyBullet" }) else { return }
+                    
+                    if !bulletEntity.components.has(AttackComponent.self){
+                        bulletEntity.components.set(AttackComponent(hit: false))
+                    }
+
+                    guard var attackComponent = bulletEntity.components[AttackComponent.self] as? AttackComponent else {return}
+                    if var playerHealth = playerEntity.components[HealthComponent.self] as? HealthComponent {
+                        do {
+                            if !attackComponent.hit{
+                                playerHealth.totalHealth -= damage
+                                print("vida do player \(playerHealth.totalHealth)")
+                                bulletEntity.components.set(AttackComponent(hit: true))
+                                attackComponent.hit = true
+                                bulletEntity.components[AttackComponent.self] = attackComponent
+                            }
+                            playerEntity.components[HealthComponent.self] = playerHealth
                         }
                     }
+                    self.hitLanded = true
                 }
+                else {return}
+                
             })
             
             collisionSubscriptions.append(context.scene.subscribe(to: CollisionEvents.Ended.self) { [weak self] event in

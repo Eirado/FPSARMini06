@@ -17,6 +17,7 @@ struct GamePlayFeedbackView: View {
     @Environment(PageManager.self) var pageManager
     @Environment (\.modelContext)  var context
     @Query private var data:[UserData]
+    @StateObject var timerManager : TimerManager
     
     var body: some View {
         ZStack {
@@ -90,7 +91,10 @@ struct GamePlayFeedbackView: View {
                 
                 Button {
                     
-                    pageManager.page = .gameScene
+                    ScoreController.final = false
+                    timerManager.timerRunning = true
+                    timerManager.timeRemaining = 60
+                    ARViewManager.shared.resetScene()
                     
                 } label: {
                     ZStack {
@@ -141,7 +145,7 @@ struct GamePlayFeedbackView: View {
     }
 }
 
-#Preview {
-    GamePlayFeedbackView()
-        .environment(PageManager())
-}
+//#Preview {
+//    GamePlayFeedbackView()
+//        .environment(PageManager())
+//}

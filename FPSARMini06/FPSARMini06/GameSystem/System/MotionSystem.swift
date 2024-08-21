@@ -9,9 +9,11 @@ class MotionSystem: RealityKit.System {
     private var nodes: [SIMD3<Float>] = []
     private var currentTargetIndex: Int?
     private let sphereRadius: Float = 0.8
-       
+    private var bullet : BulletEntity?
     private var playerEntity: [Entity]? = nil // this is a test
+    private var chance : Int = 0
 
+    
     required init(scene: Scene) {
         
     }
@@ -31,6 +33,25 @@ class MotionSystem: RealityKit.System {
         context.scene.performQuery(Self.query).forEach { entity in
             guard var motion = entity.components[MotionComponent.self] as? MotionComponent else { return }
             
+            
+            chance = Int.random(in: 0...60)
+            if chance == 1{
+                self.bullet = BulletEntity()
+                
+                guard var attackComponent = bullet?.components[AttackComponent.self] as? AttackComponent else {return}
+                attackComponent.duration = 2
+                attackComponent.attackSpeed = 2
+                attackComponent.startPosition = entity.position
+                attackComponent.direction = simd_normalize(player.first!.position - entity.position)
+                attackComponent.type = .enemy
+                bullet!.components[AttackComponent.self] = attackComponent
+                
+                bullet!.model.name = "EnemyBullet"
+                
+                let clone = bullet!.clone(recursive: true)
+                
+                entity.addChild(clone)
+            }
             defer {
                 entity.components[MotionComponent.self] = motion
             }

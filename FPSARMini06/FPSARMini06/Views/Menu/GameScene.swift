@@ -14,28 +14,28 @@ struct GameScene: View {
     @Environment(PageManager.self) var pageManager
     @StateObject private var gameState = GameState()
     @StateObject var timerManager = TimerManager()
-
+    
     var body: some View {
         ZStack {
             ARViewContainer()
                 .onAppear {
                     ARViewManager.shared.resetScene()
                     timerManager.startTimer()
-
+                    
                 }
                 .overlay {
                     if timerManager.timerRunning {
                         TimerHud(timerManager: timerManager)
                         
-                    }else if timerManager.timeRemaining == 0{
-                        Text("fim").onAppear {
-                            pageManager.page = .feedbackView
-                        }
-                        
                     }
+                    if timerManager.timeRemaining == 0 || ScoreController.final{
+                        GamePlayFeedbackView(timerManager: timerManager)
+                    }
+                    
                     if settingsPersistence.pauseGame{
                         PauseMenuView(timerManager: timerManager)
                     }
+                    
                 }
                 .ignoresSafeArea()
         }
@@ -74,6 +74,9 @@ struct TimerHud:View {
                 .cornerRadius(10)
                 .padding(.top, 50)
             HStack {
+                
+                Text(ScoreController.final.description)
+                
                 Spacer()
                 Button(action: {
                     timerManager.pauseTimer()

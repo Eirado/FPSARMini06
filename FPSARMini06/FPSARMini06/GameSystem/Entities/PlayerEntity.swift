@@ -22,23 +22,24 @@ class PlayerEntity: Entity, HasCollision, HasModel {
     required init(ar: ARView) {
         self.model = ModelEntity()
         self.animationRoot = Entity()
-        self.modelShape = .generateBox(width: 0, height: 0, depth: 0)
+        self.modelShape =  .generateBox(width: 0.5/2, height: 1.5, depth: 0.2)
         self.ar = ar
-        self.model?.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(size: 0), materials: [SimpleMaterial(color: .blue, isMetallic: true)])
+        self.model?.components[ModelComponent.self] = ModelComponent(mesh: .generateBox(width: 0.5/2, height: 1.5, depth: 0.2),materials: [SimpleMaterial(color: .blue, isMetallic: true)])
     
         self.model?.generateCollisionShapes(recursive: true)
-        
+
         bullet = BulletEntity()
         
         super.init()
         
         self.components[PlayerComponent.self] = PlayerComponent()
-        self.components[GameCollisionComponent.self] = GameCollisionComponent()
-        self.components[HealthComponent.self] = HealthComponent(totalHealth: .playerEntityHealth)
+        self.model?.components[GameCollisionComponent.self] = GameCollisionComponent()
+        self.model?.components[HealthComponent.self] = HealthComponent(totalHealth: .playerEntityHealth)
+        self.model?.collision = CollisionComponent(shapes: [modelShape!])
 
         movement()
         
-        self.name = "PlayerEntity"
+        self.model?.name = "PlayerEntity"
         self.addChild(self.model!)
         self.addChild(self.animationRoot!)
     }
@@ -66,9 +67,13 @@ extension PlayerEntity {
         component.direction = direction
         component.duration = 1
         component.attackSpeed = 2
+        component.type = .player
         component.hit = false
         
         bullet?.components[AttackComponent.self] = component
+        
+        bullet!.model.name = "PlayerBullet"
+        
         let clone = bullet?.clone(recursive: true)
 
         self.addChild(clone!)
@@ -77,9 +82,6 @@ extension PlayerEntity {
     func movement(){
         
         guard let component = self.components[PlayerComponent.self] as? PlayerComponent else {return}
-        if component.score == nil {
-            component.score = 0
-        }
         component.arView = ar
         
         self.components[PlayerComponent.self] = component

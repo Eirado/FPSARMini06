@@ -9,14 +9,13 @@ import Foundation
 import SwiftUI
 
 class TimerManager: ObservableObject {
-    @Published var timeRemaining: Int = 5
+    @Published var timeRemaining: Int = 60
     @Published var timerRunning: Bool = false
     private var timer: Timer?
 
 
     
     func startTimer() {
-        print("rodando: \(timerRunning)")
         guard !timerRunning else { return }
         timerRunning = true
         settingsPersistence.pauseGame = false

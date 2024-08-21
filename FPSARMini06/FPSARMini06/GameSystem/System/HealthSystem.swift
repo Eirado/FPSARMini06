@@ -17,23 +17,19 @@ class HealthSystem: System {
     func update(context: SceneUpdateContext) {
         context.scene.performQuery(Self.query).forEach { entity in
             guard let component = entity.components[HealthComponent.self] as? HealthComponent else { return }
-            
+            print(entity.name)
             if component.totalHealth <= 0 {
                 die(entity: entity)
             }
         }
         
         func die(entity: Entity) {
-            let playerEntity = context.scene.performQuery(Self.queryPlayer).map({$0}).first
-            if entity != playerEntity{
-                guard let score = playerEntity?.components[PlayerComponent.self] as? PlayerComponent else { return }
-                
+            if entity.name != "PlayerEntity"{
                 ScoreController.score += 1
-                print("score \(String(describing: ScoreController.score.description))")
-                
-                playerEntity?.components.set(score)
+                entity.removeFromParent()
+            }else{
+                ScoreController.final = true
             }
-            entity.removeFromParent()
         }
         
         

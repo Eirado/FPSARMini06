@@ -28,7 +28,8 @@ struct Navigator: View {
             SettingsView()
 //            PauseMenuView()
         case .feedbackView:
-            GamePlayFeedbackView()
+            SettingsView()
+//            GamePlayFeedbackView()
         }
     }
 }
