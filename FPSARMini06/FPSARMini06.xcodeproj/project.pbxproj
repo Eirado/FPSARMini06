@@ -18,7 +18,6 @@
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		4C79FBF62C751A9C009C8765 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF52C751A9C009C8765 /* FontManager.swift */; };
 		4C79FBF82C751AFE009C8765 /* TextLibary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF72C751AFE009C8765 /* TextLibary.swift */; };
-		4CB58EBE2C7629D600089BC6 /* UITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB58EBD2C7629D600089BC6 /* UITestView.swift */; };
 		700CCAE32C655CF900544531 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* ScoreController.swift */; };
 		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
 		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
@@ -39,6 +38,9 @@
 		B868FAB52C4EC3AC0038ECD9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */; };
 		B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */; };
 		B868FAB92C4EC9AC0038ECD9 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */; };
+		B880BD022C762B3A00FDDFF9 /* DharmaGothicE-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B880BD012C762B3A00FDDFF9 /* DharmaGothicE-BoldItalic.ttf */; };
+		B880BD042C762B9100FDDFF9 /* WorkSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B880BD032C762B9100FDDFF9 /* WorkSans-BoldItalic.ttf */; };
+		B880BD062C762B9D00FDDFF9 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B880BD052C762B9D00FDDFF9 /* WorkSans-Regular.ttf */; };
 		B885FF652C5424DF00761BDE /* GameCollisionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */; };
 		B8A120A62C581173003603BC /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A120A52C581173003603BC /* HowToPlayView.swift */; };
 		B8C65F8A2C4AE1E100D56811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C65F892C4AE1E100D56811 /* AppDelegate.swift */; };
@@ -76,10 +78,6 @@
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C79FBF52C751A9C009C8765 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		4C79FBF72C751AFE009C8765 /* TextLibary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLibary.swift; sourceTree = "<group>"; };
-		4C79FBF92C752DA8009C8765 /* DharmaGothicE-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DharmaGothicE-BoldItalic.ttf"; path = "../../../../Mini06/Assets/Fonts/DharmaGothicE-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4C79FBFA2C752DC9009C8765 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "WorkSans-Regular.ttf"; path = "../../../../Mini06/Assets/Fonts/Work Sans/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
-		4C79FBFB2C752DC9009C8765 /* WorkSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "WorkSans-BoldItalic.ttf"; path = "../../../../Mini06/Assets/Fonts/Work Sans/WorkSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4CB58EBD2C7629D600089BC6 /* UITestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITestView.swift; path = FPSARMini06/UITestView.swift; sourceTree = SOURCE_ROOT; };
 		700CCAE22C655CF900544531 /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
@@ -100,9 +98,13 @@
 		B868FAB42C4EC3AC0038ECD9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		B868FAB62C4EC3B90038ECD9 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		B868FAB82C4EC9AC0038ECD9 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
+		B880BCF52C76248A00FDDFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B880BD012C762B3A00FDDFF9 /* DharmaGothicE-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DharmaGothicE-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B880BD032C762B9100FDDFF9 /* WorkSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B880BD052C762B9D00FDDFF9 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		B885FF642C5424DF00761BDE /* GameCollisionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollisionComponent.swift; sourceTree = "<group>"; };
 		B8A120A52C581173003603BC /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
-		B8C65F862C4AE1E100D56811 /* Legends of Akãnã.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Legends of Akãnã.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8C65F862C4AE1E100D56811 /* FPSARMini06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPSARMini06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C65F892C4AE1E100D56811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C65F8B2C4AE1E100D56811 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B8C65F8D2C4AE1E200D56811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,9 +138,9 @@
 		127DF4242C52EA08009C3231 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4C79FBFB2C752DC9009C8765 /* WorkSans-BoldItalic.ttf */,
-				4C79FBFA2C752DC9009C8765 /* WorkSans-Regular.ttf */,
-				4C79FBF92C752DA8009C8765 /* DharmaGothicE-BoldItalic.ttf */,
+				B880BD032C762B9100FDDFF9 /* WorkSans-BoldItalic.ttf */,
+				B880BD052C762B9D00FDDFF9 /* WorkSans-Regular.ttf */,
+				B880BD012C762B3A00FDDFF9 /* DharmaGothicE-BoldItalic.ttf */,
 				B8ED20A92C6E6525009C26F0 /* frogDrone.usdz */,
 				127DF4222C52EA03009C3231 /* ComponentePauseMenu.swift */,
 				12B308E12C5C23BE0005ADE1 /* GeometryReaderNumbers.swift */,
@@ -276,7 +278,7 @@
 		B8C65F872C4AE1E100D56811 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8C65F862C4AE1E100D56811 /* Legends of Akãnã.app */,
+				B8C65F862C4AE1E100D56811 /* FPSARMini06.app */,
 				12B308D82C5AD8B60005ADE1 /* FPSARMini06Tests.xctest */,
 			);
 			name = Products;
@@ -285,10 +287,10 @@
 		B8C65F882C4AE1E100D56811 /* FPSARMini06 */ = {
 			isa = PBXGroup;
 			children = (
+				B880BCF52C76248A00FDDFF9 /* Info.plist */,
 				B868FA9A2C4EC2CB0038ECD9 /* Model */,
 				B868FA992C4EC2B70038ECD9 /* NavigationController */,
 				B868FA982C4EC2B10038ECD9 /* Views */,
-				4CB58EBD2C7629D600089BC6 /* UITestView.swift */,
 				B868FA972C4EC2A00038ECD9 /* GameSystem */,
 				B8C65F892C4AE1E100D56811 /* AppDelegate.swift */,
 				B8C65F8B2C4AE1E100D56811 /* ContentView.swift */,
@@ -344,7 +346,7 @@
 			);
 			name = FPSARMini06;
 			productName = FPSARMini06;
-			productReference = B8C65F862C4AE1E100D56811 /* Legends of Akãnã.app */;
+			productReference = B8C65F862C4AE1E100D56811 /* FPSARMini06.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -399,9 +401,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8ED20AA2C6E6525009C26F0 /* frogDrone.usdz in Resources */,
+				B880BD042C762B9100FDDFF9 /* WorkSans-BoldItalic.ttf in Resources */,
 				B8C65F912C4AE1E200D56811 /* Preview Assets.xcassets in Resources */,
+				B880BD022C762B3A00FDDFF9 /* DharmaGothicE-BoldItalic.ttf in Resources */,
 				B8C65F8E2C4AE1E200D56811 /* Assets.xcassets in Resources */,
 				12B308D32C5ABB040005ADE1 /* Localizable.xcstrings in Resources */,
+				B880BD062C762B9D00FDDFF9 /* WorkSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +430,6 @@
 				ABEC1B6A2C52D73700AE13EF /* MotionComponent.swift in Sources */,
 				B8E381F72C5AB29C0038463C /* BulletEntity.swift in Sources */,
 				B8E381FD2C5ABE620038463C /* HealthSystem.swift in Sources */,
-				4CB58EBE2C7629D600089BC6 /* UITestView.swift in Sources */,
 				B868FAA72C4EC35B0038ECD9 /* MenuView.swift in Sources */,
 				B8ED20A62C6E6379009C26F0 /* SpawnerComponent.swift in Sources */,
 				B8ED20A82C6E638B009C26F0 /* SpawnerSystem.swift in Sources */,
@@ -479,15 +483,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = CU2V2363W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeticiaMalagutti.FPSARMini06Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,15 +501,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = CU2V2363W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeticiaMalagutti.FPSARMini06Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -644,23 +640,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Legends of Akãnã";
+				INFOPLIST_FILE = FPSARMini06/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Giovanni.FPSARMini06;
-				PRODUCT_NAME = "Legends of Akãnã";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -679,23 +678,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6QABYQSWA;
+				DEVELOPMENT_TEAM = TLC9D54B8V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Legends of Akãnã";
+				INFOPLIST_FILE = FPSARMini06/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Legends Of Akãnã";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to use Augmented Reality (AR) and add virtual objects to the environment.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Giovanni.FPSARMini06;
-				PRODUCT_NAME = "Legends of Akãnã";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
