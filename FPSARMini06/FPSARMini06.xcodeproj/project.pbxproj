@@ -18,6 +18,7 @@
 		12F2DF912C581C22001C663C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F2DF902C581C22001C663C /* SettingsView.swift */; };
 		4C79FBF62C751A9C009C8765 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF52C751A9C009C8765 /* FontManager.swift */; };
 		4C79FBF82C751AFE009C8765 /* TextLibary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79FBF72C751AFE009C8765 /* TextLibary.swift */; };
+		4CACB4F82C7FCD4E0084ECB7 /* ComponentHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CACB4F72C7FCD4E0084ECB7 /* ComponentHUDView.swift */; };
 		700CCAE32C655CF900544531 /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700CCAE22C655CF900544531 /* ScoreController.swift */; };
 		70AA701E2C5D679A004C306A /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701D2C5D679A004C306A /* PlayerComponent.swift */; };
 		70AA70202C5D67BD004C306A /* PlayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA701F2C5D67BD004C306A /* PlayerSystem.swift */; };
@@ -78,6 +79,7 @@
 		12F2DF902C581C22001C663C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C79FBF52C751A9C009C8765 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		4C79FBF72C751AFE009C8765 /* TextLibary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLibary.swift; sourceTree = "<group>"; };
+		4CACB4F72C7FCD4E0084ECB7 /* ComponentHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentHUDView.swift; sourceTree = "<group>"; };
 		700CCAE22C655CF900544531 /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		70AA701D2C5D679A004C306A /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		70AA701F2C5D67BD004C306A /* PlayerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSystem.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				AB364A632C616BA6009E33A1 /* LoadModels.swift */,
 				4C79FBF52C751A9C009C8765 /* FontManager.swift */,
 				4C79FBF72C751AFE009C8765 /* TextLibary.swift */,
+				4CACB4F72C7FCD4E0084ECB7 /* ComponentHUDView.swift */,
 			);
 			name = Utils;
 			path = ..;
@@ -443,6 +446,7 @@
 				B885FF652C5424DF00761BDE /* GameCollisionComponent.swift in Sources */,
 				70E6A59F2C5ABDF200F7F7F5 /* FrogEntity.swift in Sources */,
 				12F2DF912C581C22001C663C /* SettingsView.swift in Sources */,
+				4CACB4F82C7FCD4E0084ECB7 /* ComponentHUDView.swift in Sources */,
 				B868FAB72C4EC3B90038ECD9 /* UserPoints.swift in Sources */,
 				AB364A642C616BA6009E33A1 /* LoadModels.swift in Sources */,
 				127DF4262C542A8D009C3231 /* GamePlayFeedbackView.swift in Sources */,
@@ -640,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = Z6QABYQSWA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
@@ -678,7 +682,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FPSARMini06/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = Z6QABYQSWA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FPSARMini06/Info.plist;
